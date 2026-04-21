@@ -35,7 +35,7 @@ export function renderAccordion(data, container) {
       <button class="accordion-trigger" aria-expanded="false"
               aria-controls="accordion-panel-${i}" id="accordion-btn-${i}">
         <span class="accordion-trigger-label">${panel.label}</span>
-        <span class="accordion-trigger-icon" aria-hidden="true"></span>
+        <span class="toggle-icon" aria-hidden="true"></span>
       </button>
       <div class="accordion-panel" id="accordion-panel-${i}"
            role="region" aria-labelledby="accordion-btn-${i}">
@@ -136,7 +136,7 @@ export function renderExpandableList(data, container) {
           <span class="expandable-summary-title">${item.title}</span>
           <span class="expandable-summary-desc">${item.summary}</span>
         </span>
-        <span class="expandable-icon" aria-hidden="true"></span>
+        <span class="toggle-icon" aria-hidden="true"></span>
       </button>
       <div class="expandable-panel" id="exp-panel-${i}"
            role="region" aria-labelledby="exp-btn-${i}">

@@ -1,4 +1,1159 @@
-/* css/pages/solution.css — Page-specific styles for solution.html
-   Phase build: add layout rules here as the page is constructed.
-   Keep all component-level styles in ../components.css.
+/* css/pages/solution.css — Solution page layout
+   Page-specific composition only. Component-level styles live in components.css.
 */
+
+
+/* ── SECTION RHYTHM ──────────────────────────────────────────────── */
+.page-section {
+  padding: var(--sp9) 0;
+}
+
+.section-brief { padding: var(--sp7) 0; }
+
+/* Serif framing statement that opens each section */
+.section-framing {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--color-ink);
+  max-width: 22ch;
+  margin: var(--sp5) 0 var(--sp4);
+}
+
+/* Standard body paragraph within sections */
+.section-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 65ch;
+  margin-bottom: var(--sp4);
+}
+
+/* Generic prose column */
+.section-prose p {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 65ch;
+  margin-bottom: var(--sp4);
+}
+.section-prose p:last-child { margin-bottom: 0; }
+
+.section-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  max-width: 65ch;
+  margin-top: var(--sp3);
+}
+
+/* ── §4.0 SGO INTRO — pipe image section ────────────────────────── */
+
+/* Green tint behind the thesis section — signals "this is the answer" */
+.section-sgo-intro {
+  background: rgba(95, 175, 143, 0.06);
+}
+
+/* The thesis heading gets a yellow swash: thick highlight behind the text */
+.thesis-framing {
+  position: relative;
+}
+
+.thesis-framing .highlight::after {
+  height: 10px;
+  bottom: 1px;
+  background: var(--color-yellow);
+  opacity: 0.7;
+}
+
+.sgo-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--sp8);
+  align-items: center;
+  margin-top: var(--sp2);
+}
+
+.sgo-intro-text .section-framing { margin-top: var(--sp4); }
+.sgo-intro-text .section-body { margin-bottom: var(--sp5); max-width: 52ch; }
+
+/* Student avatar cluster — 4 diverse portraits in a horizontal row */
+.student-avatars {
+  display: flex;
+  gap: calc(var(--sp3) * -1);
+  margin-top: var(--sp2);
+}
+
+.student-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  margin-right: calc(var(--sp3) * -1);
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.student-avatar:hover { transform: translateY(-3px); z-index: 1; }
+
+/* Pipe illustration — white BG image on paper background */
+.sgo-visual {
+  position: relative;
+}
+
+.pipe-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ── §4.1 ECCA — paper background, two-column ───────────────────── */
+.section-ecca {
+  padding: var(--sp9) 0;
+}
+
+.ecca-split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--sp8);
+  align-items: start;
+  margin-top: var(--sp2);
+}
+
+.ecca-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  display: block;
+  margin-bottom: var(--sp5);
+}
+
+.ecca-framing {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  max-width: 20ch;
+  margin-bottom: var(--sp6);
+}
+
+.ecca-body { max-width: 58ch; }
+
+.ecca-para {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin-bottom: var(--sp5);
+}
+.ecca-para:last-child { margin-bottom: 0; }
+
+/* Vertical stats column on the right */
+.ecca-stats {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.ecca-stat {
+  padding: var(--sp5) var(--sp6);
+  border-bottom: 1px solid var(--color-rule);
+}
+.ecca-stat:last-child { border-bottom: none; }
+
+.ecca-stat-number {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(32px, 3.5vw, 48px);
+  color: var(--color-ink);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--sp2);
+}
+
+.ecca-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+}
+
+
+/* Sidenote uses .margin-note component (mono italic, ↳ prefix, muted).
+   Only add margin-top here — all other styles come from the component. */
+.ecca-sidenote {
+  margin-top: var(--sp5);
+  max-width: 52ch;
+}
+
+/* ── §4.2 STATE MAP — two-column ─────────────────────────────────── */
+.section-state-map .section-framing { color: var(--color-ink); }
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--sp8);
+  align-items: start;
+  margin-top: var(--sp2);
+}
+
+.split-text .section-framing {
+  margin-top: 0;
+  font-size: var(--font-size-h2);
+}
+
+.map-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-top: var(--sp3);
+}
+
+/* ── §4.1 HOW IT WORKS — SGO definition + illustrated flow ──────── */
+
+/* Two-column: definition left, big statement right */
+.sgo-definition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp8);
+  align-items: center;
+  margin: var(--sp7) 0 var(--sp8);
+  padding: var(--sp5) 0;
+}
+
+.sgo-def-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin-bottom: var(--sp3);
+}
+
+.sgo-def-statement {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  letter-spacing: 0;
+}
+
+.sgo-big-statement {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1.2;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+/* 5-step illustrated flow — CSS-native, no fixed SVG, no scrollbar */
+.sgo-flow {
+  display: flex;
+  align-items: flex-start;
+  border-top: 1.5px solid var(--color-ink);
+  padding-top: var(--sp6);
+  margin-bottom: var(--sp6);
+  gap: 0;
+}
+
+.sgo-flow-step {
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--sp4) 0 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.38s ease, transform 0.38s ease;
+}
+.sgo-flow-step:last-child { padding-right: 0; }
+.sgo-flow-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Arrow between steps */
+.sgo-flow-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px; /* vertically aligns with icon center */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sgo-flow-arrow.visible { opacity: 1; }
+.sgo-flow-arrow img {
+  width: 36px;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+/* Step content */
+.step-icon-wrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp4);
+  background: var(--color-paper);
+}
+
+.step-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin-bottom: var(--sp2);
+  line-height: 1;
+}
+
+.step-label {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  color: var(--color-ink);
+  margin-bottom: var(--sp3);
+  line-height: 1.3;
+}
+
+.step-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-caption);
+  color: var(--color-ink-muted);
+  line-height: var(--line-height-caption);
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 700px) {
+  .sgo-flow {
+    flex-direction: column;
+    gap: 0;
+  }
+  .sgo-flow-step {
+    padding: var(--sp5) 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .sgo-flow-step:last-child { border-bottom: none; }
+  .sgo-flow-arrow {
+    padding-top: 0;
+    width: 100%;
+    height: 32px;
+    justify-content: flex-start;
+    padding-left: 6px;
+    transform: rotate(90deg);
+    transform-origin: 24px center;
+  }
+}
+
+/* ── §4.2 WHAT CAN THEY FUND — orbit visual ──────────────────────── */
+.wcf-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--sp8);
+  align-items: start;
+  margin-top: var(--sp2);
+}
+
+.wcf-text .section-framing {
+  margin-top: 0;
+}
+
+.wcf-body {
+  margin-top: var(--sp6);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  color: var(--color-ink);
+}
+
+#wcf-callout {
+  margin-top: var(--sp5);
+}
+
+/* Right column — orbit + caption stacked */
+.wcf-orbit-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp4);
+}
+
+.wcf-note {
+  text-align: center;
+}
+
+/* Orbit container — always square, fills its column */
+.orbit-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+}
+
+/* SVG connector lines — drawn by JS using measured coordinates */
+.orbit-svg-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.orbit-connector {
+  opacity: 0;
+}
+.orbit-connector.animate {
+  animation: orbitLineIn 0.5s ease var(--line-delay, 0.2s) both;
+}
+
+/* Student at center — CSS-centered, transitions to visible */
+.orbit-student {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  background: var(--color-paper);
+  isolation: isolate;
+  transform: translate(-50%, -50%) scale(0.75);
+  opacity: 0;
+  transition: opacity 0.45s ease, transform 0.45s var(--ease-out);
+}
+.orbit-student img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+.orbit-student.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Resource items — left/top set by JS; transitions to visible */
+.orbit-item {
+  position: absolute;
+  width: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transform: scale(0.4);
+  transform-origin: center;
+  transition: opacity 0.5s ease, transform 0.5s var(--ease-out);
+}
+.orbit-item.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Paper-bg wrapper — gives multiply a solid base */
+.orbit-icon-bg {
+  width: 46px;
+  height: 46px;
+  background: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.orbit-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.orbit-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
+  background: var(--color-paper);
+  padding: 1px 3px;
+}
+
+@keyframes orbitLineIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .wcf-layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp6);
+  }
+  .wcf-orbit-wrap {
+    display: none;
+  }
+}
+
+/* ── §4.4 REQUIREMENTS ───────────────────────────────────────────── */
+
+/* Hide the sub-description so each row is a single tight line */
+.section-requirements .expandable-summary-desc {
+  display: none;
+}
+.section-requirements .expandable-trigger {
+  padding: var(--sp3) var(--sp5);
+}
+
+.req-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--sp8);
+  align-items: start;
+}
+
+.req-framing {
+  margin-top: 0;
+  font-size: clamp(20px, 2.2vw, 32px);
+  line-height: 1.25;
+  max-width: none;
+}
+
+.req-intro {
+  margin-top: var(--sp4);
+  margin-bottom: 0;
+}
+
+.req-plaque-box {
+  display: flex;
+  align-items: center;
+  gap: var(--sp4);
+  margin-top: var(--sp6);
+}
+
+.req-shield-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+  display: block;
+}
+
+.req-plaque-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var(--color-blue);
+  margin: 0;
+}
+
+/* ── §4.7 DEFINING A SCOPE — three-beat argument ─────────────────── */
+
+/* Beat 1 — Full-width serif framing statement */
+.scope-framing {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  max-width: 26ch;
+  margin: var(--sp6) 0 0;
+  padding-bottom: var(--sp7);
+  border-bottom: 1.5px solid var(--color-ink);
+}
+
+/* Beat 2 — Prose + pull quote */
+.scope-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--sp8);
+  align-items: start;
+  margin-top: var(--sp7);
+}
+
+.scope-para {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 65ch;
+  margin-bottom: var(--sp5);
+}
+.scope-para:last-child { margin-bottom: 0; }
+
+/* Journey-to-goal icon — winding path above the pull quote */
+.scope-journey-icon {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+  margin: 0 auto var(--sp5);
+  opacity: 0.85;
+}
+
+.pull-quote {
+  border-left: 3px solid var(--color-green);
+  padding: var(--sp5) var(--sp6);
+  margin: 0;
+  position: sticky;
+  top: calc(var(--sp7) + 64px);
+  background: var(--color-paper);
+}
+
+.pull-quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--color-ink);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Beat 3 — Blueprint Panel position statement */
+.scope-position-panel {
+  margin-top: var(--sp8);
+  border-radius: var(--radius-sm);
+  padding: var(--sp7) var(--sp8);
+}
+
+/* Fix grid background attachment for contained panel */
+.scope-position-panel::before {
+  background-attachment: scroll;
+}
+
+.scope-position-inner {
+  display: flex;
+  gap: var(--sp6);
+  align-items: flex-start;
+}
+
+/* Paper-bg wrapper — gives multiply a solid base on the blue panel */
+.scope-flag-wrap {
+  width: 56px;
+  height: 56px;
+  background: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  isolation: isolate;
+}
+
+.scope-flag-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.scope-position-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Large serif question — the declared design decision */
+.scope-position-statement {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-paper);
+  margin: 0 0 var(--sp6);
+  padding-bottom: var(--sp6);
+  border-bottom: 1px solid rgba(247, 246, 242, 0.2);
+}
+
+/* Three detail lines — each opens one dimension of the answer */
+.scope-position-detail {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: rgba(247, 246, 242, 0.8);
+  padding-left: var(--sp5);
+  position: relative;
+  margin-bottom: var(--sp4);
+}
+.scope-position-detail:last-child { margin-bottom: 0; }
+.scope-position-detail::before {
+  content: '→';
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-green);
+  position: absolute;
+  left: 0;
+  top: 3px;
+  line-height: 1;
+}
+
+/* ── §4.6 PENNSYLVANIA — Case Study (Blueprint Panel, full-bleed) ──── */
+
+/* Section: no padding — panel is full-bleed */
+.section-pennsylvania {
+  padding: 0;
+}
+
+/* Full-bleed blueprint panel — overrides default panel padding */
+.case-study-panel {
+  border-radius: 0;
+  padding: var(--sp9) 0;
+}
+
+.case-study-panel::before {
+  background-attachment: fixed;
+}
+
+/* Paper content box sitting on the blue grid */
+.cs-content-box {
+  background: var(--color-paper);
+  padding: var(--sp8);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+}
+
+/* Override blueprint-panel spec-header styles inside the paper box */
+.cs-content-box .spec-header {
+  border-bottom-color: var(--color-rule);
+}
+.cs-content-box .spec-header .spec-num {
+  background: var(--color-blue);
+  color: var(--color-paper);
+}
+.cs-content-box .spec-header .spec-sep  { color: var(--color-ink-muted); }
+.cs-content-box .spec-header .spec-title { color: var(--color-ink); }
+
+/* Spec header row — no bottom border (title rule replaces it) */
+.cs-spec-row {
+  border-bottom: none;
+  padding-bottom: var(--sp3);
+}
+
+/* Program title */
+.cs-spec-program-title {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(28px, 3.6vw, 50px);
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--sp4);
+}
+
+/* Green rule under the title */
+.cs-title-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--color-green);
+  margin: 0 0 var(--sp5);
+}
+
+/* Lead framing sentence */
+.cs-framing {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--sp3);
+}
+
+/* Narrative body paragraph */
+.cs-narrative {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+
+/* ── ZONE 1: Header layout ──────────────────────────────────────── */
+
+.cs-header-zone {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--sp8);
+  align-items: start;
+  margin-bottom: var(--sp7);
+}
+
+.cs-header-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp4);
+}
+
+/* PA state sketch SVG */
+.cs-state-wrap {
+  position: relative;
+}
+
+.pa-state-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* "Since XXXX" fact card */
+.cs-since-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  background: rgba(31, 31, 31, 0.04);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  padding: var(--sp4);
+}
+
+.cs-since-icon-bg {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.cs-since-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.cs-since-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cs-since-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-mono-wide);
+  text-transform: uppercase;
+  color: var(--color-green);
+}
+
+.cs-since-desc {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+
+/* ── ZONE 2: Stats bar ──────────────────────────────────────────── */
+
+.cs-stats-card {
+  background: rgba(95, 175, 143, 0.05);
+  border: 1px solid rgba(95, 175, 143, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--sp6);
+  margin-bottom: var(--sp7);
+}
+
+.cs-stats-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-mono-wide);
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin: 0 0 var(--sp5);
+}
+
+.cs-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cs-stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--sp5);
+  border-right: 1px solid var(--color-rule);
+}
+.cs-stat-col:first-child { padding-left: 0; }
+.cs-stat-col:last-child  { padding-right: 0; border-right: none; }
+
+.cs-stat-icon-bg {
+  width: 44px;
+  height: 44px;
+  background: var(--color-paper);
+  border: 1px solid rgba(95, 175, 143, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  margin-bottom: var(--sp3);
+}
+
+.cs-stat-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.cs-stat-number {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(28px, 3.2vw, 48px);
+  color: var(--color-ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp2);
+}
+
+.cs-stat-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+  max-width: 18ch;
+  margin: 0 auto;
+}
+
+
+/* ── ZONE 3: Outcomes split ─────────────────────────────────────── */
+
+.cs-outcomes-zone {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp8);
+  align-items: start;
+  margin-bottom: var(--sp7);
+}
+
+.cs-outcomes-heading {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(16px, 1.8vw, 22px);
+  color: var(--color-green);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--sp3);
+  padding-bottom: var(--sp3);
+  border-bottom: 1.5px solid var(--color-green);
+}
+
+.cs-outcomes-subtext {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+/* Numbered rows */
+.cs-outcomes-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-outcome-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp4);
+  padding: var(--sp4) 0;
+  border-bottom: 1px dashed var(--color-rule);
+}
+.cs-outcome-row:first-child { border-top: 1px dashed var(--color-rule); }
+
+.cs-outcome-num {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--color-green);
+  line-height: 1;
+  width: 40px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.cs-outcome-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  color: var(--color-ink);
+  line-height: 1.45;
+  padding-top: 6px;
+}
+
+
+/* ── ZONE 4: Pull quote — grey box ──────────────────────────────── */
+
+.cs-pullquote-zone {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp5);
+  align-items: center;
+  background: rgba(31, 31, 31, 0.04);
+  border: 1px solid rgba(31, 31, 31, 0.15);
+  border-radius: var(--radius-sm);
+  padding: var(--sp6) var(--sp7);
+  margin-bottom: var(--sp6);
+}
+
+.cs-pullquote-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp3);
+}
+
+.cs-pullquote-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin: 0;
+}
+
+.cs-quote-body {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(15px, 1.7vw, 20px);
+  line-height: 1.55;
+  color: var(--color-ink);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.cs-pullquote-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .split-layout,
+  .ecca-split,
+  .sgo-split,
+  .sgo-definition,
+  .wcf-layout {
+    grid-template-columns: 1fr;
+  }
+  .ecca-stats {
+    flex-direction: row;
+  }
+  .ecca-stat {
+    border-bottom: none;
+    border-right: 1px solid var(--color-rule);
+    flex: 1;
+  }
+  .ecca-stat:last-child { border-right: none; }
+  .scope-layout {
+    grid-template-columns: 1fr;
+  }
+  .pull-quote {
+    position: static;
+    margin-top: var(--sp6);
+  }
+  .scope-position-inner {
+    flex-direction: column;
+    gap: var(--sp5);
+  }
+  .req-layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp4);
+  }
+}
+
+@media (max-width: 900px) {
+  .case-study-panel {
+    padding: var(--sp7) 0;
+  }
+  .cs-content-box {
+    padding: var(--sp6);
+  }
+  .section-framing {
+    font-size: var(--font-size-h3);
+    max-width: none;
+  }
+  .cs-header-zone,
+  .cs-outcomes-zone {
+    grid-template-columns: 1fr;
+  }
+  .cs-header-visual {
+    display: none;
+  }
+  .cs-pullquote-zone {
+    grid-template-columns: 1fr;
+  }
+  .cs-pullquote-visual {
+    display: none;
+  }
+  .cs-stats-grid {
+    gap: var(--sp4);
+  }
+  .cs-stat-col {
+    padding: 0 var(--sp3);
+  }
+}
+
+@media (max-width: 600px) {
+  .ecca-stats {
+    flex-direction: column;
+  }
+  .ecca-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(247, 246, 242, 0.18);
+  }
+  .ecca-stat:last-child { border-bottom: none; }
+  .ecca-stat-number { font-size: var(--font-size-h2); }
+}

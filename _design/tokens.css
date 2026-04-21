@@ -109,7 +109,7 @@
 
   /* —— GRID ———————————————————————————————————————————————————— */
   --grid-base-unit:      8px;
-  --grid-module:         12px;   /* Visible grid module size */
+  --grid-module:         24px;   /* Visible grid module size */
   --grid-columns:        12;
   --grid-gutter-desktop: 24px;
   --grid-gutter-mobile:  16px;

@@ -64,7 +64,6 @@
 
 /* Variant: Underscored (larger, underline instead of border-bottom) */
 .spec-header--underscored {
-  border-bottom: none;
   border-bottom: 2px solid var(--color-ink);
 }
 
@@ -129,20 +128,32 @@
 /* ── STACKED CARDS ──────────────────────────────────────────────── */
 .card-stack {
   position: relative;
+  isolation: isolate;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
-.card-stack .card:not(:first-child) {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+.card-stack .card:first-child {
+  position: relative;
+  z-index: 1;
 }
 
 .card-stack .card:nth-child(2) {
-  transform: translate(6px, 6px);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: -6px;
+  bottom: -6px;
+  z-index: 0;
 }
 
 .card-stack .card:nth-child(3) {
-  transform: translate(12px, 12px);
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  z-index: -1;
 }
 
 
@@ -181,15 +192,24 @@
     linear-gradient(rgba(247, 246, 242, 0.18) 1px, transparent 1px),
     linear-gradient(90deg, rgba(247, 246, 242, 0.18) 1px, transparent 1px);
   background-size: var(--grid-module) var(--grid-module);
+  background-attachment: fixed;
   pointer-events: none;
 }
 
-/* Text inside blueprint panel inherits paper color */
+/* Text inside blueprint panel */
 .blueprint-panel .spec-header {
-  border-bottom-color: rgba(247, 246, 242, 0.3);
+  border-bottom: 1.5px solid rgba(247, 246, 242, 0.55);
 }
-.blueprint-panel .spec-header .spec-num  { color: var(--color-green); }
-.blueprint-panel .spec-header .spec-sep  { color: rgba(247, 246, 242, 0.5); }
+
+/* Spec number: green pill so it reads against the dark blue grid */
+.blueprint-panel .spec-header .spec-num {
+  background: var(--color-green);
+  color: var(--color-paper);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.blueprint-panel .spec-header .spec-sep   { color: rgba(247, 246, 242, 0.7); }
 .blueprint-panel .spec-header .spec-title { color: var(--color-paper); }
 
 .blueprint-panel .rule {
@@ -593,38 +613,38 @@
   line-height: var(--line-height-subheading);
 }
 
-.accordion-trigger-icon {
+.toggle-icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   position: relative;
 }
 
-.accordion-trigger-icon::before,
-.accordion-trigger-icon::after {
+.toggle-icon::before,
+.toggle-icon::after {
   content: '';
   position: absolute;
   background: var(--color-ink);
 }
 
-.accordion-trigger-icon::before {
-  width: 14px;
+.toggle-icon::before {
+  width: 13px;
   height: 1.5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.accordion-trigger-icon::after {
+.toggle-icon::after {
   width: 1.5px;
-  height: 14px;
+  height: 13px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 250ms ease, opacity 250ms ease;
 }
 
-.accordion-trigger[aria-expanded="true"] .accordion-trigger-icon::after {
+[aria-expanded="true"] .toggle-icon::after {
   transform: translate(-50%, -50%) rotate(90deg);
   opacity: 0;
 }
@@ -762,41 +782,6 @@
   margin-top: 2px;
 }
 
-.expandable-icon {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  position: relative;
-}
-
-.expandable-icon::before,
-.expandable-icon::after {
-  content: '';
-  position: absolute;
-  background: var(--color-ink-muted);
-}
-
-.expandable-icon::before {
-  width: 12px;
-  height: 1.5px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.expandable-icon::after {
-  width: 1.5px;
-  height: 12px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 250ms ease, opacity 250ms ease;
-}
-
-.expandable-trigger[aria-expanded="true"] .expandable-icon::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-  opacity: 0;
-}
 
 .expandable-panel {
   overflow: hidden;
@@ -959,3 +944,19 @@
 }
 
 .bridge-link .arrow { margin-left: var(--sp1); }
+
+
+/* ── FLOW DIAGRAM – annotation opacity initial state ───────────── */
+.flow-annotation {
+  opacity: 0;
+}
+
+/* ── LOGIC MODEL ────────────────────────────────────────────────── */
+.logic-model {
+  width: 100%;
+}
+
+/* ── TRANSITION FALLOFF ─────────────────────────────────────────── */
+.transition-falloff {
+  width: 100%;
+}

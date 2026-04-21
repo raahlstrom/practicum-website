@@ -7,14 +7,22 @@
 export const content = {
   opening: {
     specLabel: "The ECCA",
+    framing: "The first national education voucher program in American history.",
+    stats: [
+      { number: '$1,700', label: 'Dollar-for-dollar\nfederal tax credit' },
+      { number: '$20–40B', label: 'Estimated annual\nprogram scale' },
+      { number: 'Jan 2027', label: 'Program\nstart date' },
+    ],
+    sidenote: "This program's funding is uncapped — Congress set no ceiling on how much can flow through SGOs. Most projections place annual volume between $20 and $40 billion. If those estimates hold, the ECCA would generate more federal K–12 education funding than any existing program, including Title I at $18 billion.",
     paragraphs: [
-      "The Educational Choice for Children Act (ECCA), enacted as part of the One Big Beautiful Bill Act in July 2025, establishes the first national education voucher program in U.S. history. Beginning January 1, 2027, taxpayers may claim a dollar-for-dollar federal tax credit of up to $1,700 for contributions to Scholarship Granting Organizations (SGOs) — 501(c)(3) nonprofits that use those funds to award scholarships to income-eligible K-12 students for qualified educational expenses.",
-      "This program represents one of the largest educational funding vehicles in American history, with estimates ranging from $20–40 billion annually — surpassing Title I at $18 billion. The opportunity is historic. But it will only reach the students who need it most if the organizations serving them know how to access it.",
+      "The <span class=\"highlight\">Educational Choice for Children Act (ECCA)</span>, enacted in July 2025, establishes the <span class=\"highlight\">first national education voucher program</span> in U.S. history. Beginning January 1, 2027, taxpayers may claim a dollar-for-dollar federal tax credit of up to $1,700 for contributions to SGOs — 501(c)(3) nonprofits that award scholarships to income-eligible K-12 students for qualified educational expenses.",
+      "The opportunity is historic. But it will only reach the students who need it most if the organizations serving them know how to access it.",
     ],
   },
 
   stateMap: {
     specLabel: "State Opt-In Status",
+    framing: "28 states have already committed.",
     intro: "States opt into the program annually. The governor of each state decides each year whether to participate. As of March 2026, 28 states had opted in or signaled intent. Four had publicly opted out. Approximately 18 were still undecided, waiting for Treasury regulations expected in early summer 2026.",
     note: "If a state does not opt in, its taxpayers' contributions still flow to the program — they just support SGOs in other states.",
     dataDate: "March 2026",
@@ -25,35 +33,71 @@ export const content = {
 
   fundingStream: {
     specLabel: "How It Works",
+    definition: "A Scholarship Granting Organization is a 501(c)(3) nonprofit that receives tax-credited contributions and converts them into scholarships for income-eligible K–12 students.",
+    bigStatement: "SGO scholarships fund students directly — in the classroom, on the bus, after school, and beyond.",
+    framing: "Five steps. Dollar-for-dollar, from taxpayer to student.",
     steps: [
       {
         num: "01",
         title: "The Taxpayer",
+        iconPath: "/assets/icons/icons/row03_col06.png",
+        iconAlt: "Money",
+        shortBody: "Contributes up to $1,700. Claims it back as a dollar-for-dollar federal tax credit — not a deduction.",
         body: "A taxpayer decides to contribute up to $1,700 to an SGO. Rather than that money going to the U.S. Treasury, it goes to a qualifying nonprofit. The taxpayer claims a dollar-for-dollar federal tax credit — not a deduction, but a full credit equal to the contribution amount.",
         footnote: '"The only federal tax credit that\'s 100% credit for contributions." — CGLR/Alliance for Youth Thriving Webinar Series, Feb. 3, 2026.',
       },
       {
         num: "02",
-        title: "The SGO Receives",
+        title: "SGO Receives",
+        iconPath: "/assets/icons/icons/row01_col01.png",
+        iconAlt: "Organization",
+        shortBody: "The contribution is held in a dedicated account, completely separate from all other organizational funds.",
         body: "The SGO receives the contribution and holds it in a dedicated account, separate from all other organizational funds. Contributions cannot be co-mingled with the SGO's general operating funds.",
       },
       {
         num: "03",
-        title: "Students Are Identified",
+        title: "Student Verified",
+        iconPath: "/assets/icons/icons/row02_col07.png",
+        iconAlt: "Checklist",
+        shortBody: "The SGO confirms income eligibility — household income at or below 300% of area median. Over 90% of students qualify.",
         body: "The SGO verifies that applicants are income-eligible: household income must not exceed 300% of the area median gross income. More than 90% of American students qualify. The SGO follows a statutory priority sequence: returning scholarship recipients first, then their siblings, then the general applicant pool.",
         footnote: "CGLR/Alliance for Youth Thriving Webinar Series, Dec. 2, 2025.",
       },
       {
         num: "04",
-        title: "Scholarships Are Awarded",
+        title: "Scholarship Issued",
+        iconPath: "/assets/icons/icons/row03_col07.png",
+        iconAlt: "Giving",
+        shortBody: "The SGO awards a scholarship — no cap on amount. Multiple donors can fund a single student.",
         body: "The SGO awards scholarships to eligible students for qualified educational expenses. There is no cap on individual scholarship amounts — only on the donor's $1,700 annual credit. A single student can receive a scholarship of any size, funded by contributions from multiple donors.",
       },
       {
         num: "05",
-        title: "Services Are Delivered",
+        title: "Service Delivered",
+        iconPath: "/assets/icons/icons/row02_col04.png",
+        iconAlt: "Education",
+        shortBody: "Funds go directly to the provider — school, tutor, transportation, or afterschool program. Not to the student.",
         body: "Scholarship funds are paid to the provider — a school, tutoring program, afterschool organization, transportation provider, or other qualifying vendor. The student receives the service.",
       },
     ],
+  },
+
+  whatCanFund: {
+    specLabel: "What Can They Fund",
+    framing: "Scholarships can reach students in many forms.",
+    studentIcon: "/assets/icons/icons/row04_col10.png",
+    studentAlt: "Student thriving",
+    items: [
+      { iconPath: "/assets/icons/icons/row01_col02.png", iconAlt: "School building", label: "Tuition\n& Fees" },
+      { iconPath: "/assets/icons/icons/row02_col06.png", iconAlt: "Lightbulb", label: "Tutoring" },
+      { iconPath: "/assets/icons/icons/row02_col08.png", iconAlt: "School bus", label: "Transportation" },
+      { iconPath: "/assets/icons/icons/row02_col04.png", iconAlt: "Books", label: "Books &\nMaterials" },
+      { iconPath: "/assets/icons/icons/row02_col05.png", iconAlt: "Laptop", label: "Technology" },
+      { iconPath: "/assets/icons/icons/row01_col07.png", iconAlt: "Extended programs", label: "Extended-day\nPrograms" },
+    ],
+    unclearNote: "Summer learning, apprenticeships, and other wraparound services are still being defined by Treasury regulation — expected early summer 2026.",
+    body: "Under the ECCA, qualifying expenses are defined broadly. Scholarship funds can cover tuition and school fees, tutoring and academic support, transportation to and from school, books, supplies, and equipment, technology connected to a student's education, extended-day and afterschool programs, and more. The statute intentionally reaches beyond private school tuition — SGO funds follow the student, not the institution.",
+    callout: "Previously, many state voucher programs could only fund private school tuition. SGO scholarships created under the OBBBA are different: funds can provide tuition, tutoring, transportation, technology, and a variety of other wraparound services.",
   },
 
   requirements: [
@@ -98,7 +142,7 @@ export const content = {
       num: "Req 07",
       title: "Funds only qualifying expenses",
       summary: "Scholarships may only pay for legally defined qualified educational expenses.",
-      detail: "The law defines qualifying expenses broadly — tuition, fees, tutoring, transportation, extended-day programs, technology, and more. The full scope is subject to Treasury rulemaking. What clearly qualifies: tutoring, tuition, fees, transportation, books, equipment, and technology connected to enrollment. What is still being determined: summer learning, apprenticeships, and some wraparound services.",
+      detail: "The law defines qualifying expenses broadly — tuition, fees, tutoring, transportation, extended-day programs, technology, and more. The full scope is subject to Treasury rulemaking. What clearly qualifies: tutoring, tuition, fees, transportation, books, equipment, and technology connected to enrollment. What is still being determined: summer learning, apprenticeships, and other wraparound services.",
     },
     {
       num: "Req 08",
@@ -128,25 +172,36 @@ export const content = {
 
   whoCanParticipate: {
     specLabel: "Who Can Participate",
+    framing: "A wide range of organizations qualify. Many already do the work.",
     intro: "The statutory requirements are broad. A wide range of organizational types can qualify — and organizations that are not well-suited to direct operation have a partnership path.",
     orgTypes: [
       {
+        iconPath: "/assets/icons/icons/row01_col01.png",
+        iconAlt: "Civic institution building",
         title: "Existing state scholarship organizations",
         body: "Organizations already operating under state tax credit scholarship programs are best positioned to move quickly. They have donor networks, eligibility verification systems, and scholarship distribution infrastructure. As of early 2026, SGOs were operating in approximately 17 states with existing programs.",
       },
       {
+        iconPath: "/assets/icons/icons/row01_col06.png",
+        iconAlt: "Community group",
         title: "Community foundations",
         body: "Community foundations can serve as SGOs while maintaining local democratic control over how funds are directed. A city-based 501(c)(3) oriented around its local public schools is a natural fit.",
       },
       {
+        iconPath: "/assets/icons/icons/row01_col07.png",
+        iconAlt: "Graduation cap",
         title: "Education foundations affiliated with school districts",
         body: "Foundations affiliated with school districts can qualify. The National Association of Education Foundations (NAEF), representing foundations serving more than 20 million students nationally, confirmed this and is developing toolkits for organizations building SGO capacity.",
       },
       {
+        iconPath: "/assets/icons/icons/row03_col02.png",
+        iconAlt: "Heart held in hands",
         title: "Community-based organizations",
         body: "Boys and Girls Clubs, YMCAs, afterschool providers, and similar organizations already serve more than 10 students across multiple schools. Their 10% administrative portion can supplement existing capacity without requiring a standalone operation.",
       },
       {
+        iconPath: "/assets/icons/icons/row01_col02.png",
+        iconAlt: "School building",
         title: "Public schools (through affiliated foundations)",
         body: "School districts cannot self-deal — they cannot direct all scholarship funds to their own students. But through affiliated foundations, districts can establish SGOs that distribute scholarships across a collaborative of schools.",
       },
@@ -165,31 +220,46 @@ export const content = {
 
   definingScope: {
     specLabel: "Defining a Scope",
+    framing: "The law defines what an SGO must do. It says nothing about whether it works.",
     paragraphs: [
-      "The law specifies what SGOs must do. It does not specify what they should focus on. This is both the program's greatest opportunity and its most common failure.",
-      "Most SGOs operate without a defined theory of change. They receive funds and distribute scholarships, but cannot demonstrate that their scholarships produce specific outcomes for specific students. Treasury has signaled that SGOs may voluntarily restrict their own scope — focusing on particular populations, geographies, or types of services — as long as those restrictions do not prevent them from satisfying the law's basic requirements.",
-      "This means an organization can design its SGO around a clear mission: serving students at transition points, or students in a specific neighborhood, or students who need continuity of support across school changes. That self-restriction is not a limitation — it is the mechanism by which an SGO becomes accountable, measurable, and fundable by donors who care about outcomes.",
-      "Our model requires a theory of change. The activities an SGO funds must connect, through a credible logic, to outcomes that can be measured. Whether an organization focuses on early literacy, vocational readiness, or continuity of support across transitions, the activities must be grounded in evidence and the results must be visible.",
+      "The ECCA sets a floor, not a design. An organization can satisfy every statutory requirement — maintain separate accounts, verify income, distribute scholarships — and still have no answer to the question that matters: what changed for students because of this? The law requires no outcome tracking, no theory of change, no test of whether the money produced anything beyond a tax credit.",
+      "Pennsylvania confirmed the cost of this gap. Hundreds of millions of dollars moved through SGOs with minimal outcome documentation. Organizations tracked dollars distributed and students served. Few tracked whether students stayed enrolled, improved academically, or completed their transitions. Growth became the metric because growth was the only thing being measured.",
+      "An SGO that voluntarily restricts its scope — that defines a population, a set of transition points, a specific type of support — can answer a different question. Not 'how many scholarships did we issue' but 'what changed for the students we served.' That is the difference between a compliant organization and an accountable one.",
     ],
+    pullQuote: "That self-restriction is not a limitation — it is the mechanism by which an SGO becomes accountable, measurable, and fundable.",
+    position: {
+      statement: "We built [PLACEHOLDER NAME] around one question: which students fall out between schools, and can we fund their continuity?",
+      details: [
+        "Every scholarship ties to a student, a transition point, and a tracked outcome — not just a qualified expense.",
+        "Our administrative capacity exists to measure what changes, so we can demonstrate impact to the donors who fund it.",
+        "We are not a general-purpose SGO. We are a scoped, accountable one — and that distinction is the whole point.",
+      ],
+    },
     footnotes: [
       "CGLR/Alliance for Youth Thriving Webinar Series, Dec. 2, 2025.",
     ],
   },
 
   pennsylvania: {
-    specLabel: "Pennsylvania: What We Can Learn",
-    intro: "Pennsylvania's Educational Improvement Tax Credit (EITC), operational since 2014, is the closest existing model to ECCA. It allows funds to reach income-qualified students for both private school scholarships and public school improvement programs. What the Pennsylvania experience shows:",
-    facts: [
-      "The program began at $25 million in 2022 and grew to over $600 million in foregone state revenue",
-      "The majority of growth went toward private and parochial school enrollment",
-      "Set-asides included $30 million for PreK scholarships and $70 million for education improvement organizations",
-      "Administrative retention was originally capped at 20% — recently reduced to 10%",
-      "Pennsylvania has no tracking mechanisms for impact beyond income verification",
-    ],
-    lessons: [
-      "The Pennsylvania case shows how quickly these programs scale when private school infrastructure is ready and public school infrastructure is not.",
-      "It shows what happens when accountability is absent: money flows, but outcomes are not measured.",
-    ],
+    framing: "Pennsylvania's model is the closest existing analog to the ECCA — and its decade of results tells us exactly what to expect.",
+    narrative: "Pennsylvania's Educational Improvement Tax Credit (EITC), operational since 2014, is the largest and longest-running state scholarship tax credit program in the country. Over a decade it grew from a $25 million pilot to more than $600 million in annual tax credits — and its trajectory closely mirrors what analysts project for the ECCA at national scale.",
+    outcomes: {
+      title: "The program scaled fast and served many students.",
+      facts: [
+        { stat: "24x", label: "Growth in annual tax credits over 10 years ($25M → $600M+)" },
+        { stat: "140,000+", label: "Students receiving scholarships annually at peak" },
+        { stat: "$600M+", label: "Total annual tax credits at program peak" },
+      ],
+    },
+    implications: {
+      title: "What that scale reveals about the ECCA design.",
+      points: [
+        "Organizations with existing infrastructure captured the majority of early scholarship volume — late entrants found donor relationships and school partnerships already claimed.",
+        "Without outcome tracking requirements, dollars flowed but student results went unmeasured for years.",
+        "The 10% administrative cap was introduced only after political pressure. Organizations that built operations at 20% had to restructure.",
+      ],
+    },
+    takeaway: "Pennsylvania's program grew 340% in its first decade. The organizations that entered early built the infrastructure, the donor relationships, and the track record that newer entrants couldn't replicate. The window matters.",
     callout: {
       body: "At 20% administrative retention, Pennsylvania SGOs used a portion of program funds to influence state lawmakers. Organizations developing SGO governance frameworks should include explicit prohibitions on political contributions by SGO staff and board members.",
       label: "Important to Know",

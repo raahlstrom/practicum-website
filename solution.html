@@ -6,12 +6,10 @@
   <title>Solution — [PLACEHOLDER NAME]</title>
   <meta name="description" content="How Scholarship Granting Organizations work — the ECCA mechanism, eligibility requirements, and how your organization can participate.">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -20,6 +18,7 @@
 </head>
 <body class="with-grid">
 
+  <!-- SVG defs (arrowheads, hand-drawn filter) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <filter id="hand-drawn">
@@ -39,43 +38,670 @@
   </svg>
 
   <a href="#main" class="skip-link">Skip to content</a>
-
   <nav id="site-nav" role="navigation" aria-label="Main navigation"></nav>
 
   <main id="main">
-    <!-- Phase 2: Solution page content built here -->
-    <!-- Section 4.1: ECCA Opening (Blueprint Panel) -->
-    <!-- Section 4.2: State Map -->
-    <!-- Section 4.3: Funding Stream (5-step flow diagram) -->
-    <!-- Section 4.4: Eleven Requirements (expandable list) -->
-    <!-- Section 4.5: Who Can Participate -->
-    <!-- Section 4.6: Defining a Scope -->
-    <!-- Section 4.7: Pennsylvania Case Study (Blueprint Panel) -->
-    <!-- Section 4.8: State-Level Decisions -->
-    <!-- Section 4.9: Open Questions -->
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.0  SGO INTRO — what an SGO is, why it matters
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-sgo-intro" id="section-sgo-intro" aria-labelledby="sgo-intro-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.0</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="sgo-intro-title">What's the solution?</span>
+        </div>
+
+        <div class="sgo-split">
+          <div class="sgo-intro-text">
+            <h2 class="section-framing thesis-framing">An <span class="highlight">SGO</span> keeps students in the pipe.</h2>
+            <p class="section-body">Too many students fall out at transition points — between elementary and middle school, between middle and high school. A Scholarship Granting Organization is the organizational mechanism that seals those gaps: directing scholarship funds to students exactly when and where continuity breaks down.</p>
+            <div class="student-avatars" aria-label="Students served by SGOs">
+              <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row2_col3.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row2_col1.png" alt="Student" class="student-avatar">
+            </div>
+          </div>
+          <div class="sgo-visual">
+            <img
+              src="/assets/ChatGPT Image Apr 20, 2026, 09_18_39 PM.png"
+              alt="With SGOs in place, transition points are strengthened so more students stay on track and reach graduation."
+              class="pipe-image"
+            >
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.1  HOW IT WORKS — SGO definition + illustrated 5-step flow
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-how-it-works" id="section-how-it-works" aria-labelledby="how-it-works-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.1</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="how-it-works-title">How does it work?</span>
+        </div>
+
+        <!-- Two-column: big statement left, definition right -->
+        <div class="sgo-definition">
+          <div class="sgo-def-right">
+            <p class="sgo-big-statement" id="sgo-big-statement"></p>
+          </div>
+          <div class="sgo-def-left">
+            <p class="sgo-def-label">What is an SGO</p>
+            <p class="sgo-def-statement" id="sgo-definition-text"></p>
+          </div>
+        </div>
+
+        <!-- Illustrated 5-step flow -->
+        <div class="sgo-flow" id="sgo-flow" role="list" aria-label="How an SGO works in five steps"></div>
+
+        <div class="footnotes" id="funding-footnotes"></div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.2  THE ECCA — where does it come from
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-ecca" id="section-ecca" aria-labelledby="ecca-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.2</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="ecca-title">What created this program?</span>
+        </div>
+
+        <div class="ecca-split">
+          <div class="ecca-text">
+            <span class="ecca-eyebrow">One Big Beautiful Bill Act · July 2025</span>
+            <h2 class="ecca-framing" id="ecca-framing"></h2>
+            <div class="ecca-body" id="ecca-body"></div>
+            <p class="margin-note ecca-sidenote" id="ecca-sidenote"></p>
+          </div>
+          <div class="ecca-data">
+            <div class="ecca-stats" id="ecca-stats" aria-label="Key program statistics"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.3  WHAT CAN THEY FUND — student orbit visual
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-what-can-fund" id="section-what-can-fund" aria-labelledby="wcf-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.3</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="wcf-title">What can they fund?</span>
+        </div>
+
+        <div class="wcf-layout">
+          <div class="wcf-text">
+            <h3 class="section-framing" id="wcf-framing"></h3>
+            <p class="wcf-body" id="wcf-body"></p>
+            <div class="callout-important" id="wcf-callout" role="note">
+              <span class="label-tag">Important to Know</span>
+              <p id="wcf-callout-text"></p>
+            </div>
+          </div>
+          <div class="wcf-orbit-wrap">
+            <div class="orbit-container" id="orbit-container"></div>
+            <p class="margin-note wcf-note" id="wcf-note"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.4  ELEVEN REQUIREMENTS — 1/3 intro + 2/3 list
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-requirements" id="section-requirements" aria-labelledby="req-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.4</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="req-title">What does an SGO require?</span>
+        </div>
+
+        <div class="req-layout">
+          <div class="req-left">
+            <h3 class="section-framing req-framing">The OBBBA outlines 11 requirements for 501(c)(3)s to qualify as SGOs.</h3>
+            <p class="section-body req-intro">To qualify as an SGO and accept contributions eligible for the federal tax credit, an organization must satisfy all eleven requirements. There are no partial credits — miss one and the entire SGO designation is at risk.</p>
+            <div class="req-plaque-box">
+              <img src="/assets/icons/icons/row06_col09.png" alt="Verified" class="req-shield-icon" aria-hidden="true">
+              <p class="req-plaque-note">Final qualifications may alter slightly once Treasury publishes final rules.</p>
+            </div>
+          </div>
+          <div class="req-right">
+            <div id="requirements-list" class="expandable-list"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.5  STATE MAP — two-column split
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-state-map" id="section-state-map" aria-labelledby="state-map-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.5</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="state-map-title">Which states are in?</span>
+        </div>
+
+        <div class="split-layout">
+          <div class="split-text">
+            <h3 class="section-framing" id="state-map-framing"></h3>
+            <p class="section-body" id="state-map-intro"></p>
+            <div class="callout-important" id="state-map-callout"></div>
+            <p class="margin-note" id="state-map-note"></p>
+            <p class="map-date" id="map-date"></p>
+          </div>
+          <div class="split-visual">
+            <div id="state-map"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.6  PENNSYLVANIA — Blueprint Panel case study (full-bleed)
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-pennsylvania" id="section-pennsylvania" aria-labelledby="pa-title">
+      <div class="blueprint-panel case-study-panel">
+        <div class="container">
+          <div class="cs-content-box">
+
+            <!-- ── Zone 1: Header — program title + text left, PA state sketch right ── -->
+            <div class="cs-header-zone">
+              <div class="cs-header-text">
+                <div class="spec-header cs-spec-row">
+                  <span class="spec-num">§4.6</span>
+                  <span class="spec-sep">—</span>
+                  <span class="spec-title">Case Study</span>
+                </div>
+                <h3 class="cs-spec-program-title" id="pa-title">Pennsylvania's Educational Improvement Tax Credit</h3>
+                <div class="cs-title-rule" aria-hidden="true"></div>
+                <p class="cs-framing" id="pa-framing"></p>
+                <p class="cs-narrative" id="pa-narrative"></p>
+              </div>
+              <div class="cs-header-visual" aria-hidden="true">
+                <div class="cs-state-wrap">
+                  <svg id="pa-state-svg" class="pa-state-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+                </div>
+                <div class="cs-since-card">
+                  <div class="cs-since-icon-bg">
+                    <img src="/assets/icons/icons/row03_col04.png" alt="" class="cs-since-icon">
+                  </div>
+                  <div class="cs-since-text">
+                    <span class="cs-since-year">Since 2014</span>
+                    <span class="cs-since-desc">Largest and longest-running state scholarship tax credit program in the U.S.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Zone 2: Stats bar — paper card, 3 columns ── -->
+            <div class="cs-stats-card">
+              <p class="cs-stats-heading">By the numbers</p>
+              <div class="cs-stats-grid" id="pa-stats-grid"></div>
+            </div>
+
+            <!-- ── Zone 3: Outcomes split — heading + prose left, numbered list right ── -->
+            <div class="cs-outcomes-zone">
+              <div class="cs-outcomes-prose">
+                <h4 class="cs-outcomes-heading" id="pa-implications-title"></h4>
+                <p class="cs-outcomes-subtext" id="pa-outcomes-title"></p>
+              </div>
+              <div class="cs-outcomes-list" id="pa-outcomes-list" role="list"></div>
+            </div>
+
+            <!-- ── Zone 4: Pull quote — grey box, serif + illustrated visual ── -->
+            <div class="cs-pullquote-zone">
+              <div class="cs-pullquote-text">
+                <p class="cs-pullquote-label">Key Takeaway</p>
+                <p class="cs-quote-body" id="pa-takeaway"></p>
+              </div>
+              <div class="cs-pullquote-visual" aria-hidden="true">
+                <img src="/assets/icons/icons/row01_col03.png" alt="" class="cs-pullquote-avatar">
+              </div>
+            </div>
+
+            <div class="footnotes" id="pa-footnotes"></div>
+
+          </div><!-- .cs-content-box -->
+        </div><!-- .container -->
+      </div><!-- .case-study-panel -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         §4.7  DEFINING A SCOPE — three-beat argument
+         ════════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-scope" id="section-scope" aria-labelledby="scope-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§4.7</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="scope-title">How should we define our scope?</span>
+        </div>
+
+        <!-- Beat 1: Full-width framing statement -->
+        <h2 class="scope-framing" id="scope-framing-text"></h2>
+
+        <!-- Beat 2: Prose argument + sticky pull quote -->
+        <div class="scope-layout">
+          <div class="scope-prose" id="scope-body"></div>
+          <aside class="scope-sidebar">
+            <img src="/assets/icons/icons/row04_col11.png" alt="" class="scope-journey-icon" aria-hidden="true">
+            <blockquote class="pull-quote" id="scope-pull-quote"></blockquote>
+          </aside>
+        </div>
+
+        <!-- Beat 3: Position statement — our declared design decision -->
+        <div class="blueprint-panel scope-position-panel">
+          <div class="scope-position-inner">
+            <div class="scope-flag-wrap">
+              <img src="/assets/icons/icons/row06_col07.png" alt="" class="scope-flag-icon" aria-hidden="true">
+            </div>
+            <div class="scope-position-content">
+              <p class="scope-position-statement" id="scope-position-statement"></p>
+              <div id="scope-position-details"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footnotes" id="scope-footnotes"></div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer id="site-footer"></footer>
 
+  <!-- D3 + TopoJSON for state map -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
-
   <script src="/js/nav.js"></script>
+  <script src="/js/parallax.js"></script>
+
   <script type="module">
-    import { hydrate, renderExpandableList } from '/js/render.js';
-    import { initFlowDiagram } from '/js/components/flow-diagram.js';
-    import { initStateMap } from '/js/components/state-map.js';
-    import { content } from '/content/solution.js';
-    import { stateData } from '/content/state-map-data.js';
+    import { renderExpandableList } from '/js/render.js';
+    import { initStateMap }        from '/js/components/state-map.js';
+    import { content }             from '/content/solution.js?v=2';
+    import { stateData }           from '/content/state-map-data.js';
+
     document.addEventListener('DOMContentLoaded', () => {
-      hydrate(content);
+
+      // §4.1 — How It Works
+      _setText('sgo-definition-text', content.fundingStream.definition);
+      _setText('sgo-big-statement',   content.fundingStream.bigStatement);
+      _renderSgoFlow(document.getElementById('sgo-flow'), content.fundingStream.steps);
+      _renderStepFootnotes(document.getElementById('funding-footnotes'), content.fundingStream.steps);
+      _initFlowAnimation(document.getElementById('sgo-flow'));
+
+      // §4.2 — ECCA
+      _setText('ecca-framing',  content.opening.framing);
+      _renderEccaStats(document.getElementById('ecca-stats'), content.opening.stats);
+      _renderParagraphs(document.getElementById('ecca-body'), content.opening.paragraphs, 'ecca-para');
+      if (content.opening.sidenote) {
+        const snEl = document.getElementById('ecca-sidenote');
+        if (snEl) snEl.innerHTML = content.opening.sidenote;
+      }
+
+      // §4.3 — What Can They Fund
+      _setText('wcf-framing',      content.whatCanFund.framing);
+      _setText('wcf-note',         content.whatCanFund.unclearNote);
+      _setText('wcf-body',         content.whatCanFund.body);
+      _setText('wcf-callout-text', content.whatCanFund.callout);
+      _renderOrbit(document.getElementById('orbit-container'), content.whatCanFund);
+      _initOrbitAnimation(document.getElementById('orbit-container'));
+
+      // §4.4 — Requirements
       const reqEl = document.getElementById('requirements-list');
       if (reqEl) renderExpandableList(content.requirements, reqEl);
-      const flowEl = document.getElementById('flow-diagram');
-      if (flowEl) initFlowDiagram(flowEl, content.fundingStream.steps);
+
+      // §4.5 — State Map
+      _setText('state-map-framing', content.stateMap.framing);
+      _setText('state-map-intro',   content.stateMap.intro);
+      _setText('state-map-note',    content.stateMap.note);
+      _setText('map-date',          'Data as of ' + content.stateMap.dataDate);
+      _renderCallout(document.getElementById('state-map-callout'), { body: content.stateMap.callout.body, label: 'Important to Know' });
       const mapEl = document.getElementById('state-map');
       if (mapEl) initStateMap(mapEl, stateData);
+
+      // §4.6 — Pennsylvania
+      _renderPaStateSvg(document.getElementById('pa-state-svg'));
+      const pa = content.pennsylvania;
+      _setText('pa-framing',            pa.framing);
+      _setText('pa-narrative',          pa.narrative);
+      _setText('pa-outcomes-title',     pa.outcomes.title);
+      _setText('pa-implications-title', pa.implications.title);
+      _setText('pa-takeaway',           pa.takeaway);
+      _renderCsStats(document.getElementById('pa-stats-grid'),       pa.outcomes.facts);
+      _renderCsOutcomeList(document.getElementById('pa-outcomes-list'), pa.implications.points);
+      _renderCallout(document.getElementById('pa-callout'),           pa.callout);
+      _renderCsClosureList(document.getElementById('pa-implications-list'), pa.implications.points);
+      _renderFootnotesList(document.getElementById('pa-footnotes'),   pa.footnotes);
+
+      // §4.7 — Defining a Scope
+      const ds = content.definingScope;
+      _setText('scope-framing-text',        ds.framing);
+      _renderScopeProse(document.getElementById('scope-body'),              ds.paragraphs);
+      _renderPullQuote(document.getElementById('scope-pull-quote'),         ds.pullQuote);
+      if (ds.position) {
+        _setText('scope-position-statement',  ds.position.statement);
+        _renderScopeDetails(document.getElementById('scope-position-details'), ds.position.details);
+      }
+      _renderFootnotesList(document.getElementById('scope-footnotes'),      ds.footnotes);
+
       if (window.lucide) lucide.createIcons();
     });
+
+    // ── Render helpers ──────────────────────────────────────────────
+
+    function _setText(id, text) {
+      const el = document.getElementById(id);
+      if (el && text) el.textContent = text;
+    }
+
+    function _renderSgoFlow(el, steps) {
+      if (!el) return;
+      const items = [];
+      steps.forEach((s, i) => {
+        items.push(`
+          <div class="sgo-flow-step" role="listitem">
+            <div class="step-icon-wrap">
+              <img src="${s.iconPath}" alt="${s.iconAlt}" class="step-icon">
+            </div>
+            <div class="step-num">${s.num}</div>
+            <div class="step-label">${s.title}</div>
+            <p class="step-body">${s.shortBody}</p>
+          </div>
+        `);
+        if (i < steps.length - 1) {
+          items.push(`
+            <div class="sgo-flow-arrow" aria-hidden="true">
+              <img src="/assets/icons/icons/row05_col02.png" alt="">
+            </div>
+          `);
+        }
+      });
+      el.innerHTML = items.join('');
+    }
+
+    function _initFlowAnimation(el) {
+      if (!el) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.querySelectorAll('.sgo-flow-step, .sgo-flow-arrow').forEach(n => n.classList.add('visible'));
+        return;
+      }
+      const trigger = () => {
+        if (el.dataset.animated) return;
+        el.dataset.animated = '1';
+        el.querySelectorAll('.sgo-flow-step').forEach((step, i) => {
+          setTimeout(() => step.classList.add('visible'), i * 120);
+        });
+        el.querySelectorAll('.sgo-flow-arrow').forEach((arrow, i) => {
+          setTimeout(() => arrow.classList.add('visible'), i * 120 + 80);
+        });
+      };
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        setTimeout(trigger, 100);
+        return;
+      }
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { trigger(); obs.disconnect(); }
+      }, { threshold: 0.1 });
+      obs.observe(el);
+    }
+
+    function _renderOrbit(el, data) {
+      if (!el) return;
+      const items = data.items.map((item, i) => `
+        <div class="orbit-item" style="--delay:${420 + i * 90}ms" role="listitem">
+          <div class="orbit-icon-bg">
+            <img src="${item.iconPath}" alt="${item.iconAlt}" class="orbit-icon">
+          </div>
+          <span class="orbit-label">${item.label.replace(/\n/g, '<br>')}</span>
+        </div>
+      `).join('');
+      // SVG shell — lines drawn after layout by _positionOrbit
+      el.innerHTML = `
+        <svg class="orbit-svg-lines" aria-hidden="true"></svg>
+        <div class="orbit-student">
+          <img src="${data.studentIcon}" alt="${data.studentAlt}">
+        </div>
+        ${items}
+      `;
+    }
+
+    function _positionOrbit(el) {
+      // Reads actual rendered width — must run after layout (inside RAF)
+      const W = el.clientWidth;
+      if (!W) return;
+      const cx = W / 2, cy = W / 2;  // square container
+      const radius = W * 0.36;
+      const ITEM_W = 68, ITEM_H = 84; // matches .orbit-item CSS width + approx rendered height
+
+      // Build SVG lines using same coordinate system
+      const svg = el.querySelector('.orbit-svg-lines');
+      const n = el.querySelectorAll('.orbit-item').length;
+      svg.setAttribute('viewBox', `0 0 ${W} ${W}`);
+      svg.innerHTML = Array.from({ length: n }).map((_, i) => {
+        const a = (i * 60) * Math.PI / 180;
+        const x2 = (cx + radius * Math.cos(a)).toFixed(1);
+        const y2 = (cy + radius * Math.sin(a)).toFixed(1);
+        return `<line class="orbit-connector"
+          x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}"
+          x2="${x2}" y2="${y2}"
+          stroke="#5FAF8F" stroke-width="1.5" stroke-dasharray="4 7" stroke-linecap="round"/>`;
+      }).join('');
+
+      // Position orbit items at computed coordinates
+      el.querySelectorAll('.orbit-item').forEach((item, i) => {
+        const a = (i * 60) * Math.PI / 180;
+        item.style.left = (cx + radius * Math.cos(a) - ITEM_W / 2).toFixed(1) + 'px';
+        item.style.top  = (cy + radius * Math.sin(a) - ITEM_H / 2).toFixed(1) + 'px';
+      });
+    }
+
+    function _initOrbitAnimation(el) {
+      if (!el) return;
+
+      const fire = () => {
+        if (el.dataset.animated) return;
+        el.dataset.animated = '1';
+        requestAnimationFrame(() => {
+          _positionOrbit(el);  // position using live layout measurements
+
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          // Student
+          const student = el.querySelector('.orbit-student');
+          if (student) {
+            if (reducedMotion) {
+              student.style.opacity = '1';
+              student.style.transform = 'translate(-50%,-50%) scale(1)';
+            } else {
+              setTimeout(() => student.classList.add('is-visible'), 80);
+            }
+          }
+
+          // Connectors — keep keyframe approach (works reliably for SVG)
+          el.querySelectorAll('.orbit-connector').forEach((line, i) => {
+            if (reducedMotion) { line.style.opacity = '1'; return; }
+            line.style.setProperty('--line-delay', `${180 + i * 60}ms`);
+            line.classList.add('animate');
+          });
+
+          // Items — setTimeout triggers CSS transition, guaranteed to fire
+          el.querySelectorAll('.orbit-item').forEach((item, i) => {
+            if (reducedMotion) {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+              return;
+            }
+            setTimeout(() => item.classList.add('is-visible'), 350 + i * 80);
+          });
+        });
+      };
+
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) { setTimeout(fire, 150); return; }
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { fire(); obs.disconnect(); }
+      }, { threshold: 0.15 });
+      obs.observe(el);
+    }
+
+    function _renderEccaStats(el, stats) {
+      if (!el || !stats) return;
+      el.innerHTML = stats.map(s => `
+        <div class="ecca-stat">
+          <div class="ecca-stat-number">${s.number}</div>
+          <div class="ecca-stat-label">${s.label.replace(/\n/g, '<br>')}</div>
+        </div>
+      `).join('');
+    }
+
+    function _renderParagraphs(el, paras, cls) {
+      if (!el || !paras) return;
+      const c = cls ? ` class="${cls}"` : '';
+      el.innerHTML = paras.map(p => `<p${c}>${p}</p>`).join('');
+    }
+
+    function _renderScopeDetails(el, details) {
+      if (!el) return;
+      el.innerHTML = details.map(d => `<p class="scope-position-detail">${d}</p>`).join('');
+    }
+
+    function _renderScopeProse(el, paras) {
+      if (!el || !paras) return;
+      el.innerHTML = paras.map(p => `<p class="scope-para">${p}</p>`).join('');
+    }
+
+    function _renderPullQuote(el, quote) {
+      if (!el || !quote) return;
+      el.innerHTML = `<p>${quote}</p>`;
+    }
+
+    function _renderStepFootnotes(el, steps) {
+      if (!el) return;
+      const notes = steps.filter(s => s.footnote);
+      if (!notes.length) { el.style.display = 'none'; return; }
+      el.innerHTML = '<ol>' + notes.map(s => `<li>${s.footnote}</li>`).join('') + '</ol>';
+    }
+
+    function _renderCallout(el, callout) {
+      if (!el || !callout) return;
+      el.innerHTML = `
+        <span class="label-tag">${callout.label || 'Important to Know'}</span>
+        <p>${callout.body}</p>
+      `;
+    }
+
+    function _renderFootnotesList(el, notes) {
+      if (!el || !notes || !notes.length) return;
+      el.innerHTML = '<ol>' + notes.map(n => `<li>${n}</li>`).join('') + '</ol>';
+    }
+
+    async function _renderPaStateSvg(svgEl) {
+      if (!svgEl || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
+      try {
+        const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+        const states = topojson.feature(us, us.objects.states);
+        const pa = states.features.find(f => f.id === '42');
+        if (!pa) return;
+
+        const W = svgEl.clientWidth || 280;
+        const H = Math.round(W * 0.62);
+
+        svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        svgEl.setAttribute('width', W);
+        svgEl.setAttribute('height', H);
+
+        const projection = d3.geoMercator().fitSize([W, H], pa);
+        const pathGen = d3.geoPath(projection);
+
+        const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathEl.setAttribute('d', pathGen(pa));
+        pathEl.setAttribute('fill', 'rgba(95,175,143,0.45)');
+        pathEl.setAttribute('stroke', 'rgba(95,175,143,0.8)');
+        pathEl.setAttribute('stroke-width', '1.5');
+        pathEl.setAttribute('filter', 'url(#hand-drawn)');
+
+        svgEl.innerHTML = '';
+        svgEl.appendChild(pathEl);
+      } catch (e) { /* SVG stays empty if fetch fails */ }
+    }
+
+    function _renderCsStats(el, facts) {
+      if (!el || !facts) return;
+      const icons = [
+        '/assets/icons/icons/row01_col01.png',
+        '/assets/icons/icons/row02_col03.png',
+        '/assets/icons/icons/row03_col05.png',
+      ];
+      el.innerHTML = facts.map((f, i) => `
+        <div class="cs-stat-col">
+          <div class="cs-stat-icon-bg">
+            <img src="${icons[i] || icons[0]}" alt="" class="cs-stat-icon">
+          </div>
+          <div class="cs-stat-number">${f.stat}</div>
+          <p class="cs-stat-label">${f.label}</p>
+        </div>
+      `).join('');
+    }
+
+    function _renderCsOutcomeList(el, points) {
+      if (!el || !points) return;
+      el.innerHTML = points.map((p, i) => `
+        <div class="cs-outcome-row" role="listitem">
+          <span class="cs-outcome-num">${i + 1}</span>
+          <span class="cs-outcome-label">${p}</span>
+        </div>
+      `).join('');
+    }
+
+    function _renderCsClosureList(el, points) {
+      if (!el || !points) return;
+      const icons = [
+        '/assets/icons/icons/row04_col01.png',
+        '/assets/icons/icons/row04_col03.png',
+        '/assets/icons/icons/row04_col05.png',
+      ];
+      el.innerHTML = points.slice(0, 3).map((p, i) => `
+        <div class="cs-closure-item" role="listitem">
+          <div class="cs-closure-icon-bg">
+            <img src="${icons[i]}" alt="" class="cs-closure-icon">
+          </div>
+          <span class="cs-closure-item-label">${p}</span>
+        </div>
+      `).join('');
+    }
+
   </script>
 </body>
 </html>
