@@ -1,0 +1,337 @@
+/* ─────────────────────────────────────────────────────────────────
+   BLUEPRINT × FIELD NOTES — DESIGN TOKENS
+   Practicum Project · v1.0
+
+   Drop this file into your project and import it globally.
+   All values derived from the Figma variables library.
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+
+  /* —— COLOR PRIMITIVES ————————————————————————————————————————— */
+  --color-paper:      #F7F6F2;   /* Primary background. Warm off-white. Never pure white. */
+  --color-ink:        #1F1F1F;   /* Primary text, linework, diagram strokes. Softened black. */
+  --color-ink-muted:  #6B7280;   /* Secondary text, captions, metadata, inactive states. */
+  --color-yellow:     #E7C857;   /* Emphasis/highlight only. Marker-style. Never structural. */
+  --color-green:      #5FAF8F;   /* Active/selected state. Current node. Spec tags. */
+  --color-blue:       #1E3A5F;   /* Blueprint Panels only. Use sparingly — once or twice per artifact. */
+  --color-rule:       #D9D6CE;   /* Grid lines, dividers, subtle borders on PAPER background. */
+
+  /* —— COLOR SEMANTIC ALIASES —————————————————————————————————— */
+  --color-bg:              var(--color-paper);
+  --color-bg-inverted:     var(--color-blue);
+  --color-text-primary:    var(--color-ink);
+  --color-text-secondary:  var(--color-ink-muted);
+  --color-text-inverted:   var(--color-paper);
+  --color-stroke-primary:  var(--color-ink);
+  --color-stroke-muted:    var(--color-ink-muted);
+  --color-stroke-rule:     var(--color-rule);
+  --color-highlight:       var(--color-yellow);
+  --color-active:          var(--color-green);
+
+  /* —— TYPOGRAPHY — FAMILIES ——————————————————————————————————— */
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  /* —— TYPOGRAPHY — WEIGHTS ———————————————————————————————————— */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* —— TYPOGRAPHY — SIZES —————————————————————————————————————— */
+  --font-size-display:    72px;   /* H1 / hero. Desktop value. */
+  --font-size-h1:         56px;
+  --font-size-h2:         44px;
+  --font-size-h3:         22px;
+  --font-size-body-lg:    18px;
+  --font-size-body:       16px;
+  --font-size-caption:    14px;
+  --font-size-small:      13px;
+  --font-size-spec-label: 12px;   /* Monospace SPEC tags and section labels. */
+
+  /* —— TYPOGRAPHY — LINE HEIGHTS ——————————————————————————————— */
+  --line-height-display:    1.05;
+  --line-height-heading:    1.15;
+  --line-height-subheading: 1.3;
+  --line-height-body:       1.55;
+  --line-height-caption:    1.5;
+
+  /* —— TYPOGRAPHY — LETTER SPACING ————————————————————————————— */
+  --tracking-display-tight: -0.01em;   /* Serif headlines — always tight. */
+  --tracking-normal:         0;
+  --tracking-spec-label:     0.08em;   /* Mono labels — always generous. */
+  --tracking-mono-wide:      0.10em;   /* Top-level SPEC tags. */
+
+  /* —— TYPOGRAPHY — PROSE WIDTH ———————————————————————————————— */
+  --prose-max-width: 65ch;
+  --container-max:   1240px;
+  --container-prose: 720px;
+
+  /* —— SPACING SCALE (8px baseline) ——————————————————————————— */
+  --sp1:  4px;    /* Hairline adjustments */
+  --sp2:  8px;    /* Baseline unit */
+  --sp3:  12px;
+  --sp4:  16px;   /* Gutter mobile */
+  --sp5:  24px;   /* Card padding · gutter desktop */
+  --sp6:  32px;
+  --sp7:  48px;   /* In-section spacing floor */
+  --sp8:  64px;   /* In-section spacing ceiling */
+  --sp9:  96px;   /* Between major sections floor */
+  --sp10: 128px;  /* Between major sections ceiling */
+
+  /* —— SEMANTIC SPACING ————————————————————————————————————————— */
+  --space-card-padding:  var(--sp5);
+  --space-section-sm:    var(--sp7);
+  --space-section-lg:    var(--sp10);
+  --space-card-offset:   var(--sp2);   /* Stacked Cards offset: 8px desktop */
+
+  /* —— STROKE WEIGHTS —————————————————————————————————————————— */
+  --stroke-primary:    2px;     /* Main diagram structure, outer component borders */
+  --stroke-secondary:  1.5px;   /* Internal divisions, card borders */
+  --stroke-annotation: 1px;     /* Connecting arrows, pointer lines */
+  --stroke-dashed:     1px;     /* Implied/optional relationships. Use dasharray: 4 4 */
+  --stroke-grid:       1px;     /* Background grid. Apply at 30% opacity. */
+
+  /* —— STROKE DASH PATTERNS ———————————————————————————————————— */
+  --dash-standard: 4 4;   /* Dashed connectors, optional relationships */
+  --dash-loose:    6 5;   /* Hand-drawn dash feel. Annotations only. */
+
+  /* —— BORDER RADIUS ——————————————————————————————————————————— */
+  --radius-none: 0;    /* Default. Most structural elements. */
+  --radius-sm:   2px;  /* Maximum. Cards and diagram nodes only. */
+
+  /* —— OPACITY ————————————————————————————————————————————————— */
+  --opacity-grid-light:    0.3;   /* Background grid on PAPER */
+  --opacity-grid-inverted: 0.3;   /* Grid inside Blueprint Panel */
+  --opacity-muted:         0.6;
+
+  /* —— GRID ———————————————————————————————————————————————————— */
+  --grid-base-unit:      8px;
+  --grid-module:         12px;   /* Visible grid module size */
+  --grid-columns:        12;
+  --grid-gutter-desktop: 24px;
+  --grid-gutter-mobile:  16px;
+
+  /* —— DIAGRAM NODE SIZING ————————————————————————————————————— */
+  --node-width:  112px;
+  --node-height: 96px;
+  --icon-sm:     24px;
+  --icon-md:     32px;
+
+  /* —— MOTION ——————————————————————————————————————————————————— */
+  --duration-component: 300ms;   /* Individual component arrival */
+  --duration-build:     750ms;   /* Full diagram build sequence */
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);   /* Snappy, grid-aligned. No overshoot. */
+  --ease-draw: cubic-bezier(0.4, 0, 0.2, 1);     /* Line draw-in. Feels drafted. */
+
+  /* —— Z-INDEX ————————————————————————————————————————————————— */
+  --z-base:       0;
+  --z-card:       10;
+  --z-annotation: 20;   /* Annotations sit above cards — may overlap edges */
+  --z-overlay:    100;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   GOOGLE FONTS IMPORT
+   Include this in your <head>, or use @import in your root CSS.
+   ───────────────────────────────────────────────────────────────── */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+*/
+
+
+/* ─────────────────────────────────────────────────────────────────
+   BASE RESETS
+   ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* —— LIGHT GRID BACKGROUND ——————————————————————————————————— */
+/* Apply to body or a full-bleed wrapper */
+.with-grid {
+  background-image:
+    linear-gradient(rgba(217, 214, 206, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 214, 206, 0.28) 1px, transparent 1px);
+  background-size: var(--grid-module) var(--grid-module);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   TYPE SCALE UTILITY CLASSES
+   ───────────────────────────────────────────────────────────────── */
+
+.text-display {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--tracking-display-tight);
+}
+
+.text-h1 {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--tracking-display-tight);
+}
+
+.text-h2 {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-subheading);
+}
+
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.text-caption {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  color: var(--color-text-secondary);
+}
+
+.text-spec-label {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-spec-label);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--tracking-spec-label);
+  text-transform: uppercase;
+}
+
+.text-spec-label-wide {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-spec-label);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--tracking-mono-wide);
+  text-transform: uppercase;
+}
+
+.text-annotation {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   COMPONENT TOKEN MAP
+   Exact token bindings for each core component.
+   ─────────────────────────────────────────────────────────────────
+
+   SimpleCard
+   ──────────
+   background:    var(--color-paper)
+   border:        var(--stroke-secondary) solid var(--color-ink)
+   border-radius: var(--radius-sm)
+   padding:       var(--space-card-padding)
+
+   SpecCard (extends SimpleCard)
+   ──────────────────────────────
+   .spec-tag background: var(--color-active)
+   .spec-tag color:      var(--color-paper)
+   .spec-tag font:       text-spec-label
+
+   StackedCards (extends SimpleCard)
+   ───────────────────────────────────
+   Shadow cards offset: var(--space-card-offset) x/y
+   Shadow cards same border/fill as front card
+
+   BlueprintPanel
+   ──────────────
+   background:    var(--color-blue)
+   color:         var(--color-paper)
+   padding:       var(--sp8) var(--sp7)
+   grid-overlay:  rgba(247,246,242,0.18) at var(--grid-module)
+
+   DiagramNode — Standard
+   ───────────────────────
+   background:    var(--color-paper)
+   border:        var(--stroke-primary) solid var(--color-ink)
+   border-radius: var(--radius-sm)
+   width:         var(--node-width)
+   height:        var(--node-height)
+
+   DiagramNode — Active
+   ─────────────────────
+   background:    var(--color-active)      [green]
+
+   DiagramNode — Outcome
+   ──────────────────────
+   background:    var(--color-highlight)   [yellow]
+
+   DiagramNode — Optional
+   ───────────────────────
+   border-style:  dashed
+   dasharray:     var(--dash-standard)
+
+   FlowArrow
+   ──────────
+   stroke:        var(--color-ink)
+   stroke-width:  var(--stroke-primary)
+
+   AnnotationArrow
+   ────────────────
+   stroke:        var(--color-ink-muted)
+   stroke-width:  var(--stroke-annotation)
+
+   HighlightMark
+   ──────────────
+   background:    var(--color-yellow)
+   height:        ~6px band behind text
+
+   SpecHeader
+   ──────────
+   font:          text-spec-label-wide
+   label color:   var(--color-active)
+   rule:          1px solid var(--color-rule)
+
+   MarginNote
+   ──────────
+   font:          text-annotation
+   arrow stroke:  var(--color-ink-muted) / var(--stroke-annotation)
+   arrow dash:    var(--dash-loose)
+*/

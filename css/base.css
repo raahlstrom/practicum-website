@@ -1,0 +1,172 @@
+/* ─────────────────────────────────────────────────────────────────
+   BASE — Layout utilities, containers, spacing, accessibility
+   Extends tokens.css — import tokens.css first.
+   ───────────────────────────────────────────────────────────────── */
+
+/* —— SKIP LINK ——————————————————————————————————————————————————— */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: var(--z-overlay);
+  padding: var(--sp2) var(--sp4);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-small);
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: var(--sp4);
+  top: var(--sp4);
+}
+
+/* —— CONTAINERS ——————————————————————————————————————————————————— */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sp5);
+  padding-right: var(--sp5);
+}
+
+.container-prose {
+  width: 100%;
+  max-width: var(--container-prose);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sp5);
+  padding-right: var(--sp5);
+}
+
+/* —— PAGE STRUCTURE ——————————————————————————————————————————————— */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main {
+  flex: 1;
+}
+
+/* —— SECTION SPACING ————————————————————————————————————————————— */
+.section {
+  padding-top: var(--sp9);
+  padding-bottom: var(--sp9);
+}
+
+.section-lg {
+  padding-top: var(--sp10);
+  padding-bottom: var(--sp10);
+}
+
+.section-sm {
+  padding-top: var(--sp7);
+  padding-bottom: var(--sp7);
+}
+
+/* —— GRID LAYOUTS ———————————————————————————————————————————————— */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter-desktop);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp5);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp5);
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .container-prose {
+    padding-left: var(--sp4);
+    padding-right: var(--sp4);
+  }
+
+  .grid-12 {
+    grid-template-columns: 1fr;
+    gap: var(--grid-gutter-mobile);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-top: var(--sp7);
+    padding-bottom: var(--sp7);
+  }
+
+  .section-lg {
+    padding-top: var(--sp8);
+    padding-bottom: var(--sp8);
+  }
+}
+
+/* —— PROSE CONSTRAINT ———————————————————————————————————————————— */
+.prose {
+  max-width: var(--prose-max-width);
+}
+
+.prose p + p {
+  margin-top: var(--sp4);
+}
+
+/* —— DIVIDER ————————————————————————————————————————————————————— */
+.rule {
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  margin: var(--sp6) 0;
+}
+
+/* —— ACCESSIBILITY ——————————————————————————————————————————————— */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+}
+
+/* —— LINKS ——————————————————————————————————————————————————————— */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* —— LISTS ——————————————————————————————————————————————————————— */
+ul, ol {
+  list-style: none;
+}
+
+/* —— SUPERSCRIPT (FOOTNOTES) ————————————————————————————————————— */
+sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  font-family: var(--font-mono);
+  color: var(--color-green);
+  letter-spacing: 0;
+}

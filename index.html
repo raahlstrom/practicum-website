@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PLACEHOLDER NAME] — Supporting Students Across Every Transition</title>
+  <meta name="description" content="[PLACEHOLDER NAME] helps educators and nonprofits launch Scholarship Granting Organizations designed to prevent academic loss at K-12 transition points.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/pages/landing.css">
+</head>
+<body class="with-grid">
+
+  <!-- SVG defs for hand-drawn filter and arrowheads -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="hand-drawn">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <marker id="arr-ink" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#1F1F1F"/>
+      </marker>
+      <marker id="arr-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#6B7280"/>
+      </marker>
+      <marker id="arr-white" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#F7F6F2"/>
+      </marker>
+    </defs>
+  </svg>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav id="site-nav" role="navigation" aria-label="Main navigation"></nav>
+
+  <main id="main">
+    <!-- Phase 5: Landing page content built here -->
+    <!-- Section 1.1: Hero (Blueprint Panel) — blocked on image assets -->
+    <!-- Section 1.2: The Problem teaser -->
+    <!-- Section 1.3: The Solution teaser -->
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="/js/nav.js"></script>
+  <script type="module">
+    import { hydrate } from '/js/render.js';
+    import { content } from '/content/landing.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      hydrate(content);
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
