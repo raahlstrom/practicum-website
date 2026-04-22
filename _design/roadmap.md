@@ -158,13 +158,13 @@ This is the living build plan. Update status, notes, and blocking items as work 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
 | 7.1 | Global nav audit | ✅ | Active state verified; mobile hamburger open/close working; defer added to nav.js across all shells |
-| 7.2 | Footer audit | ⬜ | Consistent across all pages; links work |
+| 7.2 | Footer audit | ✅ | Footer consistent via `buildFooter()` in nav.js; tagline added per architecture spec; `.footer-brand` + `.footer-tagline` CSS added |
 | 7.3 | Full responsive audit | ✅ | Hero `min-height: 100svh` progressive enhancement added (fixes mobile browser chrome overflow); all page layouts verified at 375/768/1280px |
-| 7.4 | Accessibility audit | ⬜ | Keyboard nav; ARIA on all interactive components; focus rings visible; color contrast check |
+| 7.4 | Accessibility audit | ✅ | `focus-visible` global ring (green); skip links on all 6 pages; ARIA landmarks + labels; accordion/tabs/expandable-list ARIA correct; avatar alt fixed to `""` inside labeled containers; solution.html h1 added |
 | 7.5 | Performance check | ✅ | `defer` on all CDN + local scripts; images not yet optimized (acceptable for v1) |
 | 7.6 | SEO basics | ✅ | `<title>`, `<meta description>`, `og:type/title/description`, `theme-color` added to all 6 HTML pages |
 | 7.7 | Cross-browser check | ⬜ | Chrome, Firefox, Safari (desktop + mobile) |
-| 7.8 | Final quality checklist | ⬜ | Run `handoff-readme.md` checklist on every page |
+| 7.8 | Final quality checklist | ✅ | Passed: paper bg, 3 typefaces, token-only colors/fonts, no decorative gradients/shadows, Blueprint Panel scarcity maintained, accent ≤15%, motion scroll-triggered; solution.html `<title>` aligned to OG title |
 | 7.9 | Replace Lorem Ipsum check | ✅ | Stale "Lorem Ipsum" comment removed from `content/problem.js`; transition callout stats moved from hardcoded HTML to `content/landing.js`; contact spec header fixed (§6.1 — The Team) |
 | 7.10 | `[PLACEHOLDER NAME]` audit | ⬜ | If org name decided, find-and-replace across all content files |
 

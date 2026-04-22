@@ -9,6 +9,7 @@ const NAV_LINKS = [
 ];
 
 const ORG_NAME = '[PLACEHOLDER NAME]';
+const TAGLINE   = 'Supporting students across every K-12 transition.';
 
 function getActivePath() {
   const path = window.location.pathname.replace(/\/$/, '') || '/';
@@ -51,7 +52,10 @@ function buildFooter() {
   return `
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-name">${ORG_NAME}</span>
+        <div class="footer-brand">
+          <span class="footer-name">${ORG_NAME}</span>
+          <span class="footer-tagline">${TAGLINE}</span>
+        </div>
         <nav class="footer-links" aria-label="Footer navigation">${links}</nav>
       </div>
     </div>
