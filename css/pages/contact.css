@@ -1,4 +1,79 @@
-/* css/pages/contact.css — Page-specific styles for contact.html
-   Phase build: add layout rules here as the page is constructed.
-   Keep all component-level styles in ../components.css.
-*/
+/* css/pages/contact.css — Contact page layout */
+
+
+/* ── STATEMENT SECTION ───────────────────────────────────────────── */
+
+.section-contact-statement {
+  padding: var(--sp10) 0 var(--sp9);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp9);
+  align-items: start;
+}
+
+.contact-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin: var(--sp5) 0 var(--sp6);
+}
+
+.contact-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 52ch;
+  margin: 0 0 var(--sp5);
+}
+
+.contact-engagement-note {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+  padding-left: var(--sp4);
+  border-left: 2px solid var(--color-rule);
+  margin: 0;
+}
+
+
+/* ── PEOPLE GRID ─────────────────────────────────────────────────── */
+
+.section-people {
+  padding: var(--sp9) 0;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp6);
+  max-width: 780px;
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp7);
+  }
+}
+
+@media (max-width: 600px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-headline {
+    font-size: 30px;
+  }
+}

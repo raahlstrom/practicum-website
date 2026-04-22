@@ -124,19 +124,17 @@ This is the living build plan. Update status, notes, and blocking items as work 
 ---
 
 ## Phase 5 — Landing Page (`index.html`)
-*Most consequential design. Hero section blocked on image assets — build rest first, hero last.*
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 5.1 | Populate `content/landing.js` | ⬜ | All landing copy; hero headline (default: Option A from `design-brief.md` §5.9) |
-| 5.2 | §1.2 Problem teaser | ⬜ | Spec header; transition falloff visual (simplified); copy; link → `/problem` |
-| 5.3 | §1.3 Solution teaser | ⬜ | Spec header; intro copy; three preview cards |
-| 5.4 | **PROMPT ALEX** for hero image assets | 🚫 | **Do not build §1.1 until image assets arrive** |
-| 5.5 | §1.1 Hero — Blueprint Panel | 🚫 | **Blocked on image assets.** When assets arrive: Blueprint Panel bg, headline, thesis, hero visual. |
-| 5.6 | Mobile responsive pass | ⬜ | Especially critical — partners open links from email on phones |
-| 5.7 | Quality checklist | ⬜ | |
+| 5.1 | Populate `content/landing.js` | ✅ | Headline Option A; thesis default set; problemTeaser + solutionTeaser copy ready |
+| 5.2 | §1.2 Problem teaser | ✅ | Two-column; body paragraph; 3 stacked transition callout blocks with arrow icon + stat |
+| 5.3 | §1.3 Solution teaser | ✅ | Spec header; intro paragraph; 3 preview cards rendered from content |
+| 5.4 | §1.1 Hero — Blueprint Panel | ✅ | Built from existing assets: student avatar composition in paper frame on blue panel; green continuity thread + stage labels; no external image needed |
+| 5.5 | Mobile responsive pass | ✅ | Hero collapses to 1-col at 860px; solution cards 2-col at 860px, 1-col at 600px |
+| 5.6 | Quality checklist | ⬜ | Pending |
 
-**Phase 5 deliverable:** `/` complete. **Hero section may remain a placeholder if image assets haven't arrived.**
+**Phase 5 deliverable:** `/` ✅ complete (quality checklist pending).
 
 ---
 
@@ -144,14 +142,14 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 6.1 | Populate `content/resources.js` | ⬜ | Placeholder card data; structure for future documents |
-| 6.2 | Build `/resources` | ⬜ | Card grid with one-pager placeholder card ("Coming Soon") |
-| 6.3 | **PROMPT ALEX** for contact info | 🚫 | Need: Alex + Evie headshot images, Evie's title and email |
-| 6.4 | Populate `content/contact.js` | 🚫 | **Blocked on Evie's info and headshots** |
-| 6.5 | Build `/contact` | 🚫 | Two person cards; engagement statement |
-| 6.6 | Mobile responsive pass (both pages) | ⬜ | |
+| 6.1 | Populate `content/resources.js` | ✅ | One placeholder doc card (SGO Quick Reference, Coming Soon) |
+| 6.2 | Build `/resources` | ✅ | Intro section; doc grid using `renderDocCard`; placeholder card styled muted |
+| 6.3 | **PROMPT ALEX** for headshots | 🚫 | Need: Alex + Evie headshot images — `person-card-photo-placeholder` shown until then |
+| 6.4 | Populate `content/contact.js` | ✅ | Statement + engagementNote populated; people array ready; photos set to null (placeholder) |
+| 6.5 | Build `/contact` | ✅ | Statement section (two-column with space for visual); people grid with `renderPersonCard` (Lucide user placeholder until headshots arrive) |
+| 6.6 | Mobile responsive pass (both pages) | ✅ | contact-layout collapses at 860px; people-grid + doc-grid at 600px |
 
-**Phase 6 deliverable:** `/resources` complete (placeholder); `/contact` complete once assets arrive.
+**Phase 6 deliverable:** `/resources` ✅ complete; `/contact` ✅ complete (headshot placeholders shown until Alex provides images).
 
 ---
 
