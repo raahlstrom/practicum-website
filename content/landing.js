@@ -9,7 +9,8 @@ export const content = {
     // Option C: "The gaps between schools are losing our kids."
     // Alex to select final headline.
     headline: "Academic progress shouldn't stop where school does.",
-    thesis: "[PLACEHOLDER — One-sentence thesis. Must be punchy, specific, under 10 words.]",
+    // Update this when Alex finalizes the thesis line
+    thesis: "We help schools build the funding structures that keep students whole.",
   },
 
   problemTeaser: {

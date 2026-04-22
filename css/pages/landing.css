@@ -1,4 +1,330 @@
-/* css/pages/landing.css — Page-specific styles for landing.html
-   Phase build: add layout rules here as the page is constructed.
-   Keep all component-level styles in ../components.css.
-*/
+/* css/pages/landing.css — Landing page layout */
+
+
+/* ── §1.1 HERO — Full-viewport Blueprint Panel ───────────────────── */
+
+.section-hero { padding: 0; }
+
+.hero-panel {
+  padding: 0;
+  border-radius: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--sp9);
+  align-items: center;
+  width: 100%;
+  padding: var(--sp10) 0;
+  min-height: 100vh;
+}
+
+/* Left: headline + thesis + CTA */
+.hero-text-col {}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-paper);
+  margin: var(--sp7) 0 var(--sp5);
+  max-width: 13em;
+}
+
+.hero-thesis {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.6vw, 17px);
+  line-height: 1.65;
+  color: rgba(247, 246, 242, 0.72);
+  margin: 0 0 var(--sp8);
+  max-width: 48ch;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp3);
+  background: var(--color-green);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--sp3) var(--sp5);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+
+.hero-cta:hover { opacity: 0.88; }
+
+/* Right: paper frame with avatar composition */
+.hero-visual-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-avatar-frame {
+  background: var(--color-paper);
+  border-radius: var(--radius-sm);
+  padding: var(--sp7) var(--sp6) var(--sp5);
+  width: 100%;
+  position: relative;
+}
+
+.hero-avatar-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: var(--sp4);
+}
+
+.hero-avatar {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  margin-right: -14px;
+  flex-shrink: 0;
+}
+
+.hero-avatar:last-child { margin-right: 0; }
+
+/* Green continuity thread below avatars */
+.hero-thread {
+  position: relative;
+  height: 20px;
+  margin-bottom: var(--sp3);
+}
+
+.hero-thread::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  right: 4px;
+  height: 1.5px;
+  background: var(--color-green);
+  transform: translateY(-50%);
+}
+
+.hero-thread-dots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.hero-thread-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-green);
+  flex-shrink: 0;
+}
+
+.hero-stage-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.hero-stage-labels span { flex: 1; text-align: center; }
+.hero-stage-labels span:first-child { text-align: left; }
+.hero-stage-labels span:last-child  { text-align: right; }
+
+
+/* ── §1.2 PROBLEM TEASER ─────────────────────────────────────────── */
+
+.section-problem-teaser {
+  padding: var(--sp10) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.problem-teaser-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp9);
+  align-items: start;
+}
+
+.problem-teaser-col {}
+
+.problem-teaser-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--sp6);
+  max-width: 54ch;
+}
+
+.problem-teaser-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-green);
+  padding-bottom: 2px;
+  transition: color 180ms;
+}
+
+.problem-teaser-link:hover { color: var(--color-green); }
+
+/* Three transition callout blocks */
+.transition-callouts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp3);
+}
+
+.transition-callout {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--sp3);
+  align-items: start;
+  padding: var(--sp4) var(--sp4);
+  border: 1px solid var(--color-rule);
+  border-left: 2.5px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper);
+}
+
+.transition-callout-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  margin-top: 1px;
+}
+
+.transition-callout-stage {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--sp1);
+}
+
+.transition-callout-stat {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+
+/* ── §1.3 SOLUTION TEASER ────────────────────────────────────────── */
+
+.section-solution-teaser { padding: var(--sp10) 0; }
+
+.solution-teaser-intro {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 58ch;
+  margin-bottom: var(--sp8);
+}
+
+.solution-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp5);
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp4);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 180ms ease;
+  padding: var(--sp6);
+}
+
+.solution-card:hover { border-color: var(--color-ink); }
+
+.solution-card-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.solution-card-desc {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+  color: var(--color-ink-muted);
+  margin: 0;
+  flex: 1;
+}
+
+.solution-card-arrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-green);
+  margin-top: var(--sp2);
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr 340px; }
+}
+
+@media (max-width: 860px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: var(--sp9) 0;
+    gap: var(--sp7);
+  }
+
+  .hero-visual-col { justify-content: flex-start; }
+
+  .hero-avatar-frame { max-width: 380px; }
+
+  .problem-teaser-layout { grid-template-columns: 1fr; }
+
+  .solution-cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero-headline { font-size: 28px; }
+
+  .hero-avatar { width: 64px; height: 64px; margin-right: -10px; }
+
+  .solution-cards { grid-template-columns: 1fr; }
+}
