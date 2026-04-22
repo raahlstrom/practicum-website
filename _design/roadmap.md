@@ -176,8 +176,8 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 8.1 | Final push to `main` | ⬜ | Trigger Netlify deploy |
-| 8.2 | Verify all pages live | ⬜ | Click through every page on Netlify URL |
+| 8.1 | Final push to `main` | ✅ | Pushed 2 commits (7c09577..0ff9da4); Netlify deploy triggered |
+| 8.2 | Verify all pages live | ⬜ | Click through every page at https://practicum-website.netlify.app |
 | 8.3 | Test all interactive components on live | ⬜ | Accordion, tabs, flow diagram, state map, expandable list |
 | 8.4 | Share URL with Alex + Evie | ⬜ | |
 | 8.5 | Custom domain (when decided) | ⬜ | Not blocking launch |
