@@ -1,6 +1,6 @@
 # Build Roadmap
 **Practicum Website — Blueprint × Field Notes**
-**Last updated:** 2026-04-20
+**Last updated:** 2026-04-22
 
 This is the living build plan. Update status, notes, and blocking items as work progresses. Phases are ordered by dependency — each phase should be complete before the next begins.
 
@@ -23,18 +23,18 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 0.1 | Create GitHub repository | ⬜ | Public repo under Alex's account |
-| 0.2 | Initialize git, create `.gitignore` | ⬜ | Ignore: `node_modules/`, `.DS_Store`, `*.log` |
-| 0.3 | Create `netlify.toml` | ⬜ | Redirect rules for clean URLs (no `.html`); build settings |
-| 0.4 | Copy `_design/tokens.css` → `css/tokens.css` | ⬜ | Never edit this file manually — it is the design system |
-| 0.5 | Write `css/base.css` | ⬜ | Global resets, body, `.with-grid`, container widths, 12-col grid utility, prose width |
-| 0.6 | Write `css/components.css` | ⬜ | All design system components per `handoff-readme.md` — Simple Card, Stacked Cards, Spec Card, Spec Header (3 variants), Blueprint Panel, Diagram Node (4 states), all annotation kit pieces, callout-important, footnotes. Verify against `component-reference.html`. |
-| 0.7 | Write `css/nav.css` + `js/nav.js` | ⬜ | Nav bar, active state, mobile nav pattern |
-| 0.8 | Create all 6 HTML shells | ⬜ | `index.html` through `contact.html` — correct `<head>` (fonts, Lucide, CSS imports), nav inclusion, footer stub |
-| 0.9 | Write `js/render.js` | ⬜ | Shared template utilities: `renderAccordion(data)`, `renderTabs(data)`, `renderExpandableList(data)`, `renderPersonCard(data)`, etc. |
-| 0.10 | Define content data schemas | ⬜ | Stub all 6 `content/*.js` files with correct structure but placeholder strings |
-| 0.11 | Browser verify | ⬜ | All 6 pages load with correct fonts, paper background, nav. No content yet — just structure. |
-| 0.12 | Push to GitHub | ⬜ | Connect to Netlify, verify deploy works |
+| 0.1 | Create GitHub repository | ✅ | `raahlstrom/practicum-website` on GitHub |
+| 0.2 | Initialize git, create `.gitignore` | ✅ | `.gitattributes` with LF normalization also added |
+| 0.3 | Create `netlify.toml` | ✅ | Clean URL redirects for all 6 pages |
+| 0.4 | Copy `_design/tokens.css` → `css/tokens.css` | ✅ | |
+| 0.5 | Write `css/base.css` | ✅ | |
+| 0.6 | Write `css/components.css` | ✅ | All design system components. QA'd in Phase 1.9. |
+| 0.7 | Write `css/nav.css` + `js/nav.js` | ✅ | |
+| 0.8 | Create all 6 HTML shells | ✅ | `index.html` through `contact.html` |
+| 0.9 | Write `js/render.js` | ✅ | All render utilities including accordion, tabs, expandable list, person card, preview card, doc card, callout |
+| 0.10 | Define content data schemas | ✅ | All 6 `content/*.js` files with real copy |
+| 0.11 | Browser verify | ✅ | All pages load |
+| 0.12 | Push to GitHub | ✅ | Live at https://practicum-website.netlify.app |
 
 **Phase 0 deliverable:** A working empty site on Netlify — correct design system base, all pages accessible, no content.
 
@@ -45,15 +45,15 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1.1 | Three-panel accordion (`accordion.js`) | ⬜ | All 3 panels visible collapsed; expand inline; independent state; keyboard accessible (Enter/Space) |
-| 1.2 | Tabbed panel (`tabs.js`) | ⬜ | Switchable without scroll; keyboard accessible; ARIA roles |
-| 1.3 | Expandable list (`requirements-list.js`) | ⬜ | 11 items; all visible collapsed without scrolling; expand inline; keyboard accessible |
-| 1.4 | 5-step flow diagram (`flow-diagram.js`) | ⬜ | SVG, left-to-right; IntersectionObserver scroll build; nodes stagger 150ms; arrows draw via stroke-dashoffset; `prefers-reduced-motion` collapse to instant |
-| 1.5 | Logic model diagram (`logic-model.js`) | ⬜ | 5 levels: Impact → Outcomes → Outputs → Activities → Inputs; most attractive SVG treatment; scroll-triggered |
-| 1.6 | SVG state map (`state-map.js`) | ⬜ | State outlines, 3-state color coding (opted-in green, opted-out muted, undecided neutral), tooltip on hover/tap, data from `content/state-map-data.js` |
-| 1.7 | Transition falloff visual | ⬜ | SVG showing academic performance drop at 3 transitions; designed as standalone diagram. Used on landing (simplified) and problem (full). |
-| 1.8 | Build `component-test.html` | ⬜ | Standalone test page where every interactive component can be exercised in isolation |
-| 1.9 | Design system QA pass | ⬜ | Run every component through `handoff-readme.md` quality checklist. Verify strokes, colors, corner radii, motion rules. |
+| 1.1 | Three-panel accordion (`accordion.js`) | ✅ | Implemented in `render.js` → `renderAccordion()`. All 3 panels collapsed, independent state, keyboard accessible. |
+| 1.2 | Tabbed panel (`tabs.js`) | ✅ | Implemented in `render.js` → `renderTabs()`. Arrow-key nav, full ARIA roles. |
+| 1.3 | Expandable list (`requirements-list.js`) | ✅ | Implemented in `render.js` → `renderExpandableList()`. 11 SGO requirements, inline callout on Req 06. |
+| 1.4 | 5-step flow diagram (`flow-diagram.js`) | ✅ | HTML nodes + SVG arrows. IntersectionObserver scroll build. Nodes stagger 150ms. Arrows draw via stroke-dashoffset. `prefers-reduced-motion` instant. |
+| 1.5 | Logic model diagram (`logic-model.js`) | ✅ | 5-column CSS layout. Column stagger reveal on scroll. Horizontal scroll on mobile. |
+| 1.6 | State map (`state-map.js`) | ✅ | D3 v7 + TopoJSON v3 + us-atlas. Green/gray/light color coding. Tooltip on hover/tap. Count totals in legend. Note: requires D3 + TopoJSON script tags on page. |
+| 1.7 | Transition falloff visual | ✅ | `transition-falloff.js`. Full version (problem page) + simplified (landing). Yellow shading at transitions, annotated drop points. |
+| 1.8 | Build `component-test.html` | ✅ | All 7 interactive components + static component reference. Real content data wired in. |
+| 1.9 | Design system QA pass | ✅ | QA checklist passed. paper bg, three typefaces, accent ≤15%, motion scroll-triggered, Blueprint Panel once in reference, no gradients/shadows. |
 
 **Phase 1 deliverable:** `component-test.html` — every interactive component working and QA'd.
 
@@ -62,44 +62,47 @@ This is the living build plan. Update status, notes, and blocking items as work 
 ## Phase 2 — Solution Page (`solution.html`)
 *Most complex page. Build first as the design proving ground.*
 
+**Note:** Section structure was redesigned during build. See `architecture.md` for actual section map.
+
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 2.1 | Populate `content/solution.js` | ⬜ | All final copy: §4.1–4.9, all 11 requirements, IMPORTANT TO KNOW callouts |
-| 2.2 | Build page layout + section structure | ⬜ | Spec headers, section rhythm, correct spacing |
-| 2.3 | §4.1 Opening — Blueprint Panel | ⬜ | ECCA reveal; key numbers set prominently |
-| 2.4 | §4.2 State Map | ⬜ | Wire `state-map.js`; intro copy; IMPORTANT TO KNOW callout; legend |
-| 2.5 | §4.3 Funding Stream | ⬜ | Wire `flow-diagram.js`; five step descriptions below; footnotes |
-| 2.6 | §4.4 Eleven Requirements | ⬜ | Wire `requirements-list.js`; inline IMPORTANT TO KNOW for Req 6 |
-| 2.7 | §4.5 Who Can Participate | ⬜ | Five org types as structured visual; two IMPORTANT TO KNOW callouts |
-| 2.8 | §4.6 Defining a Scope | ⬜ | Three paragraphs; footnote |
-| 2.9 | §4.7 Pennsylvania — Blueprint Panel | ⬜ | Case study data as structured spec items; IMPORTANT TO KNOW callout |
-| 2.10 | §4.8 + §4.9 Brief sections | ⬜ | State-level decisions + open questions; modest visual treatment |
-| 2.11 | Mobile responsive pass | ⬜ | Full responsive audit for this page |
-| 2.12 | Quality checklist | ⬜ | Run `handoff-readme.md` checklist on this page |
+| 2.1 | Populate `content/solution.js` | ✅ | All copy: SGO intro, 5-step flow, ECCA, orbit items, 11 requirements, state map, PA case study, defining scope |
+| 2.2 | Build page layout + section structure | ✅ | 8 sections built; section numbers reorganized from original plan |
+| 2.3 | §4.0 SGO Intro | ✅ | Two-column split: large serif framing + student avatars + pipe image |
+| 2.4 | §4.1 How It Works — 5-step illustrated flow | ✅ | CSS-native steps, icon PNGs, green arrow between steps, scroll stagger animation |
+| 2.5 | §4.2 The ECCA | ✅ | Split-layout: key stats (3 numbers) right, prose + sidenote left |
+| 2.6 | §4.3 What Can They Fund | ✅ | Student orbit visual: 6 expense categories radiating from student icon; IMPORTANT TO KNOW callout |
+| 2.7 | §4.4 Eleven Requirements | ✅ | Expandable list; inline callout on Req 06; shield icon plaque |
+| 2.8 | §4.5 State Map | ✅ | D3 map wired; IMPORTANT TO KNOW callout; margin note; legend |
+| 2.9 | §4.6 Pennsylvania — Blueprint Panel | ✅ | Contained panel; outcome + implications paper cards; circled takeaway; callout |
+| 2.10 | §4.7 Defining a Scope | ✅ | Three-beat: framing statement → prose + pull quote + icon → Blueprint Panel position statement |
+| 2.11 | §4.5 Who Can Participate | 🚫 | **Removed by user decision** — "doesn't feel relevant to our audience" (data retained in `content/solution.js`) |
+| 2.12 | §4.8 + §4.9 State-Level Decisions + Open Questions | 🚫 | **Removed by user decision** — "doesn't feel relevant to our audience" (data retained in `content/solution.js`) |
+| 2.13 | Mobile responsive pass | ✅ | All breakpoints fixed: two-column grids collapse, cs-stats-grid stacks at 600px, zero page overflow at 375/768/1280px |
+| 2.14 | Quality checklist | ✅ | Passed: no drop shadows, no forbidden gradients, only 3 typefaces (Source Serif 4 / Inter / IBM Plex Mono), all tokens resolve, button font reset added to base.css |
 
 **Phase 2 deliverable:** `/solution` fully complete and mobile-ready.
 
 ---
 
 ## Phase 3 — Problem Page (`problem.html`)
-*Blocked on case study content — build with Lorem Ipsum placeholder.*
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 3.1 | Populate `content/problem.js` | ⬜ | All copy for §3.1–3.5; case studies as Lorem Ipsum |
-| 3.2 | Build page layout + section structure | ⬜ | |
-| 3.3 | §3.1 Opening thesis | ⬜ | Consider Blueprint Panel here — assess during build |
-| 3.4 | §3.2 Why Gains Are Lost | ⬜ | Three paragraphs; possibly a simple SVG |
-| 3.5 | §3.3 Three Breakpoints — accordion | ⬜ | Wire `accordion.js`; footnotes per expanded panel |
-| 3.6 | §3.4 Case Studies — tabbed panel | ⬜ | Wire `tabs.js`; **Lorem Ipsum content** until Alex provides case studies |
-| 3.7 | §3.5 Bridge to Solution | ⬜ | Two paragraphs; CTA → `/solution` |
-| 3.8 | Transition falloff visual (full version) | ⬜ | Wire SVG visual from Phase 1 |
-| 3.9 | Mobile responsive pass | ⬜ | |
-| 3.10 | Quality checklist | ⬜ | |
+| 3.1 | Populate `content/problem.js` | ✅ | Complete: opening thesis, why-gains-lost, 3 breakpoints with citations, bridge. |
+| 3.2 | Build page layout + section structure | ✅ | 5 sections built; light green hero, clean paper body background |
+| 3.3 | §3.0 Opening thesis | ✅ | Light green tinted hero (rgba(95,175,143,0.06)) matching solution page §4.0 treatment; students-group icon; 3 student avatars |
+| 3.4 | §3.1 Why Gains Are Lost | ✅ | Leaky pipe image left (ChatGPT Image…09_18_50 PM.png); "Structural." serif accent + yellow underline right; 3 paragraphs |
+| 3.5 | §3.2 Three Breakpoints — carousel | ✅ | Custom CSS/JS carousel (replaced accordion per user decision); slide per breakpoint; counter, dot nav, prev/next, swipe support; stat callout + footnotes per slide |
+| 3.6 | §3.3 Oregon Case Study — full-bleed Blueprint Panel | 🔄 | **Redesigning**: replacing Lorem Ipsum tab panel with standalone full-bleed Blueprint Panel (same visual treatment as §4.6 on solution.html). Oregon/Measure 98 content from Alex. See architecture.md for section spec. |
+| 3.7 | §3.4 Bridge to Solution | ✅ | Journey-to-goal icon; two bridge paragraphs; CTA button |
+| 3.8 | Transition falloff visual | 🚫 | **Not used** — replaced by leaky pipe image per user decision |
+| 3.9 | Mobile responsive pass | ✅ | fg-panels horizontally scrollable at 375px; zero page overflow; pivot section clean |
+| 3.10 | Quality checklist | ✅ | Passed as part of site-wide audit (2026-04-22) |
 
-**Phase 3 deliverable:** `/problem` complete (case studies Lorem Ipsum — to be updated when Alex provides content).
+**Phase 3 deliverable:** `/problem` complete.
 
-**Pending update:** When Alex provides case study content, update `content/problem.js → caseStudies` and verify tab panel.
+**Oregon case study:** Real content provided by Alex (Measure 98, Oregon 2016). Replaces Lorem Ipsum tab panel with full-bleed Blueprint Panel treatment. Content in `content/problem.js → oregonCaseStudy`.
 
 ---
 
@@ -157,11 +160,11 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 7.1 | Global nav audit | ⬜ | Active state per page; mobile nav; consistent across all pages |
+| 7.1 | Global nav audit | ✅ | Active state verified; mobile hamburger open/close working; defer added to nav.js across all shells |
 | 7.2 | Footer audit | ⬜ | Consistent across all pages; links work |
 | 7.3 | Full responsive audit | ⬜ | All 6 pages at mobile (375px), tablet (768px), desktop (1240px) |
 | 7.4 | Accessibility audit | ⬜ | Keyboard nav; ARIA on all interactive components; focus rings visible; color contrast check |
-| 7.5 | Performance check | ⬜ | No unnecessary JS; images optimized; no render-blocking resources |
+| 7.5 | Performance check | 🔄 | `defer` added to all CDN + local scripts across all 6 HTML files. Images not yet optimized. |
 | 7.6 | SEO basics | ⬜ | `<title>`, `<meta description>`, Open Graph tags per page |
 | 7.7 | Cross-browser check | ⬜ | Chrome, Firefox, Safari (desktop + mobile) |
 | 7.8 | Final quality checklist | ⬜ | Run `handoff-readme.md` checklist on every page |
@@ -206,7 +209,7 @@ These items cannot proceed until Alex provides assets or decisions. Track here s
 | Hero image assets | Landing §1.1 (Phase 5.5) | 🚫 Awaiting |
 | Hero headline decision | Landing §1.1 | ⚠️ Default Option A until decided |
 | Page 3 final name | Nav, `/problem` | ⚠️ "The Handoff Problem" working default |
-| Case study content | Problem §3.4 | ⚠️ Lorem Ipsum in place |
+| Case study content | Problem §3.3 | ✅ Oregon/Measure 98 content provided by Alex |
 | Alex headshot | Contact page | 🚫 Awaiting |
 | Evie headshot | Contact page | 🚫 Awaiting |
 | Evie's title + email | Contact page | 🚫 Awaiting |
@@ -221,7 +224,7 @@ These items cannot proceed until Alex provides assets or decisions. Track here s
 |---------|---------------|-------|
 | Treasury guidance releases (early summer 2026) | 90/10 rule definition, qualified expenses scope, state authority, multi-state SGOs, SGO liability | `content/solution.js` §openQuestions + §requirements items 6 and 7 |
 | State opt-in decisions (rolling) | State map data | `content/state-map-data.js` |
-| Case study content from Alex | Tabbed panel | `content/problem.js → caseStudies` |
+| ~~Case study content from Alex~~ | ~~Tabbed panel~~ | ✅ Oregon/Measure 98 content integrated — tab panel replaced with full-bleed Blueprint Panel |
 | Org name decision | All content | Find-and-replace `[PLACEHOLDER NAME]` in all `content/*.js` files |
 | Hero headline decision | Landing hero | `content/landing.js → hero.headline` |
 | Partner logos added | Landing (future) | No infrastructure yet — add when ready |

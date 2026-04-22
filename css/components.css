@@ -960,3 +960,68 @@
 .transition-falloff {
   width: 100%;
 }
+
+
+/* ── STUDENT AVATAR CLUSTER ─────────────────────────────────────── */
+.student-avatars {
+  display: flex;
+  gap: calc(var(--sp3) * -1);
+  margin-top: var(--sp2);
+}
+
+.student-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  margin-right: calc(var(--sp3) * -1);
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.student-avatar:hover { transform: translateY(-3px); z-index: 1; }
+
+
+/* ── SECTION TYPOGRAPHY UTILITIES ───────────────────────────────── */
+/* Serif framing statement that opens each section */
+.section-framing {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--color-ink);
+  max-width: 22ch;
+  margin: var(--sp5) 0 var(--sp4);
+}
+
+/* Standard body paragraph within sections */
+.section-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 65ch;
+  margin-bottom: var(--sp4);
+}
+
+/* Generic prose column */
+.section-prose p {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 65ch;
+  margin-bottom: var(--sp4);
+}
+.section-prose p:last-child { margin-bottom: 0; }
+
+.section-note {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-spec-label);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  max-width: 65ch;
+  margin-top: var(--sp3);
+}
+
+.section-brief { padding: var(--sp7) 0; }

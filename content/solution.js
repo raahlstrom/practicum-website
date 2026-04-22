@@ -22,10 +22,10 @@ export const content = {
 
   stateMap: {
     specLabel: "State Opt-In Status",
-    framing: "28 states have already committed.",
-    intro: "States opt into the program annually. The governor of each state decides each year whether to participate. As of March 2026, 28 states had opted in or signaled intent. Four had publicly opted out. Approximately 18 were still undecided, waiting for Treasury regulations expected in early summer 2026.",
+    framing: "29 states have already committed.",
+    intro: "States opt into the program annually. The governor of each state decides each year whether to participate. As of April 2026, 29 states had officially opted in. Four had publicly opted out. Approximately 17 were still undecided, waiting for Treasury regulations expected in early summer 2026.",
     note: "If a state does not opt in, its taxpayers' contributions still flow to the program — they just support SGOs in other states.",
-    dataDate: "March 2026",
+    dataDate: "April 2026",
     callout: {
       body: "The opt-in decision is annual. States that sit out 2027 can join in future years. The legislation has no end date.",
     },

@@ -80,7 +80,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.1  HOW IT WORKS — SGO definition + illustrated 5-step flow
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-how-it-works" id="section-how-it-works" aria-labelledby="how-it-works-title">
+    <section class="page-section section-how-it-works reveal-on-scroll" id="section-how-it-works" aria-labelledby="how-it-works-title">
       <div class="container">
 
         <div class="spec-header">
@@ -111,7 +111,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.2  THE ECCA — where does it come from
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-ecca" id="section-ecca" aria-labelledby="ecca-title">
+    <section class="page-section section-ecca reveal-on-scroll" id="section-ecca" aria-labelledby="ecca-title">
       <div class="container">
 
         <div class="spec-header">
@@ -138,7 +138,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.3  WHAT CAN THEY FUND — student orbit visual
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-what-can-fund" id="section-what-can-fund" aria-labelledby="wcf-title">
+    <section class="page-section section-what-can-fund reveal-on-scroll" id="section-what-can-fund" aria-labelledby="wcf-title">
       <div class="container">
 
         <div class="spec-header">
@@ -168,7 +168,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.4  ELEVEN REQUIREMENTS — 1/3 intro + 2/3 list
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-requirements" id="section-requirements" aria-labelledby="req-title">
+    <section class="page-section section-requirements reveal-on-scroll" id="section-requirements" aria-labelledby="req-title">
       <div class="container">
 
         <div class="spec-header">
@@ -197,7 +197,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.5  STATE MAP — two-column split
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-state-map" id="section-state-map" aria-labelledby="state-map-title">
+    <section class="page-section section-state-map reveal-on-scroll" id="section-state-map" aria-labelledby="state-map-title">
       <div class="container">
 
         <div class="spec-header">
@@ -295,7 +295,7 @@
     <!-- ════════════════════════════════════════════════════════════════
          §4.7  DEFINING A SCOPE — three-beat argument
          ════════════════════════════════════════════════════════════════ -->
-    <section class="page-section section-scope" id="section-scope" aria-labelledby="scope-title">
+    <section class="page-section section-scope reveal-on-scroll" id="section-scope" aria-labelledby="scope-title">
       <div class="container">
 
         <div class="spec-header">
@@ -339,14 +339,14 @@
   <footer id="site-footer"></footer>
 
   <!-- D3 + TopoJSON for state map -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
-  <script src="/js/nav.js"></script>
-  <script src="/js/parallax.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/parallax.js" defer></script>
 
   <script type="module">
-    import { renderExpandableList } from '/js/render.js';
+    import { renderExpandableList, renderFootnotesList } from '/js/render.js';
     import { initStateMap }        from '/js/components/state-map.js';
     import { content }             from '/content/solution.js?v=2';
     import { stateData }           from '/content/state-map-data.js';
@@ -402,7 +402,7 @@
       _renderCsOutcomeList(document.getElementById('pa-outcomes-list'), pa.implications.points);
       _renderCallout(document.getElementById('pa-callout'),           pa.callout);
       _renderCsClosureList(document.getElementById('pa-implications-list'), pa.implications.points);
-      _renderFootnotesList(document.getElementById('pa-footnotes'),   pa.footnotes);
+      renderFootnotesList(document.getElementById('pa-footnotes'),   pa.footnotes);
 
       // §4.7 — Defining a Scope
       const ds = content.definingScope;
@@ -413,10 +413,25 @@
         _setText('scope-position-statement',  ds.position.statement);
         _renderScopeDetails(document.getElementById('scope-position-details'), ds.position.details);
       }
-      _renderFootnotesList(document.getElementById('scope-footnotes'),      ds.footnotes);
+      renderFootnotesList(document.getElementById('scope-footnotes'),      ds.footnotes);
 
       if (window.lucide) lucide.createIcons();
+
+      _initScrollReveal();
     });
+
+    function _initScrollReveal() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+        return;
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
+    }
 
     // ── Render helpers ──────────────────────────────────────────────
 
@@ -622,10 +637,6 @@
       `;
     }
 
-    function _renderFootnotesList(el, notes) {
-      if (!el || !notes || !notes.length) return;
-      el.innerHTML = '<ol>' + notes.map(n => `<li>${n}</li>`).join('') + '</ol>';
-    }
 
     async function _renderPaStateSvg(svgEl) {
       if (!svgEl || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;

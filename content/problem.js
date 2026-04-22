@@ -11,9 +11,9 @@ export const content = {
   whyGainsAreLost: {
     specLabel: "Why Gains Are Lost",
     paragraphs: [
-      "When a student moves between schools or stages of education, the funding stays behind. The relationships stay behind. The institutional knowledge of what that student needs stays behind. What was working — a reading intervention, a trusted adult, a tutoring relationship — ends when the institution ends, regardless of where the student is in their learning.",
-      "Most education funding is tied to institutions: per-pupil allocations, categorical grants, district appropriations. These mechanisms are designed to fund buildings and systems, not individual trajectories. A student who changes schools between third and fourth grade does not carry her resources with her. The new school starts from scratch.",
-      "This is not a failure of individual teachers or administrators. It is the predictable output of a system that was designed to fund institutions, not students. The consequence — repeated academic loss at every major transition — is equally predictable.",
+      "When a student moves between schools or stages of education, the funding stays behind. <span class=\"highlight\">The relationships stay behind.</span> The institutional knowledge of what that student needs stays behind. What was working — a reading intervention, a trusted adult, a tutoring relationship — ends when the institution ends, regardless of where the student is in their learning.",
+      "Most education funding is tied to institutions: per-pupil allocations, categorical grants, district appropriations. These mechanisms are designed to fund buildings and systems, not individual trajectories. A student who changes schools between third and fourth grade <span class=\"highlight\">does not carry her resources with her.</span> The new school starts from scratch.",
+      "This is not a failure of individual teachers or administrators. It is the predictable output of a system that was designed to <span class=\"highlight\">fund institutions, not students</span>. The consequence — <span class=\"highlight\">repeated academic loss at every major transition</span> — is equally predictable.",
     ],
   },
 
@@ -58,30 +58,58 @@ export const content = {
     },
   ],
 
-  // PLACEHOLDER: Replace with real case study content from Alex
-  caseStudies: [
-    {
-      label: "Program A",
-      content: `<p><strong>What problem were they solving?</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-<p><strong>What did they do?</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<p><strong>What were the outcomes?</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-<p><strong>What made it work?</strong> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
+  oregonCaseStudy: {
+    specLabel: "§3.3 — Case Study",
+    programName: "Oregon Measure 98",
+    programSubtitle: "High School Graduation & College Readiness Fund",
+    framing: "Oregon had a graduation crisis hiding behind strong test scores — and showed what governing a transition point looks like in practice.",
+    context: "In 2015, Oregon students graduated at 68% — well below the 81.4% national average. For low-income students, the rate fell to 60.4%. But Oregon's eighth-grade reading and math scores surpassed national averages, suggesting the problem was not preparation: students were arriving to high school academically ready and falling off track between eighth grade and graduation. Stand for Children responded by passing Measure 98, creating the High School Graduation and College Readiness Fund — a statute that operationalized three governance design principles this thesis argues are essential to managing K-12 transition points.",
+    stats: {
+      label: "By the Numbers",
+      facts: [
+        { stat: "68% → 87%", label: "Graduation rate growth, 2015–2024" },
+        { stat: "~6 pts",    label: "Low-income achievement gap narrowed" },
+        { stat: "Nov. 2016", label: "Measure 98 passed by Oregon voters" },
+      ],
     },
-    {
-      label: "Program B",
-      content: `<p><strong>What problem were they solving?</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-<p><strong>What did they do?</strong> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin vel ante a orci tempus eleifend.</p>
-<p><strong>What were the outcomes?</strong> Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-<p><strong>What made it work?</strong> Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>`,
+    principles: {
+      label: "Three Design Principles in Action",
+      items: [
+        {
+          num: "01",
+          title: "Governance",
+          body: "Measure 98 assigned explicit ownership of the eighth-to-ninth grade transition. The statute defined the what (statewide graduation goals), the who (Oregon Legislature, Department of Education, State Board, districts, and the Center for High School Success), and the how (three protected funding pillars: Career and Technical Education, early college credit, and ninth-grade dropout prevention). This is governance as structure — not aspiration.",
+        },
+        {
+          num: "02",
+          title: "Accountability",
+          body: "Districts must demonstrate how funds advance the three pillars before receiving money. Ninth-grade on-track rates are the primary leading indicator; chronic absenteeism, course grades, and credits earned are tracked from eighth grade to identify at-risk students before a crisis. The Secretary of State audits outcomes — and districts that fail lose funding to qualifying peers.",
+        },
+        {
+          num: "03",
+          title: "Capacity Building",
+          body: "The Center for High School Success provided coaching, technical assistance, and a shared on-track data infrastructure. The statute required data management systems, dedicated collaboration time, and biennial planning processes designed to outlast any single funding cycle. Supports begin the summer after eighth grade — embedding a formal cross-institutional handoff between middle and high school.",
+        },
+      ],
     },
-    {
-      label: "Program C",
-      content: `<p><strong>What problem were they solving?</strong> Lorem ipsum dolor sit amet. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.</p>
-<p><strong>What did they do?</strong> Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.</p>
-<p><strong>What were the outcomes?</strong> Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
-<p><strong>What made it work?</strong> Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>`,
+    pullquote: {
+      label: "Key Takeaway",
+      body: "When a transition point is treated as a governance problem — with clear ownership, layered accountability, and sustained capacity-building — it is possible to produce significant, durable change.",
     },
-  ],
+    footnotes: [
+      "Wheelock, 2026",
+      "High School Graduation and College Readiness Act (Measure 98), 2016",
+    ],
+  },
+
+  fundingGap: {
+    headline: "Three requirements. One broken link.",
+    framing: "Oregon proved governance works — but the funding mechanism is still broken. Student success requires all three elements to connect: funding must follow the student, which makes accountability possible, which makes student success achievable.",
+    diagramCaption: "Same three requirements. Two very different chains.",
+    statBar: "Academic falloff is a documented and consistent finding across K–12 transitions. Its effects fall disproportionately on low-income students and students of color.",
+    pivot: "What if a dollar could follow a student across every transition?",
+    pivotHighlight: "follow a student",
+  },
 
   bridge: {
     paragraphs: [

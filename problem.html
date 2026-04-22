@@ -6,12 +6,10 @@
   <title>The Handoff Problem — [PLACEHOLDER NAME]</title>
   <meta name="description" content="Academic loss at K-12 transition points is not inevitable. It is structural — and it can be redesigned.">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -32,38 +30,601 @@
       <marker id="arr-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
         <polygon points="0 0, 8 3, 0 6" fill="#6B7280"/>
       </marker>
+      <marker id="arr-white" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#F7F6F2"/>
+      </marker>
     </defs>
   </svg>
 
   <a href="#main" class="skip-link">Skip to content</a>
-
   <nav id="site-nav" role="navigation" aria-label="Main navigation"></nav>
 
   <main id="main">
-    <!-- Phase 3: Problem page content built here -->
-    <!-- Section 3.1: Opening thesis -->
-    <!-- Section 3.2: Why gains are lost -->
-    <!-- Section 3.3: Three breakpoints (accordion) -->
-    <!-- Section 3.4: Case studies (tabs) — Lorem Ipsum -->
-    <!-- Section 3.5: Bridge to Solution -->
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.0  OPENING THESIS — Full-bleed Blueprint Panel
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-prob-hero"
+             id="section-prob-hero"
+             aria-labelledby="prob-hero-h1">
+      <div class="container prob-hero-container">
+
+        <div class="spec-header">
+          <span class="spec-num">§3.0</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title">The handoff problem</span>
+        </div>
+
+        <div class="prob-hero-layout">
+
+          <div class="prob-hero-text">
+            <h1 class="prob-hero-h1" id="prob-hero-h1">
+              Students don't fall behind because they stop trying.
+            </h1>
+            <p class="prob-hero-body" id="prob-hero-body"></p>
+
+            <div class="student-avatars" aria-label="Students affected by K-12 transition gaps">
+              <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row2_col4.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row1_col5.png" alt="Student" class="student-avatar">
+              <img src="/assets/avatars/avatars/avatar_row2_col2.png" alt="Student" class="student-avatar">
+            </div>
+          </div>
+
+          <div class="prob-hero-pipe">
+            <img
+              src="/assets/ChatGPT Image Apr 20, 2026, 09_18_50 PM.png"
+              alt="Without transition support, students fall out at Pre-K to kindergarten, elementary to middle school, and middle to high school."
+              class="prob-hero-pipe-img"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.1  WHY GAINS ARE LOST — falloff chart + prose
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-why-lost reveal-on-scroll"
+             id="section-why-lost"
+             aria-labelledby="why-lost-title">
+      <div class="container">
+
+        <div class="why-lost-layout">
+
+          <div class="why-lost-anchor-col">
+            <div class="spec-header">
+              <span class="spec-num">§3.1</span>
+              <span class="spec-sep">—</span>
+              <span class="spec-title" id="why-lost-title">Why gains are lost</span>
+            </div>
+            <div class="why-lost-accent-word">
+              <span class="why-lost-word">It's Structural.</span>
+            </div>
+          </div>
+
+          <div class="why-lost-prose-col">
+            <div id="why-lost-paragraphs" class="why-lost-paragraphs"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.2  THE THREE BREAKPOINTS — carousel
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-breakpoints reveal-on-scroll"
+             id="section-breakpoints"
+             aria-labelledby="breakpoints-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§3.2</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="breakpoints-title">The three breakpoints</span>
+        </div>
+
+        <div class="breakpoints-frame">
+          <span class="cs-corner cs-corner--tl" aria-hidden="true">+</span>
+          <span class="cs-corner cs-corner--tr" aria-hidden="true">+</span>
+          <span class="cs-corner cs-corner--bl" aria-hidden="true">+</span>
+          <span class="cs-corner cs-corner--br" aria-hidden="true">+</span>
+          <span class="label-tag cs-frame-tag" aria-hidden="true">Three Breakpoints</span>
+
+          <div id="breakpoints-accordion"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.3  OREGON CASE STUDY — full-bleed Blueprint Panel
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-oregon reveal-on-scroll"
+             id="section-oregon"
+             aria-labelledby="oregon-title">
+      <div class="blueprint-panel oregon-panel">
+        <div class="container">
+          <div class="or-content-box">
+
+            <!-- Zone 1: Header — text left, state shape right -->
+            <div class="or-header-zone">
+              <div class="or-header-text">
+                <div class="spec-header or-spec-row">
+                  <span class="spec-num">§3.3</span>
+                  <span class="spec-sep">—</span>
+                  <span class="spec-title">Case Study</span>
+                </div>
+                <h2 class="or-program-name" id="oregon-title">Oregon Measure 98</h2>
+                <p class="or-program-subtitle">High School Graduation &amp; College Readiness Fund</p>
+                <div class="or-title-rule" aria-hidden="true"></div>
+                <p class="or-framing" id="or-framing"></p>
+              </div>
+              <div class="or-header-visual" aria-hidden="true">
+                <div class="or-state-wrap">
+                  <svg id="oregon-state-svg" class="oregon-state-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Context paragraph -->
+            <p class="or-context" id="or-context"></p>
+
+            <!-- Zone 2: Stats -->
+            <div class="or-stats-card">
+              <p class="or-stats-heading">By the Numbers</p>
+              <div class="or-stats-grid" id="oregon-stats-grid"></div>
+            </div>
+
+            <!-- Zone 3: Design Principles -->
+            <div class="or-principles-zone">
+              <p class="or-principles-label">Three Design Principles in Action</p>
+              <div class="or-principles-list" id="oregon-principles-list" role="list"></div>
+            </div>
+
+            <!-- Zone 4: Pull quote / Key Takeaway -->
+            <div class="or-pullquote-zone">
+              <div class="or-pullquote-text">
+                <p class="or-pullquote-label">Key Takeaway</p>
+                <p class="or-quote-body" id="or-pullquote-body"></p>
+              </div>
+              <div class="or-pullquote-visual" aria-hidden="true">
+                <img src="/assets/icons/icons/row04_col10.png" alt="" class="or-pullquote-avatar">
+              </div>
+            </div>
+
+            <div class="footnotes" id="oregon-footnotes"></div>
+
+          </div><!-- .or-content-box -->
+        </div><!-- .container -->
+      </div><!-- .oregon-panel -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.4  THE FUNDING GAP — annotated comparison diagram
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-funding-gap reveal-on-scroll"
+             id="section-funding-gap"
+             aria-labelledby="funding-gap-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§3.4</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="funding-gap-title">The Funding Gap</span>
+        </div>
+
+        <h2 class="fg-section-headline" id="fg-headline"></h2>
+        <p class="fg-framing-body" id="fg-framing-text"></p>
+
+        <!-- Two-panel horizontal timeline diagram -->
+        <div class="fg-panels-container">
+
+          <!-- ═══ PANEL 1: FUNDING TO INSTITUTIONS ═══ -->
+          <div class="fg-panel fg-panel--inst">
+
+            <div class="fg-panel-header">
+              <span class="fg-panel-eyebrow fg-panel-eyebrow--inst">Model 01</span>
+              <h3 class="fg-panel-title fg-panel-title--inst">Funding to Institutions</h3>
+              <p class="fg-panel-subtitle">Money flows to institutions. Students pass through — and fall off at every transition.</p>
+            </div>
+
+            <div class="fg-flow-grid fg-flow-grid--inst">
+
+              <!-- ROW 1: FUNDING -->
+              <div class="fg-rl">FUNDING</div>
+              <div class="fg-fund-drop-cell"><span class="fg-silo-top-label">SILOED</span><div class="fg-node--inst"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-fund-drop-cell"><span class="fg-silo-top-label">SILOED</span><div class="fg-node--inst"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-fund-drop-cell"><span class="fg-silo-top-label">SILOED</span><div class="fg-node--inst"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-fund-drop-cell"><span class="fg-silo-top-label">SILOED</span><div class="fg-node--inst"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+
+              <!-- ROW 2: INSTITUTIONS -->
+              <div class="fg-rl">INSTITUTIONS</div>
+              <div class="fg-stage-cell fg-stage-cell--inst fg-stage-silo"><div class="fg-circle">PRE-K</div></div>
+              <div class="fg-limited-vis">LIMITED VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--inst fg-stage-silo"><div class="fg-circle">ELEMENTARY</div></div>
+              <div class="fg-limited-vis">LIMITED VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--inst fg-stage-silo"><div class="fg-circle">MIDDLE</div></div>
+              <div class="fg-limited-vis">LIMITED VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--inst fg-stage-silo"><div class="fg-circle">HIGH SCHOOL</div></div>
+
+              <!-- ROW 3: ACCOUNTABILITY -->
+              <div class="fg-rl">ACCOUNTABILITY</div>
+              <div class="fg-acct-silo-cell"><div class="fg-node--inst"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-acct-silo-cell"><div class="fg-node--inst"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-acct-silo-cell"><div class="fg-node--inst"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-icon" aria-hidden="true"></div></div>
+              <div></div>
+              <div class="fg-acct-silo-cell"><div class="fg-node--inst"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-icon" aria-hidden="true"></div></div>
+
+              <!-- ROW 4: STUDENTS -->
+              <div class="fg-rl">STUDENTS</div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col01.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar fg-avatar--faded">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col01.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar fg-avatar--faded">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar fg-avatar--faded">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col01.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar fg-avatar--faded">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar fg-avatar--faded">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar fg-avatar--faded">
+                </div>
+              </div>
+
+
+            </div><!-- .fg-flow-grid--inst -->
+
+            <div class="fg-panel-stat-bar">
+              <img src="/assets/icons/icons/row01_col03.png" alt="" class="fg-stat-bar-icon" aria-hidden="true">
+              <p class="fg-stat-bar-copy" id="fg-stat-bar-copy"></p>
+            </div>
+
+          </div><!-- .fg-panel--inst -->
+
+          <!-- Floating vs. label -->
+          <div class="fg-vs-float" aria-hidden="true">vs.</div>
+
+          <!-- ═══ PANEL 2: FUNDING FOLLOWS STUDENTS ═══ -->
+          <div class="fg-panel fg-panel--student">
+
+            <div class="fg-panel-header">
+              <span class="fg-panel-eyebrow fg-panel-eyebrow--student">Model 02</span>
+              <h3 class="fg-panel-title fg-panel-title--student">Funding Follows Students</h3>
+              <p class="fg-panel-subtitle">Money flows through students. Accountability flows with it.</p>
+            </div>
+
+            <div class="fg-flow-grid fg-flow-grid--student">
+
+              <!-- ROW 1: FUNDING (continuous line) -->
+              <div class="fg-rl fg-rl--green">FUNDING</div>
+              <div class="fg-fund-on-line fg-fund-on-line--first"><div class="fg-node"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div class="fg-fund-line-seg"></div>
+              <div class="fg-fund-on-line"><div class="fg-node"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div class="fg-fund-line-seg"></div>
+              <div class="fg-fund-on-line"><div class="fg-node"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+              <div class="fg-fund-line-seg"></div>
+              <div class="fg-fund-on-line fg-fund-on-line--last"><div class="fg-node"><img src="/assets/icons/icons/row03_col06.png" alt="" class="fg-dollar-icon" aria-hidden="true"></div></div>
+
+              <!-- ROW 2: INSTITUTIONS -->
+              <div class="fg-rl fg-rl--green">INSTITUTIONS</div>
+              <div class="fg-stage-cell fg-stage-cell--green"><div class="fg-circle fg-circle--green">PRE-K</div></div>
+              <div class="fg-connected-label">VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--green"><div class="fg-circle fg-circle--green">ELEMENTARY</div></div>
+              <div class="fg-connected-label">VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--green"><div class="fg-circle fg-circle--green">MIDDLE</div></div>
+              <div class="fg-connected-label">VISIBILITY</div>
+              <div class="fg-stage-cell fg-stage-cell--green"><div class="fg-circle fg-circle--green">HIGH SCHOOL</div></div>
+
+              <!-- ROW 3: ACCOUNTABILITY (continuous line) -->
+              <div class="fg-rl fg-rl--green">ACCOUNTABILITY</div>
+              <div class="fg-acct-on-line fg-acct-on-line--first"><div class="fg-node"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-shield-icon" aria-hidden="true"></div></div>
+              <div class="fg-acct-line-seg"></div>
+              <div class="fg-acct-on-line"><div class="fg-node"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-shield-icon" aria-hidden="true"></div></div>
+              <div class="fg-acct-line-seg"></div>
+              <div class="fg-acct-on-line"><div class="fg-node"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-shield-icon" aria-hidden="true"></div></div>
+              <div class="fg-acct-line-seg"></div>
+              <div class="fg-acct-on-line fg-acct-on-line--last"><div class="fg-node"><img src="/assets/icons/icons/row02_col07.png" alt="" class="fg-acct-shield-icon" aria-hidden="true"></div></div>
+
+              <!-- ROW 4: STUDENTS -->
+              <div class="fg-rl fg-rl--green">STUDENTS</div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col02.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name fg-trans-name--green">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col02.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name fg-trans-name--green">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar">
+                </div>
+              </div>
+              <div class="fg-trans-marker">
+                <img src="/assets/icons/icons/row05_col02.png" alt="" class="fg-trans-arrow-img" aria-hidden="true">
+                <span class="fg-trans-name fg-trans-name--green">TRANSITION</span>
+              </div>
+              <div class="fg-student-cell">
+                <div class="fg-student-group">
+                  <img src="/assets/avatars/avatars/avatar_row1_col1.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col2.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col3.png" alt="" class="fg-avatar">
+                  <img src="/assets/avatars/avatars/avatar_row1_col4.png" alt="" class="fg-avatar">
+                </div>
+              </div>
+
+            </div><!-- .fg-flow-grid--student -->
+
+            <div class="fg-panel-outcome">
+              <img src="/assets/icons/icons/row06_col09.png" alt="" class="fg-outcome-icon" aria-hidden="true">
+              <p class="fg-outcome-copy">When an SGO fund follows the student, every provider — at every stage — is accountable for the same child's outcomes across their entire K–12 journey. Support doesn't restart. Gains compound.</p>
+            </div>
+
+          </div><!-- .fg-panel--student -->
+
+        </div><!-- .fg-panels-container -->
+
+        <!-- Pivot question -->
+        <div class="fg-pivot-wrap">
+          <h2 class="fg-pivot-question" id="fg-pivot-question"></h2>
+        </div>
+
+      </div><!-- .container -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §3.5  BRIDGE TO SOLUTION
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-bridge reveal-on-scroll"
+             id="section-bridge"
+             aria-labelledby="bridge-title">
+      <div class="container">
+
+        <div class="bridge-layout">
+
+          <div class="bridge-icon-col" aria-hidden="true">
+            <div class="bridge-icon-bg">
+              <img src="/assets/icons/icons/row04_col11.png"
+                   alt=""
+                   class="bridge-icon">
+            </div>
+          </div>
+
+          <div class="bridge-text-col">
+            <div class="spec-header">
+              <span class="spec-num">§3.5</span>
+              <span class="spec-sep">—</span>
+              <span class="spec-title" id="bridge-title">A different design</span>
+            </div>
+            <div id="bridge-paragraphs" class="bridge-paragraphs"></div>
+            <a id="bridge-cta" href="/solution" class="bridge-cta">
+              <span id="bridge-cta-label">Learn how SGOs work →</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer id="site-footer"></footer>
 
-  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/parallax.js" defer></script>
 
-  <script src="/js/nav.js"></script>
   <script type="module">
-    import { hydrate, renderAccordion, renderTabs } from '/js/render.js';
-    import { content } from '/content/problem.js';
+    import { renderAccordion, renderFootnotesList } from '/js/render.js';
+    import { content }         from '/content/problem.js';
+
     document.addEventListener('DOMContentLoaded', () => {
-      hydrate(content);
-      const accordionEl = document.getElementById('breakpoints-accordion');
-      if (accordionEl) renderAccordion(content.breakpoints, accordionEl);
-      const tabsEl = document.getElementById('case-studies-tabs');
-      if (tabsEl) renderTabs(content.caseStudies, tabsEl);
+
+      // §3.0 — Split opening thesis: first sentence as H1, rest as body
+      const full = content.openingThesis.body;
+      const cut  = full.indexOf('. ');
+      const rest = cut !== -1 ? full.slice(cut + 2) : '';
+      _setText('prob-hero-body', rest);
+
+      // §3.1 — Why gains are lost (prose paragraphs)
+      const whyEl = document.getElementById('why-lost-paragraphs');
+      if (whyEl) {
+        whyEl.innerHTML = content.whyGainsAreLost.paragraphs
+          .map(p => `<p class="why-lost-para">${p}</p>`)
+          .join('');
+      }
+
+      // §3.2 — Three breakpoints accordion
+      const bpEl = document.getElementById('breakpoints-accordion');
+      if (bpEl) renderAccordion(content.breakpoints, bpEl);
+
+      // §3.3 — Oregon case study
+      const or = content.oregonCaseStudy;
+      _setText('or-framing',       or.framing);
+      _setText('or-context',       or.context);
+      _setText('or-pullquote-body', or.pullquote.body);
+      _renderOrStats(document.getElementById('oregon-stats-grid'),        or.stats.facts);
+      _renderOrPrinciples(document.getElementById('oregon-principles-list'), or.principles.items);
+      renderFootnotesList(document.getElementById('oregon-footnotes'),   or.footnotes);
+      _renderOregonStateSvg(document.getElementById('oregon-state-svg'));
+
+      // §3.4 — Funding Gap
+      const fg = content.fundingGap;
+      _setText('fg-headline', fg.headline);
+      _setText('fg-framing-text', fg.framing);
+      _setText('fg-stat-bar-copy', fg.statBar);
+      const pivotEl = document.getElementById('fg-pivot-question');
+      if (pivotEl && fg.pivot && fg.pivotHighlight) {
+        const idx   = fg.pivot.indexOf(fg.pivotHighlight);
+        const before = fg.pivot.slice(0, idx);
+        const after  = fg.pivot.slice(idx + fg.pivotHighlight.length);
+        pivotEl.innerHTML = `${before}<span class="fg-hl-wrap"><span class="fg-hl-text">${fg.pivotHighlight}</span><img src="/assets/icons/icons/row07_col13.png" alt="" class="fg-hl-underline" aria-hidden="true"></span>${after}`;
+      }
+
+      // §3.5 — Bridge paragraphs + CTA
+      const bridgeEl = document.getElementById('bridge-paragraphs');
+      if (bridgeEl) {
+        bridgeEl.innerHTML = content.bridge.paragraphs
+          .map(p => `<p class="bridge-para">${p}</p>`)
+          .join('');
+      }
+      const ctaEl = document.getElementById('bridge-cta');
+      if (ctaEl) {
+        ctaEl.href = content.bridge.linkHref;
+        const labelEl = document.getElementById('bridge-cta-label');
+        if (labelEl) labelEl.textContent = content.bridge.linkLabel;
+      }
+
+      // Scroll reveal
+      _initScrollReveal();
+
       if (window.lucide) lucide.createIcons();
     });
+
+    function _setText(id, text) {
+      const el = document.getElementById(id);
+      if (el && text) el.textContent = text;
+    }
+
+    function _renderOrStats(el, facts) {
+      if (!el || !facts) return;
+      const icons = [
+        '/assets/icons/icons/row01_col07.png', // graduation-cap-circle
+        '/assets/icons/icons/row04_col06.png', // group-circle
+        '/assets/icons/icons/row06_col09.png', // shield-verified
+      ];
+      el.innerHTML = facts.map((f, i) => `
+        <div class="cs-stat-col">
+          <div class="cs-stat-icon-bg">
+            <img src="${icons[i] || icons[0]}" alt="" class="cs-stat-icon">
+          </div>
+          <div class="cs-stat-number">${f.stat}</div>
+          <p class="cs-stat-label">${f.label}</p>
+        </div>
+      `).join('');
+    }
+
+    function _renderOrPrinciples(el, items) {
+      if (!el || !items) return;
+      el.innerHTML = items.map(item => `
+        <div class="or-principle-row" role="listitem">
+          <span class="or-principle-num">${item.num}</span>
+          <div class="or-principle-body">
+            <p class="or-principle-title">${item.title}</p>
+            <p class="or-principle-desc">${item.body}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function _renderOregonStateSvg(svgEl) {
+      if (!svgEl || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
+      try {
+        const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+        const states = topojson.feature(us, us.objects.states);
+        const oregon = states.features.find(f => f.id === '41');
+        if (!oregon) return;
+
+        const W = svgEl.clientWidth || 240;
+        const H = Math.round(W * 0.72);
+
+        svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        svgEl.setAttribute('width', W);
+        svgEl.setAttribute('height', H);
+
+        const projection = d3.geoMercator().fitSize([W, H], oregon);
+        const pathGen = d3.geoPath(projection);
+
+        const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathEl.setAttribute('d', pathGen(oregon));
+        pathEl.setAttribute('fill', 'rgba(95,175,143,0.45)');
+        pathEl.setAttribute('stroke', 'rgba(95,175,143,0.8)');
+        pathEl.setAttribute('stroke-width', '1.5');
+        pathEl.setAttribute('filter', 'url(#hand-drawn)');
+
+        svgEl.innerHTML = '';
+        svgEl.appendChild(pathEl);
+      } catch (e) { /* SVG stays empty if fetch fails */ }
+    }
+
+    function _initScrollReveal() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+        return;
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
+    }
   </script>
+
 </body>
 </html>

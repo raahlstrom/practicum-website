@@ -4,53 +4,8 @@
 
 
 /* ── SECTION RHYTHM ──────────────────────────────────────────────── */
-.page-section {
-  padding: var(--sp9) 0;
-}
-
-.section-brief { padding: var(--sp7) 0; }
-
-/* Serif framing statement that opens each section */
-.section-framing {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-h2);
-  line-height: 1.15;
-  letter-spacing: 0;
-  color: var(--color-ink);
-  max-width: 22ch;
-  margin: var(--sp5) 0 var(--sp4);
-}
-
-/* Standard body paragraph within sections */
-.section-body {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  color: var(--color-ink);
-  max-width: 65ch;
-  margin-bottom: var(--sp4);
-}
-
-/* Generic prose column */
-.section-prose p {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  color: var(--color-ink);
-  max-width: 65ch;
-  margin-bottom: var(--sp4);
-}
-.section-prose p:last-child { margin-bottom: 0; }
-
-.section-note {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-style: italic;
-  color: var(--color-ink-muted);
-  max-width: 65ch;
-  margin-top: var(--sp3);
-}
+/* .page-section, .section-brief, .section-framing, .section-body,
+   .section-prose, .section-note all live in components.css         */
 
 /* ── §4.0 SGO INTRO — pipe image section ────────────────────────── */
 
@@ -82,23 +37,7 @@
 .sgo-intro-text .section-framing { margin-top: var(--sp4); }
 .sgo-intro-text .section-body { margin-bottom: var(--sp5); max-width: 52ch; }
 
-/* Student avatar cluster — 4 diverse portraits in a horizontal row */
-.student-avatars {
-  display: flex;
-  gap: calc(var(--sp3) * -1);
-  margin-top: var(--sp2);
-}
-
-.student-avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  mix-blend-mode: multiply;
-  margin-right: calc(var(--sp3) * -1);
-  position: relative;
-  transition: transform 0.15s ease;
-}
-.student-avatar:hover { transform: translateY(-3px); z-index: 1; }
+/* .student-avatars and .student-avatar live in components.css */
 
 /* Pipe illustration — white BG image on paper background */
 .sgo-visual {
@@ -114,10 +53,7 @@
 }
 
 
-/* ── §4.1 ECCA — paper background, two-column ───────────────────── */
-.section-ecca {
-  padding: var(--sp9) 0;
-}
+/* ── §4.1 ECCA — padding inherited from .page-section ───────────── */
 
 .ecca-split {
   display: grid;
@@ -163,7 +99,7 @@
 .ecca-stats {
   display: flex;
   flex-direction: column;
-  border: 1.5px solid var(--color-ink);
+  border: var(--stroke-secondary) solid var(--color-ink);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
@@ -270,7 +206,7 @@
 .sgo-flow {
   display: flex;
   align-items: flex-start;
-  border-top: 1.5px solid var(--color-ink);
+  border-top: var(--stroke-secondary) solid var(--color-ink);
   padding-top: var(--sp6);
   margin-bottom: var(--sp6);
   gap: 0;
@@ -297,10 +233,7 @@
   display: flex;
   align-items: flex-start;
   padding-top: 20px; /* vertically aligns with icon center */
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
-.sgo-flow-arrow.visible { opacity: 1; }
 .sgo-flow-arrow img {
   width: 36px;
   height: auto;
@@ -596,7 +529,7 @@
   max-width: 26ch;
   margin: var(--sp6) 0 0;
   padding-bottom: var(--sp7);
-  border-bottom: 1.5px solid var(--color-ink);
+  border-bottom: var(--stroke-secondary) solid var(--color-ink);
 }
 
 /* Beat 2 — Prose + pull quote */
@@ -984,7 +917,7 @@
   letter-spacing: -0.01em;
   margin: 0 0 var(--sp3);
   padding-bottom: var(--sp3);
-  border-bottom: 1.5px solid var(--color-green);
+  border-bottom: var(--stroke-secondary) solid var(--color-green);
 }
 
 .cs-outcomes-subtext {
@@ -1156,4 +1089,38 @@
   }
   .ecca-stat:last-child { border-bottom: none; }
   .ecca-stat-number { font-size: var(--font-size-h2); }
+
+  /* Case study: tighter padding on mobile */
+  .cs-content-box {
+    padding: var(--sp5);
+  }
+
+  /* Stats grid: stack to single column */
+  .cs-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .cs-stat-col {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: var(--sp4);
+    padding: var(--sp4) 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .cs-stat-col:first-child { padding-left: 0; }
+  .cs-stat-col:last-child {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  .cs-stat-icon-bg { flex-shrink: 0; }
+  .cs-stat-number { margin-bottom: var(--sp1); }
+  .cs-stat-label { margin: 0; max-width: none; }
+
+  /* Pull-quote: tighter padding */
+  .cs-pullquote-zone {
+    padding: var(--sp5);
+  }
 }

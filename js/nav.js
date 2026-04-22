@@ -3,7 +3,7 @@
 const NAV_LINKS = [
   { label: 'About',       href: '/about'     },
   { label: 'The Problem', href: '/problem'   },
-  { label: 'Solution',    href: '/solution'  },
+  { label: 'The Solution', href: '/solution'  },
   { label: 'Resources',   href: '/resources' },
   { label: 'Get in Touch', href: '/contact'  },
 ];

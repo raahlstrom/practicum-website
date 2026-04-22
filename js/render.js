@@ -257,3 +257,14 @@ export function renderCallout(data) {
     </div>
   `;
 }
+
+
+/* ── FOOTNOTES LIST ─────────────────────────────────────────────
+   Renders an <ol> of footnote strings.
+   el: DOM element to render into
+   notes: string[]
+*/
+export function renderFootnotesList(el, notes) {
+  if (!el || !notes || !notes.length) return;
+  el.innerHTML = '<ol>' + notes.map(n => `<li>${n}</li>`).join('') + '</ol>';
+}

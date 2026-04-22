@@ -9,3 +9,4 @@ node_modules/
 
 # Playwright MCP session data
 .playwright-mcp/
+_screenshots/
