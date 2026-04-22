@@ -1,4 +1,297 @@
-/* css/pages/about.css — Page-specific styles for about.html
-   Phase build: add layout rules here as the page is constructed.
-   Keep all component-level styles in ../components.css.
+/* css/pages/about.css — About page layout
+   Component-level styles live in ../components.css.
 */
+
+
+/* ── §2.1 MISSION & VISION ───────────────────────────────────────── */
+
+.section-mission { padding: 0; }
+
+.mission-panel {
+  padding: var(--sp10) 0 var(--sp9);
+  border-radius: 0;
+}
+
+.mission-inner {
+  max-width: 860px;
+}
+
+.mission-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.6vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-paper);
+  margin: var(--sp7) 0 var(--sp8);
+}
+
+.vision-block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp5);
+  background: rgba(247, 246, 242, 0.06);
+  border: 1px solid rgba(247, 246, 242, 0.16);
+  border-left: 3px solid var(--color-yellow);
+  padding: var(--sp5) var(--sp6);
+}
+
+.vision-text-wrap { flex: 1; }
+
+.vision-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: var(--sp2);
+}
+
+.vision-text {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-style: italic;
+  line-height: 1.55;
+  color: rgba(247, 246, 242, 0.92);
+  margin: 0;
+}
+
+
+/* ── §2.2 WE BELIEVE ─────────────────────────────────────────────── */
+
+.section-believe {
+  padding: var(--sp10) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.believe-layout {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 0;
+  align-items: start;
+}
+
+.believe-col--left {
+  padding-right: var(--sp8);
+  border-right: 1px solid var(--color-rule);
+}
+
+.believe-col--right {
+  padding-left: var(--sp7);
+}
+
+.believe-para {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--sp5);
+}
+
+.believe-para:last-child { margin-bottom: 0; }
+
+.believe-para--lg {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: var(--sp7);
+}
+
+.believe-hl {
+  background: var(--color-yellow);
+  padding: 1px 4px;
+  border-radius: 1px;
+}
+
+.believe-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--color-green);
+  margin: 0 0 var(--sp6);
+}
+
+.believe-annotation {
+  margin: var(--sp3) 0 var(--sp6);
+}
+
+
+/* ── §2.3 WHO WE ARE ─────────────────────────────────────────────── */
+
+.section-who-we-are {
+  padding: var(--sp10) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.wwa-intro {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 64ch;
+  margin-bottom: var(--sp7);
+}
+
+.wwa-mandates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp6);
+  margin-bottom: var(--sp7);
+}
+
+.mandate-card-icon-bg {
+  width: 44px;
+  height: 44px;
+  background: var(--color-paper);
+  border: 1.5px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp4);
+}
+
+.mandate-card-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.mandate-card-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.wwa-closing {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink-muted);
+  font-style: italic;
+  max-width: 68ch;
+  padding-left: var(--sp5);
+  border-left: 2px solid var(--color-rule);
+}
+
+
+/* ── §2.4 OUR MODEL ──────────────────────────────────────────────── */
+
+.section-our-model { padding: var(--sp10) 0; }
+
+.model-intro {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  max-width: 64ch;
+  margin-bottom: var(--sp6);
+}
+
+.model-problems {
+  border-top: 1px solid var(--color-rule);
+  margin-bottom: var(--sp9);
+  max-width: 760px;
+}
+
+.model-problem-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: var(--sp4);
+  align-items: baseline;
+  padding: var(--sp4) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.model-problem-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-green);
+  letter-spacing: 0.06em;
+}
+
+.model-problem-text {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.model-body {
+  max-width: 68ch;
+  margin-bottom: var(--sp8);
+}
+
+.model-body p {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--sp5);
+}
+
+.model-body p:last-child { margin-bottom: 0; }
+
+.model-lm-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--sp4);
+  padding-bottom: var(--sp3);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.model-lm-subtext {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-caption);
+  color: var(--color-ink-muted);
+  margin-bottom: var(--sp6);
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .believe-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .believe-col--left {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: var(--sp7);
+    margin-bottom: var(--sp7);
+  }
+
+  .believe-col--right {
+    padding-left: 0;
+  }
+
+  .wwa-mandates {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mission-statement {
+    font-size: 24px;
+    margin-top: var(--sp6);
+  }
+
+  .vision-block {
+    flex-direction: column;
+    gap: var(--sp3);
+  }
+
+  .model-problem-item {
+    grid-template-columns: 44px 1fr;
+  }
+}

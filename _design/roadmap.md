@@ -89,38 +89,37 @@ This is the living build plan. Update status, notes, and blocking items as work 
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 3.1 | Populate `content/problem.js` | ✅ | Complete: opening thesis, why-gains-lost, 3 breakpoints with citations, bridge. |
+| 3.1 | Populate `content/problem.js` | ✅ | Complete: opening thesis, why-gains-lost, 3 breakpoints with citations, bridge, fundingGap. |
 | 3.2 | Build page layout + section structure | ✅ | 5 sections built; light green hero, clean paper body background |
-| 3.3 | §3.0 Opening thesis | ✅ | Light green tinted hero (rgba(95,175,143,0.06)) matching solution page §4.0 treatment; students-group icon; 3 student avatars |
-| 3.4 | §3.1 Why Gains Are Lost | ✅ | Leaky pipe image left (ChatGPT Image…09_18_50 PM.png); "Structural." serif accent + yellow underline right; 3 paragraphs |
-| 3.5 | §3.2 Three Breakpoints — carousel | ✅ | Custom CSS/JS carousel (replaced accordion per user decision); slide per breakpoint; counter, dot nav, prev/next, swipe support; stat callout + footnotes per slide |
-| 3.6 | §3.3 Oregon Case Study — full-bleed Blueprint Panel | 🔄 | **Redesigning**: replacing Lorem Ipsum tab panel with standalone full-bleed Blueprint Panel (same visual treatment as §4.6 on solution.html). Oregon/Measure 98 content from Alex. See architecture.md for section spec. |
-| 3.7 | §3.4 Bridge to Solution | ✅ | Journey-to-goal icon; two bridge paragraphs; CTA button |
-| 3.8 | Transition falloff visual | 🚫 | **Not used** — replaced by leaky pipe image per user decision |
-| 3.9 | Mobile responsive pass | ✅ | fg-panels horizontally scrollable at 375px; zero page overflow; pivot section clean |
-| 3.10 | Quality checklist | ✅ | Passed as part of site-wide audit (2026-04-22) |
+| 3.3 | §3.0 Opening thesis | ✅ | Light green tinted hero; 4 student avatars |
+| 3.4 | §3.1 Why Gains Are Lost | ✅ | Leaky pipe image left; "Structural." serif accent + yellow underline right; 3 paragraphs |
+| 3.5 | §3.2 Three Breakpoints — accordion | ✅ | Custom CSS/JS accordion; stat callout + footnotes per panel |
+| 3.6 | §3.3 Oregon Case Study — full-bleed Blueprint Panel | ✅ | Full-bleed Blueprint Panel; header zone with state SVG; stats; 3 design principles; pull quote; footnotes |
+| 3.7 | §3.4 The Funding Gap — two-panel comparison diagram | ✅ | Blueprint × Field Notes horizontal timeline; 2 stacked panels (Institutional vs Student-centered); avatar falloff; continuous funding/accountability lines; pivot pull quote |
+| 3.8 | §3.5 Bridge to Solution | ✅ | Journey-to-goal icon; two bridge paragraphs; CTA button |
+| 3.9 | Transition falloff visual | 🚫 | **Not used** — replaced by leaky pipe image per user decision |
+| 3.10 | Mobile responsive pass | ✅ | fg-panels horizontally scrollable at 375px; zero page overflow |
+| 3.11 | Quality checklist | ✅ | Passed as part of site-wide audit (2026-04-22) |
 
-**Phase 3 deliverable:** `/problem` complete.
-
-**Oregon case study:** Real content provided by Alex (Measure 98, Oregon 2016). Replaces Lorem Ipsum tab panel with full-bleed Blueprint Panel treatment. Content in `content/problem.js → oregonCaseStudy`.
+**Phase 3 deliverable:** `/problem` ✅ complete.
 
 ---
 
 ## Phase 4 — About Page (`about.html`)
-*Content complete and final. Layout approach decided during build.*
+*Content complete and final. Single-scroll layout.*
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 4.1 | Populate `content/about.js` | ⬜ | All final copy: §2.1–2.4 |
-| 4.2 | Decide layout approach | ⬜ | Single scroll vs. internal anchor-nav; decide based on what best serves the content volume and visual engagement |
-| 4.3 | §2.1 Mission & Vision | ⬜ | Large serif opener; vision as pull quote or highlight |
-| 4.4 | §2.2 We Believe | ⬜ | Five paragraphs — design carefully to prevent word wall. Consider: large first paragraph, yellow highlights, margin annotations, mid-section visual break |
-| 4.5 | §2.3 Who We Are | ⬜ | Two mandate blocks as visual elements (Spec Cards or similar); closing paragraph |
-| 4.6 | §2.4 Our Model | ⬜ | Intro + three-problem list + logic model diagram; wire `logic-model.js` |
-| 4.7 | Mobile responsive pass | ⬜ | |
-| 4.8 | Quality checklist | ⬜ | |
+| 4.1 | Populate `content/about.js` | ✅ | All final copy: mission, vision, weBelieve (5 paras), whoWeAre (2 mandates + closing), ourModel (problems + body + logic model levels) |
+| 4.2 | Decide layout approach | ✅ | Single scroll, varied section rhythms: Blueprint Panel hero, two-col beliefs, spec cards for mandates, logic model diagram |
+| 4.3 | §2.1 Mission & Vision | ✅ | Blueprint Panel opener; large serif mission (hydrated via data-content); vision as yellow-accent pull quote block inside panel |
+| 4.4 | §2.2 We Believe | ✅ | Two-col layout (5fr/4fr); first para body-lg; yellow `.believe-hl` on "most schools are not yet prepared to use it"; margin-note annotation on para 3; right col has annotated para 3 + para 4 |
+| 4.5 | §2.3 Who We Are | ✅ | Intro prose; two mandate Spec Cards (label-tag--green "First"/"Second", icon PNG, body); italic closing para with left-border rule |
+| 4.6 | §2.4 Our Model | ✅ | Intro + three-problem list (mono numeral + body, ruled); two body paras; logicModelIntro label; logic model diagram wired (levels adapted from body string → items array) |
+| 4.7 | Mobile responsive pass | ✅ | believe-layout collapses to 1-col at 900px; wwa-mandates collapses to 1-col at 900px; mission text smaller at 600px |
+| 4.8 | Quality checklist | ⬜ | Run before marking complete |
 
-**Phase 4 deliverable:** `/about` complete.
+**Phase 4 deliverable:** `/about` ✅ complete (quality checklist pending).
 
 ---
 

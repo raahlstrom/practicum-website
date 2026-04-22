@@ -1,6 +1,6 @@
 # Site Architecture
 **Practicum Website — Blueprint × Field Notes Design System**
-**Last updated:** 2026-04-20
+**Last updated:** 2026-04-21
 
 This document describes, in plain language, exactly what will be built for every page, section, and component on the site. It is the implementation contract — if the design brief says *what* the content is, this doc says *what is actually built*. Update this document as decisions are made and as build progresses.
 
@@ -260,19 +260,34 @@ Make the pipeline problem visceral and structural. Reader leaves thinking: this 
 
 ---
 
-### Section 4 — Case Studies
-**What's built:**
-- Blueprint Panel candidate — case studies are a high-value use of the panel
-- Spec header: "What Works" or similar
-- Tabbed panel (`js/components/tabs.js`):
-  - Multiple programs switchable without scrolling
-  - Tab labels: program names
-  - Tab content: what problem, what they did, what happened, what made it work
-  - Keyboard accessible
-- **Content status: Lorem Ipsum until Alex provides case study content**
-- Tab panel framing copy: brief intro explaining what the reader is looking at
+### Section 4 — Case Study: Oregon Measure 98
+**Visual treatment:** Full-bleed Blueprint Panel (no container wrapper), matching the PA case study treatment in `solution.html §4.6`. Paper content box inside panel. Parallax grid via `background-attachment: fixed`.
 
-**Content source:** `content/problem.js → caseStudies` (array of case study objects)
+**What's built:**
+- `<section class="page-section section-oregon">` — `padding: 0` so panel is full-bleed
+- `<div class="blueprint-panel oregon-panel">` full width, then `<div class="container">` inside, then `<div class="or-content-box">` (paper bg)
+- **Zone 1 — Header (2/3 / 1/3 grid):**
+  - Left 2/3: spec header (§3.3 — Case Study), program name "Oregon Measure 98", program subtitle, framing sentence
+  - Right 1/3: Oregon state SVG shape via D3+TopoJSON (FIPS `'41'`), green fill + stroke, opaque on blue
+- **Context paragraph:** Brief plain-language framing of the problem Oregon faced
+- **Zone 2 — By the Numbers (3 stat blocks):**
+  - `68% → 87%` — graduation rate growth (2015–2024), icon: `row01_col07.png` (graduation-cap-circle)
+  - `~6 pts` — low-income gap narrowing, icon: `row04_col06.png` (group-circle)
+  - `Nov. 2016` — Measure 98 passed, icon: `row06_col09.png` (shield-verified)
+- **Zone 3 — Three Design Principles (numbered list):**
+  - Large green serif numeral (01/02/03) + mono uppercase title + body paragraph
+  - 01 Governance, 02 Accountability, 03 Capacity Building
+- **Zone 4 — Pull quote / Key Takeaway:**
+  - Grey-tinted box (rgba(31,31,31,0.04)), 1px ink border
+  - Left: `row04_col10.png` (student-thriving) at 180px, mix-blend-mode: multiply
+  - Right: mono "KEY TAKEAWAY" label + blockquote serif text
+- Footnotes at bottom of content box
+
+**Rejected tab structure:** The original Lorem Ipsum tabbed panel (`renderTabs`) is removed. If additional case studies are added in a future update, a tab layer can be wrapped around the panel.
+
+**Content source:** `content/problem.js → oregonCaseStudy` (structured object; `caseStudies` array deprecated)
+
+**Dependencies:** D3 v7 + TopoJSON v3 + us-atlas (same scripts as solution.html §4.5)
 
 ---
 
@@ -291,122 +306,110 @@ Make the pipeline problem visceral and structural. Reader leaves thinking: this 
 ### Purpose
 Get someone fully up to speed on the SGO mechanism. A skeptic arrives; a capable practitioner leaves.
 
-### Section 1 — Opening: ECCA
-**What's built:**
-- Blueprint Panel (confirmed — see `handoff-readme.md` §Project-Specific Decisions)
-- Inside panel: spec header + two paragraphs from `design-brief.md` §4.1
-- Key numbers (20–40B, Title I at 18B, $1,700) should stand out — potentially as annotated callouts or set in larger type within the panel
+**Build status:** Sections §4.0–4.7 complete. Mobile responsive pass and quality checklist still needed.
 
-**Content source:** `content/solution.js → opening`
+**Section structure (as built — differs from original plan):**
 
 ---
 
-### Section 2 — State Map
+### §4.0 — What's the Solution? (SGO Intro)
 **What's built:**
-- Spec header: "State Opt-In Status" in mono
-- Intro copy + IMPORTANT TO KNOW callout (annual opt-in)
-- SVG U.S. state map (`js/components/state-map.js`):
-  - Color-coded by status: opted-in (green), opted-out (ink/muted), undecided (paper/neutral)
-  - Hover or tap: tooltip showing state name + status
-  - "As of March 2026" label; note that map will be updated
-  - Data from `content/state-map-data.js`
-- Brief legend below map
+- Spec header: §4.0 — What's the solution?
+- Two-column split: large serif H2 framing statement left; SGO definition label + sentence + 4 student avatar PNGs + pipe image right
+- Framing: "An SGO keeps students in the pipe."
 
-**Content source:** `content/solution.js → stateMap`, `content/state-map-data.js`
+**Content source:** `content/solution.js → fundingStream.bigStatement`, `fundingStream.definition`
 
 ---
 
-### Section 3 — How It Works: The Funding Stream
+### §4.1 — How Does It Work? (5-Step Flow)
 **What's built:**
-- Spec header: "How It Works" in mono
-- 5-step flow diagram (`js/components/flow-diagram.js`):
-  - SVG, left-to-right: TAXPAYER → SGO RECEIVES → STUDENTS IDENTIFIED → SCHOLARSHIPS AWARDED → SERVICES DELIVERED
-  - Matches canonical fund flow pattern from `handoff-readme.md` (Diagram Node components, flow arrows)
-  - Scroll-triggered build animation via IntersectionObserver: nodes fade/slide in, arrows draw via stroke-dashoffset, stagger 150ms per element
-  - `prefers-reduced-motion`: instant appearance, no animation
-  - 2 margin annotations above/below the diagram
-- Below diagram: five step-description blocks (one per step), each with the step number in mono, a title, and the full explanation paragraph
-- Footnote citations at section bottom
+- Spec header: §4.1 — How does it work?
+- Two-column definition block: large "big statement" serif left, "What is an SGO" label + definition text right
+- CSS-native 5-step illustrated flow (not SVG): each step has an icon PNG (mix-blend-mode: multiply), step number in mono, title, one-sentence body
+- Green arrow PNG (`row05_col02.png`) between each step
+- Scroll-triggered stagger animation (IntersectionObserver, 120ms stagger)
+- Footnote citations below
 
 **Content source:** `content/solution.js → fundingStream`
 
 ---
 
-### Section 4 — The Eleven Requirements
+### §4.2 — What Created This Program? (The ECCA)
 **What's built:**
-- Spec header: "The Eleven Requirements" in mono
-- Intro copy: one paragraph
-- Expandable list (`js/components/requirements-list.js`):
-  - All 11 requirements visible in collapsed state without scrolling (tight collapsed height per item — title + one-sentence summary)
-  - Click/Enter to expand inline; reveals full explanation
-  - Items expand independently
-  - Item numbering in green mono (Req 01, Req 02, etc.)
-  - IMPORTANT TO KNOW callout for Requirement 6 (90/10 rule) appears inline after that item expands
+- Spec header: §4.2 — What created this program?
+- Eyebrow: "One Big Beautiful Bill Act · July 2025" in mono
+- Split-layout: serif framing H2 + two body paragraphs + sidenote left; three stat blocks ($1,700 / $20–40B / Jan 2027) right
+- Stats rendered as large mono numbers with descriptive labels
 
-**Content source:** `content/solution.js → requirements` (array of 11 requirement objects)
+**Content source:** `content/solution.js → opening`
 
 ---
 
-### Section 5 — Who Can Become an SGO
+### §4.3 — What Can They Fund? (Orbit Visual)
 **What's built:**
-- Spec header: "Who Can Participate" in mono
-- Intro copy: one paragraph
-- Five organizational type blocks — displayed as a structured visual (Spec Cards or annotated list), not a plain `<ul>`:
-  - Existing state scholarship organizations
-  - Community foundations
-  - District-affiliated education foundations
-  - Community-based organizations (Boys & Girls Clubs, YMCAs, etc.)
-  - Public schools (through affiliated foundations)
-- Two IMPORTANT TO KNOW callouts: Direct Operation vs. Partnership, and Relational vs. Transactional
+- Spec header: §4.3 — What can they fund?
+- Two-column: prose + IMPORTANT TO KNOW callout left; student orbit visual right
+- Orbit: student icon PNG at center, 6 expense-category icon PNGs radiating on a circle with dashed green connector lines (SVG)
+- Items animate in on scroll (IntersectionObserver, staggered)
 
-**Content source:** `content/solution.js → whoCanParticipate`
+**Content source:** `content/solution.js → whatCanFund`
 
 ---
 
-### Section 6 — Defining a Scope
+### §4.4 — What Does an SGO Require? (Eleven Requirements)
 **What's built:**
-- Spec header: "Defining a Scope" in mono
-- Three paragraphs of copy
-- Footnote at section bottom
-- This section should feel analytical and slightly prescriptive — it's the org's model coming through
+- Spec header: §4.4 — What does an SGO require?
+- One-third / two-thirds layout: framing H3 + intro copy + shield icon plaque left; expandable list right
+- Expandable list: all 11 requirements visible collapsed; click/Enter expands; IMPORTANT TO KNOW inline after Req 06
 
-**Content source:** `content/solution.js → definingScope`
+**Content source:** `content/solution.js → requirements` (array of 11)
 
 ---
 
-### Section 7 — Pennsylvania Case Study
+### §4.5 — Which States Are In? (State Map)
 **What's built:**
-- Blueprint Panel (confirmed — see `handoff-readme.md` §Project-Specific Decisions)
-- Inside panel: spec header + Pennsylvania program data as a structured visual (bullet points displayed as spec items, not a plain list)
-- Two "lessons" pulled out visually
-- IMPORTANT TO KNOW callout (political contributions) inside or immediately after the panel
-- Footnote at section bottom
+- Spec header: §4.5 — Which states are in?
+- Split-layout: framing + intro + IMPORTANT TO KNOW callout + margin note + date label left; D3 state map right
+- D3 v7 + TopoJSON v3 map, color-coded by status; tooltip on hover/tap
+- Legend at map bottom
+
+**Content source:** `content/solution.js → stateMap`, `content/state-map-data.js`
+
+---
+
+### §4.6 — Case Study: Pennsylvania (Blueprint Panel)
+**What's built:**
+- Contained Blueprint Panel inside `.case-study-frame` with floating corner marks and label tag
+- Two-line header: mono spec row + serif program title
+- Framing statement + narrative paragraph (paper-colored on blue)
+- Two paper cards side-by-side: Outcomes (stat blocks) + Implications (margin-note points); each with a decorative swash icon
+- IMPORTANT TO KNOW callout (political contributions) inside panel
+- Circled takeaway: circle PNG (`row07_col21.png`) with overlaid text
+- Footnote inside panel
 
 **Content source:** `content/solution.js → pennsylvania`
 
 ---
 
-### Section 8 — State-Level Decisions (Brief)
+### §4.7 — How Should We Define Our Scope? (Three-Beat Argument)
 **What's built:**
-- Small section — a quick blurb, not a deep dive
-- Spec header: "State-Level Decisions" in mono
-- Two short paragraphs
-- No diagram or visual component needed
+- Spec header: §4.7 — How should we define our scope?
+- **Beat 1:** Full-width serif framing H2 with ink bottom border ("The law defines what an SGO must do...")
+- **Beat 2:** Two-column layout — three prose paragraphs left; journey-to-goal icon (`row04_col11.png`) + italic pull quote right
+- **Beat 3:** Contained Blueprint Panel: flag icon (`row06_col07.png`) in paper-bg wrapper + serif position statement + three `→`-prefixed detail lines
+- Footnote below panel
 
-**Content source:** `content/solution.js → stateLevelDecisions`
+**Content source:** `content/solution.js → definingScope`
 
 ---
 
-### Section 9 — What's Still Being Decided (Brief)
-**What's built:**
-- Spec header: "Open Questions" in mono
-- Five-item structured list of pending regulatory questions
-- A note: "This section will be updated when Treasury guidance releases (expected early summer 2026)"
-- Visually modest — not a call-to-action, just information
+### Removed Sections (data preserved in content/solution.js)
+- **Who Can Participate** (`whoCanParticipate`) — removed per user decision
+- **State-Level Decisions** (`stateLevelDecisions`) — removed per user decision
+- **Open Questions** (`openQuestions`) — removed per user decision; note that this section will need updating when Treasury guidance releases (early summer 2026)
 
-**Content source:** `content/solution.js → openQuestions`
-
-**Update flag:** Multiple items in this section depend on Treasury regulations expected early summer 2026. When guidance releases, update: `content/solution.js` §openQuestions, §requirements (Requirement 6 and 7), and `design-brief.md` §13 open items.
+**Update flag:** When Treasury guidance releases, update `content/solution.js` requirements items 6 and 7, and the openQuestions object (even if openQuestions section is not currently displayed — it may be re-added later).
 
 ---
 

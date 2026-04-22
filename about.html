@@ -6,12 +6,10 @@
   <title>About Us — [PLACEHOLDER NAME]</title>
   <meta name="description" content="Our mission, beliefs, and model for helping educators launch high-impact Scholarship Granting Organizations.">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -36,33 +34,224 @@
   </svg>
 
   <a href="#main" class="skip-link">Skip to content</a>
-
   <nav id="site-nav" role="navigation" aria-label="Main navigation"></nav>
 
   <main id="main">
-    <!-- Phase 4: About page content built here -->
-    <!-- Section 2.1: Mission & Vision -->
-    <!-- Section 2.2: We Believe -->
-    <!-- Section 2.3: Who We Are -->
-    <!-- Section 2.4: Our Model + Logic model diagram -->
+
+    <!-- ════════════════════════════════════════════════════════════
+         §2.1  MISSION & VISION — Full-bleed Blueprint Panel
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-mission"
+             id="section-mission"
+             aria-labelledby="mission-h1">
+      <div class="blueprint-panel mission-panel">
+        <div class="container">
+          <div class="mission-inner">
+
+            <div class="spec-header">
+              <span class="spec-num">§2.1</span>
+              <span class="spec-sep">—</span>
+              <span class="spec-title">Mission &amp; Vision</span>
+            </div>
+
+            <h1 class="mission-statement" id="mission-h1" data-content="mission.statement"></h1>
+
+            <div class="vision-block">
+              <div class="vision-text-wrap">
+                <span class="vision-label">Vision</span>
+                <p class="vision-text" data-content="vision.statement"></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §2.2  WE BELIEVE — Two-column editorial layout
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-believe reveal-on-scroll"
+             id="section-believe"
+             aria-labelledby="believe-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§2.2</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="believe-title">We Believe</span>
+        </div>
+
+        <div class="believe-layout">
+
+          <div class="believe-col believe-col--left">
+            <p class="believe-para believe-para--lg" id="believe-0"></p>
+            <p class="believe-para" id="believe-1"></p>
+            <p class="believe-para" id="believe-2"></p>
+          </div>
+
+          <div class="believe-col believe-col--right">
+            <div class="believe-annotated">
+              <p class="believe-para" id="believe-3"></p>
+              <div class="margin-note believe-annotation" aria-label="Key insight">
+                These patterns persist because the gap between institutions is treated as an informal handoff rather than a structural design unit.
+              </div>
+            </div>
+            <p class="believe-para" id="believe-4"></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §2.3  WHO WE ARE — Intro + two mandate Spec Cards + closing
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-who-we-are reveal-on-scroll"
+             id="section-who-we-are"
+             aria-labelledby="wwa-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§2.3</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="wwa-title">Who We Are</span>
+        </div>
+
+        <p class="wwa-intro" id="wwa-intro"></p>
+
+        <div class="wwa-mandates" id="wwa-mandates" role="list"></div>
+
+        <p class="wwa-closing" id="wwa-closing"></p>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         §2.4  OUR MODEL — Problem list + body + logic model diagram
+         ════════════════════════════════════════════════════════════ -->
+    <section class="page-section section-our-model reveal-on-scroll"
+             id="section-our-model"
+             aria-labelledby="model-title">
+      <div class="container">
+
+        <div class="spec-header">
+          <span class="spec-num">§2.4</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title" id="model-title">Our Model</span>
+        </div>
+
+        <p class="model-intro" id="model-intro"></p>
+
+        <div class="model-problems" id="model-problems" role="list"></div>
+
+        <div class="model-body" id="model-body"></div>
+
+        <p class="model-lm-label" id="model-lm-label"></p>
+        <p class="model-lm-subtext">Working backward from the outcome we are trying to produce</p>
+
+        <div id="logic-model"></div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer id="site-footer"></footer>
 
-  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js" integrity="sha384-wkxmY9HYHJVzx0oZ7k8stpLQ7g7ogSqBha75ozCZmxFadwtaIw5dzXKVWWfi9I36" crossorigin="anonymous" defer></script>
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"
+          integrity="sha384-wkxmY9HYHJVzx0oZ7k8stpLQ7g7ogSqBha75ozCZmxFadwtaIw5dzXKVWWfi9I36"
+          crossorigin="anonymous" defer></script>
 
   <script src="/js/nav.js" defer></script>
   <script src="/js/parallax.js" defer></script>
+
   <script type="module">
-    import { hydrate } from '/js/render.js';
-    import { initLogicModel } from '/js/components/logic-model.js';
-    import { content } from '/content/about.js';
+    import { hydrate, initScrollReveal } from '/js/render.js';
+    import { initLogicModel }            from '/js/components/logic-model.js';
+    import { content }                   from '/content/about.js';
+
     document.addEventListener('DOMContentLoaded', () => {
+
+      // Simple string values via hydrate
       hydrate(content);
+
+      // §2.2 — We Believe paragraphs
+      const paras = content.weBelieve.paragraphs;
+      paras.forEach((text, i) => {
+        const el = document.getElementById(`believe-${i}`);
+        if (!el) return;
+        if (i === 0) {
+          // Highlight the provocative claim in para 0
+          const phrase = 'most schools are not yet prepared to use it';
+          const highlighted = text.replace(phrase,
+            `<span class="believe-hl">${phrase}</span>`);
+          el.innerHTML = highlighted;
+        } else {
+          el.textContent = text;
+        }
+      });
+
+      // §2.3 — Who We Are
+      const wwa = content.whoWeAre;
+      _setText('wwa-intro',   wwa.intro);
+      _setText('wwa-closing', wwa.closing);
+
+      const mandatesEl = document.getElementById('wwa-mandates');
+      if (mandatesEl) {
+        const icons = [
+          '/assets/icons/icons/row04_col11.png',
+          '/assets/icons/icons/row06_col07.png',
+        ];
+        mandatesEl.innerHTML = wwa.mandates.map((m, i) => `
+          <div class="card-spec mandate-card" role="listitem">
+            <span class="label-tag label-tag--green">${m.label}</span>
+            <div class="mandate-card-icon-bg" aria-hidden="true">
+              <img src="${icons[i]}" alt="" class="mandate-card-icon">
+            </div>
+            <p class="mandate-card-body">${m.body}</p>
+          </div>
+        `).join('');
+      }
+
+      // §2.4 — Our Model
+      const om = content.ourModel;
+      _setText('model-intro',    om.intro);
+      _setText('model-lm-label', om.logicModelIntro);
+
+      const problemsEl = document.getElementById('model-problems');
+      if (problemsEl) {
+        problemsEl.innerHTML = om.problems.map((p, i) => `
+          <div class="model-problem-item" role="listitem">
+            <span class="model-problem-num">0${i + 1}</span>
+            <p class="model-problem-text">${p}</p>
+          </div>
+        `).join('');
+      }
+
+      const bodyEl = document.getElementById('model-body');
+      if (bodyEl) {
+        bodyEl.innerHTML = om.body.map(p => `<p>${p}</p>`).join('');
+      }
+
+      // Logic model — adapt levels: each body string → single-item items array
       const logicEl = document.getElementById('logic-model');
-      if (logicEl) initLogicModel(logicEl, content.ourModel.levels);
+      if (logicEl) {
+        initLogicModel(logicEl, om.levels.map(l => ({
+          label: l.label,
+          items: [l.body],
+        })));
+      }
+
+      initScrollReveal();
       if (window.lucide) lucide.createIcons();
     });
+
+    function _setText(id, text) {
+      const el = document.getElementById(id);
+      if (el && text) el.textContent = text;
+    }
   </script>
+
 </body>
 </html>
