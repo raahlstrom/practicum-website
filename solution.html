@@ -346,7 +346,7 @@
   <script src="/js/parallax.js" defer></script>
 
   <script type="module">
-    import { renderExpandableList, renderFootnotesList } from '/js/render.js';
+    import { renderExpandableList, renderFootnotesList, initScrollReveal } from '/js/render.js';
     import { initStateMap }        from '/js/components/state-map.js';
     import { content }             from '/content/solution.js?v=2';
     import { stateData }           from '/content/state-map-data.js';
@@ -417,21 +417,8 @@
 
       if (window.lucide) lucide.createIcons();
 
-      _initScrollReveal();
+      initScrollReveal();
     });
-
-    function _initScrollReveal() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
-        return;
-      }
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
-        });
-      }, { threshold: 0.08 });
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
-    }
 
     // ── Render helpers ──────────────────────────────────────────────
 

@@ -151,17 +151,17 @@
           <div class="or-content-box">
 
             <!-- Zone 1: Header — text left, state shape right -->
-            <div class="or-header-zone">
+            <div class="cs-header-zone">
               <div class="or-header-text">
-                <div class="spec-header or-spec-row">
+                <div class="spec-header cs-spec-row">
                   <span class="spec-num">§3.3</span>
                   <span class="spec-sep">—</span>
                   <span class="spec-title">Case Study</span>
                 </div>
-                <h2 class="or-program-name" id="oregon-title">Oregon Measure 98</h2>
+                <h2 class="cs-spec-program-title" id="oregon-title">Oregon Measure 98</h2>
                 <p class="or-program-subtitle">High School Graduation &amp; College Readiness Fund</p>
-                <div class="or-title-rule" aria-hidden="true"></div>
-                <p class="or-framing" id="or-framing"></p>
+                <div class="cs-title-rule" aria-hidden="true"></div>
+                <p class="cs-framing" id="or-framing"></p>
               </div>
               <div class="or-header-visual" aria-hidden="true">
                 <div class="or-state-wrap">
@@ -171,28 +171,28 @@
             </div>
 
             <!-- Context paragraph -->
-            <p class="or-context" id="or-context"></p>
+            <p class="cs-narrative" id="or-context"></p>
 
             <!-- Zone 2: Stats -->
-            <div class="or-stats-card">
-              <p class="or-stats-heading">By the Numbers</p>
-              <div class="or-stats-grid" id="oregon-stats-grid"></div>
+            <div class="cs-stats-card">
+              <p class="cs-stats-heading">By the Numbers</p>
+              <div class="cs-stats-grid" id="oregon-stats-grid"></div>
             </div>
 
             <!-- Zone 3: Design Principles -->
             <div class="or-principles-zone">
-              <p class="or-principles-label">Three Design Principles in Action</p>
-              <div class="or-principles-list" id="oregon-principles-list" role="list"></div>
+              <p class="cs-outcomes-heading">Three Design Principles in Action</p>
+              <div class="cs-outcomes-list" id="oregon-principles-list" role="list"></div>
             </div>
 
             <!-- Zone 4: Pull quote / Key Takeaway -->
-            <div class="or-pullquote-zone">
-              <div class="or-pullquote-text">
-                <p class="or-pullquote-label">Key Takeaway</p>
-                <p class="or-quote-body" id="or-pullquote-body"></p>
+            <div class="cs-pullquote-zone">
+              <div class="cs-pullquote-text">
+                <p class="cs-pullquote-label">Key Takeaway</p>
+                <p class="cs-quote-body" id="or-pullquote-body"></p>
               </div>
               <div class="or-pullquote-visual" aria-hidden="true">
-                <img src="/assets/icons/icons/row04_col10.png" alt="" class="or-pullquote-avatar">
+                <img src="/assets/icons/icons/row04_col10.png" alt="" class="cs-pullquote-avatar">
               </div>
             </div>
 
@@ -477,7 +477,7 @@
   <script src="/js/parallax.js" defer></script>
 
   <script type="module">
-    import { renderAccordion, renderFootnotesList } from '/js/render.js';
+    import { renderAccordion, renderFootnotesList, initScrollReveal } from '/js/render.js';
     import { content }         from '/content/problem.js';
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -538,7 +538,7 @@
       }
 
       // Scroll reveal
-      _initScrollReveal();
+      initScrollReveal();
 
       if (window.lucide) lucide.createIcons();
     });
@@ -609,22 +609,7 @@
       } catch (e) { /* SVG stays empty if fetch fails */ }
     }
 
-    function _initScrollReveal() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
-        return;
-      }
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('revealed');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
-    }
-  </script>
+</script>
 
 </body>
 </html>

@@ -268,3 +268,21 @@ export function renderFootnotesList(el, notes) {
   if (!el || !notes || !notes.length) return;
   el.innerHTML = '<ol>' + notes.map(n => `<li>${n}</li>`).join('') + '</ol>';
 }
+
+
+/* ── SCROLL REVEAL ──────────────────────────────────────────────
+   Wires up IntersectionObserver for .reveal-on-scroll elements.
+   Call once after DOMContentLoaded. Respects prefers-reduced-motion.
+*/
+export function initScrollReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+    return;
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
+}

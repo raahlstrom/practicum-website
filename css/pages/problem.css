@@ -198,28 +198,6 @@
 .or-content-box .spec-header .spec-title { color: var(--color-ink); }
 
 /* Zone 1: Header */
-.or-header-zone {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--sp8);
-  align-items: start;
-}
-
-.or-spec-row {
-  border-bottom: none;
-  padding-bottom: var(--sp3);
-}
-
-.or-program-name {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-semibold);
-  font-size: clamp(28px, 3.6vw, 50px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--color-ink);
-  margin: 0 0 var(--sp4);
-}
-
 .or-program-subtitle {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -230,22 +208,6 @@
   margin: 0 0 var(--sp4);
 }
 
-.or-title-rule {
-  width: 48px;
-  height: 2px;
-  background: var(--color-green);
-  margin: 0 0 var(--sp5);
-}
-
-/* Match PA: framing is sans-serif body-lg, not italic */
-.or-framing {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-body-lg);
-  line-height: var(--line-height-body);
-  color: var(--color-ink);
-  margin: 0 0 var(--sp3);
-}
-
 .or-header-visual {
   display: flex;
   align-items: center;
@@ -253,9 +215,7 @@
   padding-top: var(--sp4);
 }
 
-.or-state-wrap {
-  width: 100%;
-}
+.or-state-wrap { width: 100%; }
 
 .oregon-state-svg {
   width: 100%;
@@ -263,120 +223,9 @@
   display: block;
 }
 
-/* Context paragraph — match PA .cs-narrative */
-.or-context {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  color: var(--color-ink-muted);
-  max-width: 80ch;
-  margin: 0;
-}
-
-/* Zone 2: Stats card — match PA .cs-stats-card exactly */
-.or-stats-card {
-  background: rgba(95, 175, 143, 0.05);
-  border: 1px solid rgba(95, 175, 143, 0.2);
-  border-radius: var(--radius-sm);
-  padding: var(--sp6);
-}
-
-/* Match PA: "BY THE NUMBERS" label is green */
-.or-stats-heading {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--tracking-mono-wide);
-  text-transform: uppercase;
-  color: var(--color-green);
-  margin: 0 0 var(--sp5);
-}
-
-/* Match PA: 3-column grid with vertical dividers, centered */
-.or-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-/* Stat blocks — match PA .cs-stat-col exactly */
-.or-stats-grid .cs-stat-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 var(--sp5);
-  border-right: 1px solid var(--color-rule);
-}
-.or-stats-grid .cs-stat-col:first-child { padding-left: 0; }
-.or-stats-grid .cs-stat-col:last-child  { padding-right: 0; border-right: none; }
-
-/* Match PA .cs-stat-icon-bg: 44px, no border-radius, green border */
-.or-stats-grid .cs-stat-icon-bg {
-  width: 44px;
-  height: 44px;
-  background: var(--color-paper);
-  border: 1px solid rgba(95, 175, 143, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-  margin-bottom: var(--sp3);
-}
-
-/* Match PA .cs-stat-icon: 30px */
-.or-stats-grid .cs-stat-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  display: block;
-}
-
-/* Match PA .cs-stat-number exactly */
-.or-stats-grid .cs-stat-number {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-semibold);
-  font-size: clamp(28px, 3.2vw, 48px);
-  color: var(--color-ink);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--sp2);
-}
-
-/* Match PA .cs-stat-label: 12px, 18ch, centered */
-.or-stats-grid .cs-stat-label {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  color: var(--color-ink-muted);
-  line-height: 1.4;
-  max-width: 18ch;
-  margin: 0 auto;
-}
-
 /* Zone 3: Design Principles */
-.or-principles-zone {
-  padding-top: 0;
-}
+.or-principles-zone { padding-top: 0; }
 
-/* Match PA .cs-outcomes-heading: green serif with green underline */
-.or-principles-label {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-semibold);
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: var(--color-green);
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  margin: 0 0 var(--sp6);
-  padding-bottom: var(--sp3);
-  border-bottom: var(--stroke-secondary) solid var(--color-green);
-}
-
-.or-principles-list {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Match PA .cs-outcome-row: dashed dividers */
 .or-principle-row {
   display: flex;
   gap: var(--sp5);
@@ -386,7 +235,6 @@
 }
 .or-principle-row:first-child { border-top: 1px dashed var(--color-rule); }
 
-/* Match PA .cs-outcome-num: 40px, centered */
 .or-principle-num {
   font-family: var(--font-serif);
   font-weight: var(--font-weight-semibold);
@@ -423,59 +271,17 @@
   max-width: 72ch;
 }
 
-/* Zone 4: Pull quote — match PA .cs-pullquote-zone exactly */
-.or-pullquote-zone {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--sp5);
-  align-items: center;
-  background: rgba(31, 31, 31, 0.04);
-  border: 1px solid rgba(31, 31, 31, 0.15);
-  border-radius: var(--radius-sm);
-  padding: var(--sp6) var(--sp7);
-}
-
-.or-pullquote-text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp3);
-}
-
-.or-pullquote-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-green);
-  margin: 0;
-}
-
-/* Match PA .cs-quote-body exactly */
-.or-quote-body {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(15px, 1.7vw, 20px);
-  line-height: 1.55;
-  color: var(--color-ink);
-  max-width: 58ch;
-  margin: 0;
-}
-
 .or-pullquote-visual {
   background: var(--color-paper);
   isolation: isolate;
 }
 
-/* Match PA .cs-pullquote-avatar: 180px */
-.or-pullquote-avatar {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  display: block;
-  flex-shrink: 0;
-}
+/* cs-* overrides inside the flex-gap Oregon content box */
+.or-content-box .cs-header-zone    { margin-bottom: 0; }
+.or-content-box .cs-stats-card     { margin-bottom: 0; }
+.or-content-box .cs-pullquote-zone { margin-bottom: 0; }
+.or-content-box .cs-narrative      { max-width: 80ch; }
+.or-content-box .cs-outcomes-heading { margin-bottom: var(--sp6); }
 
 /* Footnotes inside content box */
 .or-content-box .footnotes {
@@ -1626,30 +1432,10 @@
 }
 
 @media (max-width: 900px) {
-  .or-header-zone {
-    grid-template-columns: 1fr;
-    gap: var(--sp5);
-  }
-
-  .or-header-visual {
-    display: none;
-  }
-
-  .or-stats-grid {
-    gap: var(--sp4);
-  }
-
-  .or-stats-grid .cs-stat-col {
-    padding: 0 var(--sp3);
-  }
-
-  .or-pullquote-zone {
-    grid-template-columns: 1fr;
-  }
-
-  .or-pullquote-visual {
-    display: none;
-  }
+  /* cs-header-zone, cs-stats-grid, cs-stat-col, cs-pullquote-zone
+     responsive rules live in components.css */
+  .or-header-visual  { display: none; }
+  .or-pullquote-visual { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -1678,12 +1464,7 @@
     padding: var(--sp6);
   }
 
-  .or-pullquote-zone {
-    flex-direction: column;
-    gap: var(--sp4);
-  }
-
-  .or-pullquote-avatar {
+  .cs-pullquote-avatar {
     width: 96px;
     height: 96px;
   }
