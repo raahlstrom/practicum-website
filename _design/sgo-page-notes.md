@@ -61,13 +61,13 @@ These are **not part of the main body** but are essential supporting detail. Tre
 
 ## Who Can Become an SGO
 
-Include. Content is detailed in the design brief (Section 4.5).
+**Removed (2026-04-21).** User decision: "doesn't feel relevant to our audience." Data preserved in `content/solution.js → whoCanParticipate` for potential future use.
 
 ---
 
 ## Defining a Scope
 
-Include. Content is detailed in the design brief (Section 4.6). The org's model requires a theory of change — this section is where that argument lands.
+Include. Now §4.7 (was §4.6). Redesigned as a three-beat argument: statutory floor → Pennsylvania gap → [PLACEHOLDER NAME] scoped model. Blueprint Panel position statement included.
 
 ---
 
@@ -79,9 +79,9 @@ Include. Content is detailed in the design brief (Section 4.7). It's instructive
 
 ## What to De-emphasize
 
-**State-level decisions** — broadly out of scope. A quick blurb is sufficient; do not go deep.
+**State-level decisions** — broadly out of scope. A quick blurb is sufficient; do not go deep. *(Section removed entirely 2026-04-21 per user decision.)*
 
-**Unresolved regulatory items** — flag them, but don't expand. Readers need to know Treasury guidance is pending; they don't need the full regulatory analysis inline.
+**Unresolved regulatory items** — flag them, but don't expand. Readers need to know Treasury guidance is pending; they don't need the full regulatory analysis inline. *(Open Questions section removed entirely 2026-04-21 per user decision.)*
 
 **Broad SGO content (Part IV of prior drafts)** — skip. This site's SGOs are narrowly tailored to transition-point support, not broadly applicable. The problem section handles the "why" already.
 

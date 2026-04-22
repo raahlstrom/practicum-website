@@ -18,6 +18,20 @@ export const content = {
     body: "Students lose academic ground at every major transition of their K-12 education. The losses are predictable, well-documented, and steepest for low-income students and students of color. They persist not because of anything students do, but because the institutions responsible for their education were never designed to hand them off.",
     linkLabel: "Read more",
     linkHref: "/problem",
+    transitions: [
+      {
+        stage: "Pre-K → Elementary",
+        stat: "Pre-K gains fade within one year of kindergarten for most children.",
+      },
+      {
+        stage: "Elementary → Middle",
+        stat: "Grades and attendance fall sharply when students enter 6th grade.",
+      },
+      {
+        stage: "Middle → High School",
+        stat: "9th grade has the highest course failure rate of any year in K-12.",
+      },
+    ],
   },
 
   solutionTeaser: {

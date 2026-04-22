@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Test — Blueprint × Field Notes</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Design system CSS -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- Third-party libraries (state map) -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+  <script src="/js/parallax.js"></script>
+
+  <style>
+    /* Test page chrome */
+    .test-page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: var(--sp8) var(--sp5);
+    }
+
+    .test-page-header {
+      border-bottom: 2px solid var(--color-ink);
+      padding-bottom: var(--sp5);
+      margin-bottom: var(--sp9);
+    }
+
+    .test-section {
+      margin-bottom: var(--sp10);
+    }
+
+    .test-section-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-green);
+      margin-bottom: var(--sp2);
+    }
+
+    .test-section-title {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: var(--font-size-h2);
+      line-height: var(--line-height-heading);
+      margin-bottom: var(--sp3);
+    }
+
+    .test-section-desc {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-caption);
+      color: var(--color-ink-muted);
+      margin-bottom: var(--sp6);
+      max-width: 60ch;
+    }
+
+    .test-divider {
+      border: none;
+      border-top: 1px solid var(--color-rule);
+      margin: var(--sp8) 0;
+    }
+
+    .test-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ink-muted);
+      margin-bottom: var(--sp4);
+      margin-top: var(--sp7);
+    }
+
+    /* Constrain prose-width components */
+    .test-prose { max-width: 800px; }
+  </style>
+</head>
+<body class="with-grid">
+
+  <!-- SVG defs (arrows, hand-drawn filter) -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="hand-drawn">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <marker id="arr-ink" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#1F1F1F"/>
+      </marker>
+      <marker id="arr-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#6B7280"/>
+      </marker>
+      <marker id="arr-white" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#F7F6F2"/>
+      </marker>
+    </defs>
+  </svg>
+
+  <div class="test-page">
+
+    <!-- Page header -->
+    <header class="test-page-header">
+      <div class="spec-header">
+        <span class="spec-num">PHASE 1</span>
+        <span class="spec-sep">—</span>
+        <span class="spec-title">Interactive Component Library</span>
+      </div>
+      <h1 style="font-family:var(--font-serif);font-weight:600;font-size:var(--font-size-h1);line-height:1.05;letter-spacing:-0.01em;margin-top:var(--sp5)">Component Test</h1>
+      <p style="font-family:var(--font-mono);font-size:12px;color:var(--color-ink-muted);margin-top:var(--sp3)">Blueprint × Field Notes — All interactive components exercised in isolation.</p>
+    </header>
+
+
+    <!-- ── 01 ACCORDION ─────────────────────────────────────────── -->
+    <section class="test-section" id="accordion">
+      <div class="test-section-label">01</div>
+      <h2 class="test-section-title">Accordion</h2>
+      <p class="test-section-desc">Three-panel accordion. All panels visible collapsed. Independent state. Keyboard accessible (Enter / Space).</p>
+
+      <div class="accordion test-prose" id="test-accordion"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 02 TABS ───────────────────────────────────────────────── -->
+    <section class="test-section" id="tabs">
+      <div class="test-section-label">02</div>
+      <h2 class="test-section-title">Tabbed Panel</h2>
+      <p class="test-section-desc">Switchable without scroll. Keyboard accessible (arrow keys). ARIA roles.</p>
+
+      <div class="tabs test-prose" id="test-tabs"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 03 EXPANDABLE LIST ────────────────────────────────────── -->
+    <section class="test-section" id="requirements">
+      <div class="test-section-label">03</div>
+      <h2 class="test-section-title">Expandable List</h2>
+      <p class="test-section-desc">11 SGO requirements. All visible collapsed without scrolling. Expand inline. Keyboard accessible. Inline IMPORTANT TO KNOW callout on Req 06.</p>
+
+      <div class="expandable-list test-prose" id="test-requirements"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 04 FLOW DIAGRAM ───────────────────────────────────────── -->
+    <section class="test-section" id="flow">
+      <div class="test-section-label">04</div>
+      <h2 class="test-section-title">SGO Fund Flow Diagram</h2>
+      <p class="test-section-desc">5-node SVG flow. IntersectionObserver scroll build. Nodes stagger 150ms. Arrows draw via stroke-dashoffset. Scroll down to trigger animation.</p>
+
+      <div id="test-flow-diagram"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 05 STATE MAP ──────────────────────────────────────────── -->
+    <section class="test-section" id="statemap">
+      <div class="test-section-label">05</div>
+      <h2 class="test-section-title">State Opt-In Map</h2>
+      <p class="test-section-desc">D3 + TopoJSON + us-atlas. Green = opted in, gray = opted out, light = undecided. Tooltip on hover/tap.</p>
+
+      <div id="test-state-map" class="state-map"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 06 LOGIC MODEL ────────────────────────────────────────── -->
+    <section class="test-section" id="logicmodel">
+      <div class="test-section-label">06</div>
+      <h2 class="test-section-title">Logic Model</h2>
+      <p class="test-section-desc">5-level horizontal diagram: Inputs → Activities → Outputs → Outcomes → Impact. Scroll-triggered column stagger.</p>
+
+      <div id="test-logic-model"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 07 TRANSITION FALLOFF ─────────────────────────────────── -->
+    <section class="test-section" id="falloff">
+      <div class="test-section-label">07</div>
+      <h2 class="test-section-title">Transition Falloff Visual</h2>
+      <p class="test-section-desc">Academic performance drop at school transitions. Full version (below) and simplified version (landing teaser).</p>
+
+      <p class="test-sub">Full version (problem page)</p>
+      <div id="test-falloff-full"></div>
+
+      <p class="test-sub">Simplified (landing page)</p>
+      <div id="test-falloff-simple" style="max-width:480px"></div>
+    </section>
+
+    <hr class="test-divider">
+
+
+    <!-- ── 08 STATIC COMPONENTS ─────────────────────────────────── -->
+    <section class="test-section" id="static">
+      <div class="test-section-label">08</div>
+      <h2 class="test-section-title">Static Components Reference</h2>
+      <p class="test-section-desc">Non-interactive components for QA verification.</p>
+
+      <p class="test-sub">Spec Header variants</p>
+      <div style="display:flex;flex-direction:column;gap:var(--sp6);max-width:700px">
+        <div class="spec-header">
+          <span class="spec-num">01</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title">Minimal (rule below)</span>
+        </div>
+        <div class="spec-header spec-header--bracketed">
+          <span class="spec-num">02</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title">Bracketed Variant</span>
+        </div>
+        <div class="spec-header spec-header--underscored">
+          <span class="spec-num">03</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title">Underscored Variant</span>
+        </div>
+      </div>
+
+      <p class="test-sub">Label Tags</p>
+      <div style="display:flex;gap:var(--sp4);flex-wrap:wrap;align-items:center">
+        <span class="label-tag">Default</span>
+        <span class="label-tag label-tag--green">Active</span>
+        <span class="label-tag label-tag--muted">Muted</span>
+      </div>
+
+      <p class="test-sub">Cards</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp5);max-width:800px">
+        <div class="card">
+          <span class="crosshair crosshair--tl">+</span>
+          <span class="crosshair crosshair--br">+</span>
+          <p style="font-family:var(--font-sans);font-size:var(--font-size-body)">Simple Card — primary structural container.</p>
+        </div>
+        <div class="card-spec">
+          <span class="label-tag label-tag--green">Spec</span>
+          <p style="font-family:var(--font-sans);font-size:var(--font-size-body);margin-top:var(--sp3)">Spec Card — with green tag in top-left corner.</p>
+        </div>
+        <div class="card-stack">
+          <div class="card">
+            <p style="font-family:var(--font-sans);font-size:var(--font-size-body)">Stacked Card — front layer.</p>
+          </div>
+          <div class="card"></div>
+        </div>
+      </div>
+
+      <p class="test-sub">Blueprint Panel</p>
+      <div class="blueprint-panel" style="max-width:700px">
+        <div class="spec-header">
+          <span class="spec-num">§4.1</span>
+          <span class="spec-sep">—</span>
+          <span class="spec-title">The ECCA</span>
+        </div>
+        <h2 style="font-family:var(--font-serif);font-weight:600;font-size:var(--font-size-h2);line-height:1.15;margin-top:var(--sp5)">$20–40 billion annually.</h2>
+        <p style="font-family:var(--font-sans);font-size:var(--font-size-body-lg);line-height:1.55;margin-top:var(--sp4);max-width:55ch;color:rgba(247,246,242,0.85)">The ECCA surpasses Title I at $18B. Dollar-for-dollar federal tax credit up to $1,700 per taxpayer per year.</p>
+      </div>
+
+      <p class="test-sub">IMPORTANT TO KNOW Callout</p>
+      <div class="callout-important" style="max-width:700px">
+        <span class="label-tag">Important to Know</span>
+        <p>The opt-in decision is annual. States that sit out 2027 can join in future years. The legislation has no end date.</p>
+      </div>
+
+      <p class="test-sub">Diagram Nodes</p>
+      <div style="display:flex;gap:var(--sp5);flex-wrap:wrap">
+        <div class="dnode">
+          <i data-lucide="user" style="width:28px;height:28px;stroke-width:1.5" aria-hidden="true"></i>
+          <span class="dnode-label">Standard</span>
+        </div>
+        <div class="dnode active">
+          <i data-lucide="landmark" style="width:28px;height:28px;stroke-width:1.5" aria-hidden="true"></i>
+          <span class="dnode-label">Active</span>
+        </div>
+        <div class="dnode outcome">
+          <i data-lucide="graduation-cap" style="width:28px;height:28px;stroke-width:1.5" aria-hidden="true"></i>
+          <span class="dnode-label">Outcome</span>
+        </div>
+        <div class="dnode optional">
+          <i data-lucide="settings-2" style="width:28px;height:28px;stroke-width:1.5" aria-hidden="true"></i>
+          <span class="dnode-label">Optional</span>
+        </div>
+      </div>
+
+      <p class="test-sub">Annotation Kit</p>
+      <div style="display:flex;gap:var(--sp7);flex-wrap:wrap;align-items:flex-start">
+        <div>
+          <p style="font-family:var(--font-mono);font-size:11px;color:var(--color-ink-muted);margin-bottom:var(--sp2)">Highlight Mark</p>
+          <p style="font-family:var(--font-sans);font-size:var(--font-size-body-lg)">
+            Students are <span class="highlight">4× more likely to drop out</span> if they can't read by third grade.
+          </p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-mono);font-size:11px;color:var(--color-ink-muted);margin-bottom:var(--sp2)">Margin Note</p>
+          <p class="margin-note">This pattern holds regardless<br>of initial readiness level.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-mono);font-size:11px;color:var(--color-ink-muted);margin-bottom:var(--sp2)">Callout Stat</p>
+          <div class="callout-stat" style="max-width:320px">
+            <p><strong>90%</strong> of American students qualify for SGO scholarships by income.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="test-sub">Footnotes</p>
+      <div class="footnotes" style="max-width:600px">
+        <ol>
+          <li>Durkin et al., 2022 — Tennessee Voluntary Pre-K randomized control trial</li>
+          <li>Bailey et al., 2017 — Meta-analysis of 67 early childhood interventions</li>
+          <li>Hernandez, 2011 — Reading proficiency and graduation outcomes</li>
+        </ol>
+      </div>
+    </section>
+
+  </div><!-- /test-page -->
+
+  <script type="module">
+    import { renderAccordion, renderTabs, renderExpandableList } from '/js/render.js';
+    import { initFlowDiagram } from '/js/components/flow-diagram.js';
+    import { initStateMap }    from '/js/components/state-map.js';
+    import { initLogicModel }  from '/js/components/logic-model.js';
+    import { initTransitionFalloff } from '/js/components/transition-falloff.js';
+    import { stateData }       from '/content/state-map-data.js';
+    import { content as solutionContent } from '/content/solution.js';
+
+    // — 01 Accordion ——————————————————————————————————————————————
+    renderAccordion([
+      {
+        label: 'Pre-K to Kindergarten',
+        content: `<p>Pre-K programs produce real academic gains. But those gains do not persist into elementary school — not because the programs fail, but because the institutions receiving students afterward are not designed to build on what they gained.</p>`,
+        stat: `Students who do not read proficiently by third grade are <strong>4× more likely to drop out of high school.</strong>`,
+        footnotes: ['Durkin et al., 2022', 'Bailey et al., 2017'],
+      },
+      {
+        label: 'Elementary to Middle School',
+        content: `<p>A longitudinal study of sixth graders in Florida found that students transitioning to middle school experienced a sharp drop in both math and reading performance that persisted through tenth grade. The move from a single classroom teacher to subject-specific teachers disrupts the relationships that matter most for academic confidence.</p>`,
+        stat: `The elementary-to-middle transition is associated with a performance drop that <strong>persists through tenth grade.</strong>`,
+        footnotes: ['Schwerdt, 2012'],
+      },
+      {
+        label: 'Middle to High School',
+        content: `<p>Ninth grade is the most acute crisis point in American schooling. The strongest predictor of whether a student stays on track is not their individual background or academic history — it is the school they attend.</p>`,
+        footnotes: ['Neild, 2009', 'Allensworth & Easton, 2005'],
+      },
+    ], document.getElementById('test-accordion'));
+
+    // — 02 Tabs ———————————————————————————————————————————————————
+    renderTabs([
+      {
+        label: 'Case Study A',
+        content: `<h3 style="font-family:var(--font-serif);font-weight:600;font-size:22px;margin-bottom:var(--sp4)">Lorem Ipsum District</h3><p style="color:var(--color-ink-muted)">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>`,
+      },
+      {
+        label: 'Case Study B',
+        content: `<h3 style="font-family:var(--font-serif);font-weight:600;font-size:22px;margin-bottom:var(--sp4)">Placeholder Charter Network</h3><p style="color:var(--color-ink-muted)">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>`,
+      },
+      {
+        label: 'Case Study C',
+        content: `<h3 style="font-family:var(--font-serif);font-weight:600;font-size:22px;margin-bottom:var(--sp4)">Community Foundation Example</h3><p style="color:var(--color-ink-muted)">Sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>`,
+      },
+    ], document.getElementById('test-tabs'));
+
+    // — 03 Expandable list (11 SGO requirements) ——————————————————
+    renderExpandableList(solutionContent.requirements,
+      document.getElementById('test-requirements'));
+
+    // — 04 Flow diagram ————————————————————————————————————————————
+    initFlowDiagram(
+      document.getElementById('test-flow-diagram'),
+      solutionContent.fundingStream.steps,
+    );
+
+    // — 05 State map ———————————————————————————————————————————————
+    initStateMap(document.getElementById('test-state-map'), stateData);
+
+    // — 06 Logic model ——————————————————————————————————————————————
+    initLogicModel(document.getElementById('test-logic-model'), [
+      {
+        label: 'Inputs',
+        items: ['Federal tax-credit funds', 'Institutional partnerships', 'Operational capacity'],
+      },
+      {
+        label: 'Activities',
+        items: ['SGO design', 'Theory of change', 'Scholarship distribution', 'Measurement systems'],
+      },
+      {
+        label: 'Outputs',
+        items: ['Scholarships awarded', 'Services delivered', 'Progress measured'],
+      },
+      {
+        label: 'Outcomes',
+        items: ['Gains retained across transitions', 'Dropout reduction', 'Continuity of support'],
+      },
+      {
+        label: 'Impact',
+        items: ['Academic progress endures from K through graduation'],
+      },
+    ]);
+
+    // — 07 Transition falloff ————————————————————————————————————
+    initTransitionFalloff(document.getElementById('test-falloff-full'),   { full: true });
+    initTransitionFalloff(document.getElementById('test-falloff-simple'), { full: false });
+
+    // — Init Lucide icons ———————————————————————————————————————————
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

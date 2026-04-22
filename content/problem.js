@@ -1,6 +1,5 @@
 /* content/problem.js — The Handoff Problem page copy and data
    Edit strings here. Never edit problem.html for copy.
-   NOTE: caseStudies is Lorem Ipsum until Alex provides real content.
 */
 
 export const content = {

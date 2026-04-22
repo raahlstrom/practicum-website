@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[PLACEHOLDER NAME] — Supporting Students Across Every Transition</title>
   <meta name="description" content="[PLACEHOLDER NAME] helps educators and nonprofits launch Scholarship Granting Organizations designed to prevent academic loss at K-12 transition points.">
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="[PLACEHOLDER NAME] — Supporting Students Across Every Transition">
+  <meta property="og:description" content="We help educators and nonprofits launch SGOs designed to prevent academic loss at every K-12 transition point.">
+  <meta name="theme-color"        content="#1E3A5F">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,36 +128,8 @@
           </div>
 
           <div class="problem-teaser-col">
-            <div class="transition-callouts" aria-label="Three K-12 transition points">
-
-              <div class="transition-callout">
-                <img src="/assets/icons/icons/row05_col01.png"
-                     alt="" class="transition-callout-icon" aria-hidden="true">
-                <div>
-                  <span class="transition-callout-stage">Pre-K → Elementary</span>
-                  <p class="transition-callout-stat">Pre-K gains fade within one year of kindergarten for most children.</p>
-                </div>
-              </div>
-
-              <div class="transition-callout">
-                <img src="/assets/icons/icons/row05_col01.png"
-                     alt="" class="transition-callout-icon" aria-hidden="true">
-                <div>
-                  <span class="transition-callout-stage">Elementary → Middle</span>
-                  <p class="transition-callout-stat">Grades and attendance fall sharply when students enter 6th grade.</p>
-                </div>
-              </div>
-
-              <div class="transition-callout">
-                <img src="/assets/icons/icons/row05_col01.png"
-                     alt="" class="transition-callout-icon" aria-hidden="true">
-                <div>
-                  <span class="transition-callout-stage">Middle → High School</span>
-                  <p class="transition-callout-stat">9th grade has the highest course failure rate of any year in K-12.</p>
-                </div>
-              </div>
-
-            </div>
+            <div class="transition-callouts" id="transition-callouts"
+                 aria-label="Three K-12 transition points"></div>
           </div>
 
         </div>
@@ -201,8 +177,21 @@
       // Simple string values via hydrate
       hydrate(content);
 
-      // §1.2 — Problem teaser body
+      // §1.2 — Problem teaser body + transition callouts
       _setText('problem-teaser-body', content.problemTeaser.body);
+      const calloutsEl = document.getElementById('transition-callouts');
+      if (calloutsEl) {
+        calloutsEl.innerHTML = content.problemTeaser.transitions.map(t => `
+          <div class="transition-callout">
+            <img src="/assets/icons/icons/row05_col01.png"
+                 alt="" class="transition-callout-icon" aria-hidden="true">
+            <div>
+              <span class="transition-callout-stage">${t.stage}</span>
+              <p class="transition-callout-stat">${t.stat}</p>
+            </div>
+          </div>
+        `).join('');
+      }
 
       // §1.3 — Solution teaser body + cards
       _setText('solution-teaser-body', content.solutionTeaser.body);

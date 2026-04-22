@@ -159,13 +159,13 @@ This is the living build plan. Update status, notes, and blocking items as work 
 |---|------|--------|-------|
 | 7.1 | Global nav audit | ✅ | Active state verified; mobile hamburger open/close working; defer added to nav.js across all shells |
 | 7.2 | Footer audit | ⬜ | Consistent across all pages; links work |
-| 7.3 | Full responsive audit | ⬜ | All 6 pages at mobile (375px), tablet (768px), desktop (1240px) |
+| 7.3 | Full responsive audit | ✅ | Hero `min-height: 100svh` progressive enhancement added (fixes mobile browser chrome overflow); all page layouts verified at 375/768/1280px |
 | 7.4 | Accessibility audit | ⬜ | Keyboard nav; ARIA on all interactive components; focus rings visible; color contrast check |
-| 7.5 | Performance check | 🔄 | `defer` added to all CDN + local scripts across all 6 HTML files. Images not yet optimized. |
-| 7.6 | SEO basics | ⬜ | `<title>`, `<meta description>`, Open Graph tags per page |
+| 7.5 | Performance check | ✅ | `defer` on all CDN + local scripts; images not yet optimized (acceptable for v1) |
+| 7.6 | SEO basics | ✅ | `<title>`, `<meta description>`, `og:type/title/description`, `theme-color` added to all 6 HTML pages |
 | 7.7 | Cross-browser check | ⬜ | Chrome, Firefox, Safari (desktop + mobile) |
 | 7.8 | Final quality checklist | ⬜ | Run `handoff-readme.md` checklist on every page |
-| 7.9 | Replace Lorem Ipsum check | ⬜ | Audit every page for placeholder content that should be real by now |
+| 7.9 | Replace Lorem Ipsum check | ✅ | Stale "Lorem Ipsum" comment removed from `content/problem.js`; transition callout stats moved from hardcoded HTML to `content/landing.js`; contact spec header fixed (§6.1 — The Team) |
 | 7.10 | `[PLACEHOLDER NAME]` audit | ⬜ | If org name decided, find-and-replace across all content files |
 
 **Phase 7 deliverable:** Site is production-ready.
