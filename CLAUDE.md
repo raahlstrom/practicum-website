@@ -8,7 +8,7 @@ C:\Users\ahlst\Files\Education\Darden-MEd\Practicum & Independent Study\
 
 **V1 (deprecated):** `Files/Dev/Projects/closing-the-cracks/` — do not continue work there.
 
-**Organization name:** TBD. Use `[PLACEHOLDER NAME]` everywhere — find-and-replace when decided. Never use any other stand-in.
+**Organization name:** Wayfind. All `[PLACEHOLDER NAME]` instances have been replaced.
 
 ---
 

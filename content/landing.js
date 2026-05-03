@@ -1,6 +1,6 @@
-/* content/landing.js — Landing page copy and data
+﻿/* content/landing.js — Landing page copy and data
    Edit strings here to update page content. Never edit index.html for copy.
-   [PLACEHOLDER NAME] will be replaced site-wide when org name is decided.
+   Wayfind will be replaced site-wide when org name is decided.
 */
 
 export const content = {

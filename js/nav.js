@@ -1,4 +1,4 @@
-/* nav.js — Injects site navigation and footer, sets active state */
+﻿/* nav.js — Injects site navigation and footer, sets active state */
 
 const NAV_LINKS = [
   { label: 'About',       href: '/about'     },
@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'Get in Touch', href: '/contact'  },
 ];
 
-const ORG_NAME = '[PLACEHOLDER NAME]';
+const ORG_NAME = 'Wayfind';
 const TAGLINE   = 'Supporting students across every K-12 transition.';
 
 function getActivePath() {

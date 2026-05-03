@@ -1,4 +1,4 @@
-/* content/solution.js — Solution page copy and data
+﻿/* content/solution.js — Solution page copy and data
    Edit strings here. Never edit solution.html for copy.
    NOTE: Treasury guidance sections (openQuestions, requirements 6 & 7)
    need updates when regulations release (expected early summer 2026).
@@ -228,7 +228,7 @@ export const content = {
     ],
     pullQuote: "That self-restriction is not a limitation — it is the mechanism by which an SGO becomes accountable, measurable, and fundable.",
     position: {
-      statement: "We built [PLACEHOLDER NAME] around one question: which students fall out between schools, and can we fund their continuity?",
+      statement: "We built Wayfind around one question: which students fall out between schools, and can we fund their continuity?",
       details: [
         "Every scholarship ties to a student, a transition point, and a tracked outcome — not just a qualified expense.",
         "Our administrative capacity exists to measure what changes, so we can demonstrate impact to the donors who fund it.",

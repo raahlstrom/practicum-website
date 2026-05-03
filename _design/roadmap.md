@@ -166,7 +166,7 @@ This is the living build plan. Update status, notes, and blocking items as work 
 | 7.7 | Cross-browser check | ⬜ | Chrome, Firefox, Safari (desktop + mobile) |
 | 7.8 | Final quality checklist | ✅ | Passed: paper bg, 3 typefaces, token-only colors/fonts, no decorative gradients/shadows, Blueprint Panel scarcity maintained, accent ≤15%, motion scroll-triggered; solution.html `<title>` aligned to OG title |
 | 7.9 | Replace Lorem Ipsum check | ✅ | Stale "Lorem Ipsum" comment removed from `content/problem.js`; transition callout stats moved from hardcoded HTML to `content/landing.js`; contact spec header fixed (§6.1 — The Team) |
-| 7.10 | `[PLACEHOLDER NAME]` audit | ⬜ | If org name decided, find-and-replace across all content files |
+| 7.10 | `[PLACEHOLDER NAME]` audit | ✅ | Org name decided: **Wayfind**. Replaced in all 6 HTML files, all content JS files, nav.js, and CLAUDE.md |
 
 **Phase 7 deliverable:** Site is production-ready.
 
@@ -210,7 +210,7 @@ These items cannot proceed until Alex provides assets or decisions. Track here s
 | Alex headshot | Contact page | 🚫 Awaiting |
 | Evie headshot | Contact page | 🚫 Awaiting |
 | Evie's title + email | Contact page | 🚫 Awaiting |
-| Organization name | All content | ⚠️ `[PLACEHOLDER NAME]` throughout |
+| Organization name | All content | ✅ **Wayfind** — replaced everywhere |
 | One-pager content + design | Resources page | ⚠️ Phase 8.5 |
 
 ---
@@ -222,6 +222,6 @@ These items cannot proceed until Alex provides assets or decisions. Track here s
 | Treasury guidance releases (early summer 2026) | 90/10 rule definition, qualified expenses scope, state authority, multi-state SGOs, SGO liability | `content/solution.js` §openQuestions + §requirements items 6 and 7 |
 | State opt-in decisions (rolling) | State map data | `content/state-map-data.js` |
 | ~~Case study content from Alex~~ | ~~Tabbed panel~~ | ✅ Oregon/Measure 98 content integrated — tab panel replaced with full-bleed Blueprint Panel |
-| Org name decision | All content | Find-and-replace `[PLACEHOLDER NAME]` in all `content/*.js` files |
+| ~~Org name decision~~ | ~~All content~~ | ✅ Done — **Wayfind** |
 | Hero headline decision | Landing hero | `content/landing.js → hero.headline` |
 | Partner logos added | Landing (future) | No infrastructure yet — add when ready |

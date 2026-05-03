@@ -1,4 +1,4 @@
-/* content/about.js — About page copy and data
+﻿/* content/about.js — About page copy and data
    Edit strings here. Never edit about.html for copy.
 */
 
@@ -24,7 +24,7 @@ export const content = {
 
   whoWeAre: {
     specLabel: "Who We Are",
-    intro: "[PLACEHOLDER NAME] is an advocacy and consultative organization built for this moment. We have two mandates:",
+    intro: "Wayfind is an advocacy and consultative organization built for this moment. We have two mandates:",
     mandates: [
       {
         label: "First",
